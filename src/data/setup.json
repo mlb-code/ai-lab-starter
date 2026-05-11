@@ -1,0 +1,102 @@
+{
+  "category": {
+    "title": "התקנה והתחלה",
+    "subtitle": "סביבת העבודה של יזם AI — צעד אחר צעד",
+    "kicker": "ארגז הכלים"
+  },
+  "intro": "לפני שמתחילים לבנות, צריך סביבת עבודה. ארבעת הכלים האלה עובדים יחד כמערכת אחת — Cursor הוא מקום הכתיבה, Claude Code הוא הסוכן שמבצע, GitHub הוא הזיכרון לטווח ארוך, ו-Supabase הוא בסיס הנתונים. הסעיפים הבאים מסבירים איך להתקין כל אחד ולמה הם משלימים זה את זה.",
+  "why": [
+    {
+      "title": "למה Cursor?",
+      "text": "Cursor הוא העורך — שם תכתוב/י את הקוד. בלעדיו צריך לעבור בין דפדפן (ChatGPT/Claude) לעורך הקוד הרגיל, ולעשות העתק-הדבק כל הזמן. Cursor משלב את ה-AI בעורך עצמו — הוא רואה את כל הקוד שלך, מציע שינויים בקובץ הנכון, ועובד הרבה יותר מהר."
+    },
+    {
+      "title": "למה Claude Code?",
+      "text": "Cursor מצוין לכתיבה ידנית עם AI. Claude Code הוא הצעד הבא — סוכן שעובד לבד על משימה שלמה. אומרים לו ‘בנה לי דף נחיתה’, והוא יוצר את הקבצים, כותב את הקוד, ומריץ. שני הכלים יחד — Cursor + Claude Code — נותנים לך גמישות מלאה."
+    },
+    {
+      "title": "למה GitHub?",
+      "text": "כל הקוד שלך חייב להיות במקום שלא ייעלם. GitHub שומר גרסאות (אפשר לחזור אחורה כל רגע), מאפשר עבודה עם שותפים, ובחינם מארח אתרים סטטיים דרך GitHub Pages. בלי GitHub אין דרך לפרסם אתר לאוויר ולא לגבות את העבודה."
+    },
+    {
+      "title": "למה Supabase?",
+      "text": "ברגע שהאתר שלך זקוק לבסיס נתונים אמיתי (משתמשים, התחברות, שמירת מידע) — Supabase הוא הפתרון הכי פשוט. תוכנית חינם נדיבה, ממשק נקי, וכולל מערכת אימות מלאה. חלופה ל-Google Sheets לפרויקטים רציניים יותר."
+    }
+  ],
+  "steps": [
+    {
+      "num": "01",
+      "tool": "Cursor",
+      "logo": "https://cdn.simpleicons.org/cursor/10E593",
+      "title": "התקנת Cursor",
+      "subtitle": "העורך הראשי שלך לאורך הקורס",
+      "duration": "~5 דקות",
+      "actions": [
+        { "label": "כניסה לאתר Cursor", "detail": "פתח/י cursor.com בדפדפן" },
+        { "label": "הורדה של הגרסה למחשב שלך", "detail": "Mac / Windows / Linux — האתר יזהה אוטומטית" },
+        { "label": "התקנה", "detail": "Mac: גרור/י את האייקון ל-Applications. Windows: הרצת ה-installer." },
+        { "label": "פתיחת Cursor והתחברות", "detail": "צור/י חשבון או התחבר/י עם Google. בחר/י את התוכנית החינמית להתחלה." }
+      ],
+      "downloadUrl": "https://cursor.com",
+      "downloadLabel": "להורדה"
+    },
+    {
+      "num": "02",
+      "tool": "Claude Code",
+      "logo": "https://cdn.simpleicons.org/anthropic/10E593",
+      "title": "התקנת Claude Code",
+      "subtitle": "הסוכן שעובד לבד בטרמינל",
+      "duration": "~3 דקות",
+      "intro": "Claude Code מותקן דרך הטרמינל. צריך קודם חשבון Claude Pro פעיל.",
+      "actions": [
+        { "label": "וודא שיש לך חשבון Claude Pro", "detail": "claude.ai → הרשמה ל-Pro ($20/חודש)" },
+        { "label": "פתיחת הטרמינל", "detail": "Mac: Spotlight → Terminal. Windows: WSL מומלץ." },
+        { "label": "הרצת פקודת התקנה", "detail": "הדבק את הפקודה הבאה והרץ אותה" },
+        { "label": "התחברות לחשבון", "detail": "אחרי ההתקנה — claude login. תיפתח דף בדפדפן לאישור." }
+      ],
+      "code": "curl -fsSL https://claude.ai/install.sh | bash",
+      "downloadUrl": "https://claude.com/product/claude-code",
+      "downloadLabel": "להוראות מפורטות"
+    },
+    {
+      "num": "03",
+      "tool": "GitHub",
+      "logo": "https://cdn.simpleicons.org/github/10E593",
+      "title": "פתיחת חשבון GitHub",
+      "subtitle": "אחסון הקוד + פרסום אתרים",
+      "duration": "~5 דקות",
+      "actions": [
+        { "label": "הרשמה ב-GitHub", "detail": "github.com → Sign up. בחר/י username שאת/ה תהיה/י גאה/ה בו (יופיע ב-URL של האתרים שלך)." },
+        { "label": "אימות אימייל", "detail": "GitHub ישלח קישור לאימות. לחיצה — וזהו." },
+        { "label": "חיבור Cursor ל-GitHub", "detail": "ב-Cursor: Source Control → Sign in with GitHub. אישור הרשאה." },
+        { "label": "יצירת repository ראשון", "detail": "ב-Cursor: File → Open Folder → צור תיקייה חדשה. ואז: Source Control → Initialize Repository → Publish to GitHub." }
+      ],
+      "downloadUrl": "https://github.com/signup",
+      "downloadLabel": "להרשמה"
+    },
+    {
+      "num": "04",
+      "tool": "Supabase",
+      "logo": "https://cdn.simpleicons.org/supabase/10E593",
+      "title": "פתיחת חשבון Supabase",
+      "subtitle": "בסיס הנתונים לפרויקטים מתקדמים",
+      "duration": "~5 דקות",
+      "intro": "לא חובה בשיעורים הראשונים — אבל כדאי לפתוח חשבון מראש כדי שיהיה מוכן.",
+      "actions": [
+        { "label": "הרשמה ב-Supabase", "detail": "supabase.com → Start your project. כדאי להירשם עם אותו GitHub." },
+        { "label": "יצירת פרויקט חדש", "detail": "Project name: שם תיאורי. Database password: סיסמה חזקה — שמור/י אותה!" },
+        { "label": "בחירת אזור (Region)", "detail": "בחר/י Frankfurt או London — הכי קרוב לישראל מבחינת latency." },
+        { "label": "המתנה ~2 דקות", "detail": "Supabase יקים עבורך בסיס נתונים PostgreSQL מלא. תקבל/י URL ו-API key מוכנים לשימוש." }
+      ],
+      "downloadUrl": "https://supabase.com",
+      "downloadLabel": "להרשמה"
+    }
+  ],
+  "checklist": [
+    "Cursor מותקן ועובד",
+    "Claude Code מותקן בטרמינל ומחובר לחשבון",
+    "חשבון GitHub פעיל + Cursor מחובר אליו",
+    "חשבון Supabase פעיל עם פרויקט ראשון"
+  ],
+  "tip": "אם משהו לא עובד — לפני שמחפשים בגוגל, פשוט שאל את Claude. הוא יודע את כל הכלים האלה היטב, וייתן הוראות מותאמות לבעיה שלך."
+}

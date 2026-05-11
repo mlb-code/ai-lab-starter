@@ -1,0 +1,94 @@
+{
+  "category": {
+    "title": "ספרייה",
+    "subtitle": "פודקאסטים, ערוצי יוטיוב וניוזלטרים — להעמקה בעולם ה-AI",
+    "kicker": "עזרים"
+  },
+  "note": "כל הקישורים לפודקאסטים מובילים לערוץ היוטיוב הרשמי שלהם.",
+  "sections": [
+    {
+      "type": "podcast",
+      "title": "פודקאסטים בעברית",
+      "icon": "♪",
+      "items": [
+        {
+          "name": "TrashTech",
+          "host": "פודקאסט טכנולוגי ישראלי",
+          "description": "פודקאסט ישראלי שמסקר את החדשות החמות בעולם הטכנולוגיה וה-AI — מגמות, כלים חדשים וניתוחים בעברית. מתאים גם למתחילים וגם למתקדמים.",
+          "url": "https://www.youtube.com/@TrashTechNews",
+          "frequency": "שבועי"
+        }
+      ]
+    },
+    {
+      "type": "podcast-en",
+      "title": "פודקאסטים באנגלית",
+      "icon": "♫",
+      "items": [
+        {
+          "name": "Lex Fridman Podcast",
+          "host": "Lex Fridman",
+          "description": "ראיונות עומק עם החוקרים והמייסדים הגדולים בתעשיית ה-AI. הראיונות עם Sam Altman, Dario Amodei ו-Jensen Huang הם חובה.",
+          "url": "https://www.youtube.com/@lexfridman",
+          "frequency": "שבועי"
+        },
+        {
+          "name": "Latent Space",
+          "host": "Swyx & Alessio",
+          "description": "פודקאסט טכני מיועד למפתחים. כל שבוע ראיון עם founder או חוקר AI מוביל. רלוונטי במיוחד לבונים מוצרי AI.",
+          "url": "https://www.youtube.com/results?search_query=Latent+Space+podcast+swyx",
+          "frequency": "שבועי"
+        },
+        {
+          "name": "The AI Daily Brief",
+          "host": "Nathaniel Whittemore",
+          "description": "סיכום יומי קצר של כל מה שקרה בעולם ה-AI ב-15 דקות. מצוין להישאר מעודכן.",
+          "url": "https://www.youtube.com/results?search_query=AI+Daily+Brief+Whittemore",
+          "frequency": "יומי"
+        },
+        {
+          "name": "No Priors",
+          "host": "Sarah Guo & Elad Gil",
+          "description": "פודקאסט VC מבכירי הקרנות בעמק הסיליקון. ראיונות עם מייסדי חברות AI מובילות (Anthropic, OpenAI, Perplexity).",
+          "url": "https://www.youtube.com/results?search_query=No+Priors+podcast+Sarah+Guo",
+          "frequency": "שבועי"
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "title": "ערוצי יוטיוב",
+      "icon": "▶",
+      "items": [
+        {
+          "name": "Anthropic",
+          "host": "Anthropic — ערוץ רשמי",
+          "description": "הערוץ הרשמי של חברת Claude. מדריכים על Claude Code, MCP, וטיפים ל-prompt engineering.",
+          "url": "https://www.youtube.com/@anthropic-ai",
+          "frequency": "מספר סרטונים בחודש"
+        },
+        {
+          "name": "Matthew Berman",
+          "host": "Matthew Berman",
+          "description": "ערוץ יומי על כל החדשות והכלים החדשים ב-AI. סקירות מעמיקות על מודלים חדשים ביום שיוצאים.",
+          "url": "https://www.youtube.com/results?search_query=Matthew+Berman+AI",
+          "frequency": "יומי"
+        },
+        {
+          "name": "AI Explained",
+          "host": "Philip",
+          "description": "ניתוחים מעמיקים של מאמרי מחקר חדשים ב-AI. אם מעניין אותך מה קורה מתחת למכסה — זה הערוץ.",
+          "url": "https://www.youtube.com/results?search_query=AI+Explained+Philip",
+          "frequency": "שבועי"
+        },
+        {
+          "name": "AI Jason",
+          "host": "Jason Zhou",
+          "description": "מדריכים מעשיים לבניית סוכני AI ו-agents. מצוין לבונים מוצרים.",
+          "url": "https://www.youtube.com/results?search_query=AI+Jason+Zhou",
+          "frequency": "שבועי"
+        }
+      ]
+    }
+  ]
+}

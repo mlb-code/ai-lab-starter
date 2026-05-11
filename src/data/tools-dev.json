@@ -1,0 +1,167 @@
+{
+  "category": {
+    "title": "כלי פיתוח",
+    "subtitle": "העורכים, השרתים והכלים שיזם AI חייב",
+    "kicker": "ארגז הכלים"
+  },
+  "tools": [
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "company": "Anysphere",
+      "category": "עורך קוד",
+      "logo": "https://cdn.simpleicons.org/cursor/FFFFFF",
+      "tagline": "VSCode עם AI מובנה — העורך החדש של מפתחי AI",
+      "description": "Cursor הוא fork של VSCode שכולל AI מובנה ברמת הקוד. במקום לעבור בין ChatGPT לעורך, Cursor מבין את כל הקוד שלך ומציע שינויים בקובץ הנכון. זה ההבדל בין 'לדבר עם AI' לבין 'לעבוד עם AI'.",
+      "strengths": [
+        "AI מובנה ישירות בעורך",
+        "מבין את כל הפרויקט (לא רק קובץ אחד)",
+        "Tab completion חכם",
+        "מבוסס VSCode — תוספים תואמים"
+      ],
+      "weaknesses": [
+        "תוכנית חינם מוגבלת",
+        "לפעמים איטי בפרויקטים גדולים"
+      ],
+      "useCases": [
+        "כתיבת קוד יומיומית",
+        "Refactoring",
+        "תיקון באגים",
+        "כתיבת בדיקות"
+      ],
+      "pricing": [
+        { "tier": "Hobby", "price": "חינם", "note": "200 בקשות בחודש" },
+        { "tier": "Pro", "price": "$20 / חודש", "note": "ללא הגבלה למודלים מתקדמים" }
+      ],
+      "url": "https://cursor.com",
+      "courseRelevance": "העורך הראשי שלנו לאורך הקורס. נתקין אותו בשיעור 2."
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "company": "Anthropic",
+      "category": "CLI Agent",
+      "logo": "https://cdn.simpleicons.org/anthropic/D97757",
+      "tagline": "Claude בטרמינל — סוכן שעובד לבד על משימות שלמות",
+      "description": "Claude Code הוא הגרסה ה-CLI של Claude. רץ בטרמינל, יכול לקרוא ולכתוב קבצים, להריץ פקודות, ולעבוד על משימה שלמה לבד. זה ההבדל בין 'AI שמייעץ' לבין 'AI שמבצע'.",
+      "strengths": [
+        "עובד באוטונומיה — סוכן אמיתי",
+        "כותב, קורא ומריץ קבצים",
+        "תמיכה ב-MCP servers (אינטגרציות)",
+        "עובד על פרויקט שלם בו-זמנית"
+      ],
+      "weaknesses": [
+        "דורש Claude Pro / API",
+        "צריך להבין טרמינל בסיסי"
+      ],
+      "useCases": [
+        "בניית פרויקט שלם מאפס",
+        "Migration של פרויקטים",
+        "אוטומציה של משימות חוזרות",
+        "Code review"
+      ],
+      "pricing": [
+        { "tier": "Pro", "price": "כלול ב-Claude Pro $20", "note": "שימוש סטנדרטי" },
+        { "tier": "Max", "price": "$200 / חודש", "note": "שימוש כבד" }
+      ],
+      "url": "https://claude.com/product/claude-code",
+      "courseRelevance": "השיעור השני של הקורס מוקדש כולו ל-Claude Code."
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "company": "Microsoft",
+      "category": "קוד + אירוח",
+      "logo": "https://cdn.simpleicons.org/github/FFFFFF",
+      "tagline": "אחסון קוד + אירוח אתרים + ניהול פרויקטים — הכל במקום אחד",
+      "description": "GitHub הוא הסטנדרט העולמי לאחסון קוד. אבל הוא הרבה יותר מזה: GitHub Pages מאפשר לפרסם אתרים סטטיים בחינם בלחיצת כפתור, GitHub Actions מאפשר אוטומציה, ו-GitHub Issues מנהל את כל המשימות. כיזם בתחילת הדרך — GitHub יחיד נותן לך גם אחסון קוד, גם פרסום לאוויר, וגם ניהול פרויקט.",
+      "strengths": [
+        "סטנדרט עולמי לאחסון קוד",
+        "GitHub Pages — אירוח אתרים בחינם",
+        "תומך בדומיין מותאם אישית",
+        "GitHub Actions לאוטומציה",
+        "ניהול משימות ב-Issues",
+        "קהילה ענקית"
+      ],
+      "weaknesses": [
+        "GitHub Pages תומך רק באתרים סטטיים (לא בשרתים)",
+        "עקומת לימוד ל-git למתחילים"
+      ],
+      "useCases": [
+        "אחסון קוד הפרויקט וגיבויים",
+        "פרסום דף נחיתה / אתר לאוויר",
+        "אתר תיק עבודות אישי",
+        "אוטומציה של בנייה ופרסום",
+        "ניהול משימות ופרויקט"
+      ],
+      "pricing": [
+        { "tier": "Free", "price": "חינם", "note": "אחסון קוד + Pages + Actions" },
+        { "tier": "Pro", "price": "$4 / חודש", "note": "Codespaces וכלים מתקדמים" }
+      ],
+      "url": "https://github.com",
+      "courseRelevance": "נשתמש בו לאורך הקורס לאחסון הקוד וגם לפרסום האתרים שנבנה. בשיעור 3 נחבר GitHub Pages לדף הנחיתה הראשון. שים לב: לפרויקטים עם שרת אמיתי (בוטים, AI agents) — צריך כלי נוסף כמו Railway."
+    },
+    {
+      "id": "google-sheets",
+      "name": "Google Sheets",
+      "company": "Google",
+      "category": "בסיס נתונים",
+      "logo": "https://cdn.simpleicons.org/googlesheets/0F9D58",
+      "tagline": "בסיס הנתונים החינמי הכי פשוט בעולם",
+      "description": "Google Sheets הוא לא רק טבלה — זה בסיס נתונים מלא עם API. אפשר לחבר אליו אתרים, לקבל לידים מטופס דרך הגיליון, ולנהל לקוחות בלי להחזיק שרת אמיתי. שלב מצוין ליזם שמתחיל ולא רוצה להסתבך עם תשתיות.",
+      "strengths": [
+        "חינם לחלוטין",
+        "ממשק שכל אחד מכיר",
+        "API פתוח",
+        "אינטגרציה עם הכל"
+      ],
+      "weaknesses": [
+        "לא מתאים למיליוני רשומות",
+        "אבטחה פחות חזקה מ-Supabase"
+      ],
+      "useCases": [
+        "ניהול לידים מטופס נחיתה",
+        "ניהול תורים",
+        "מלאי / רשימות מוצרים",
+        "פרויקטים עם פחות מ-10K רשומות"
+      ],
+      "pricing": [
+        { "tier": "Free", "price": "חינם", "note": "כלול בכל חשבון Google" }
+      ],
+      "url": "https://sheets.google.com",
+      "courseRelevance": "השיעור הרביעי של הקורס מוקדש לחיבור אתר ל-Google Sheets."
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "company": "Supabase",
+      "category": "בסיס נתונים",
+      "logo": "https://cdn.simpleicons.org/supabase/3FCF8E",
+      "tagline": "Firebase Open Source — בסיס נתונים אמיתי + אימות + Storage",
+      "description": "Supabase זה הצעד הבא אחרי Google Sheets. בסיס נתונים PostgreSQL אמיתי, מערכת אימות מלאה (גוגל, אפל, פייסבוק), Storage לקבצים — והכל בממשק נקי. מתאים ליזם שכבר עבר את שלב ה-MVP ורוצה מערכת רצינית.",
+      "strengths": [
+        "PostgreSQL אמיתי",
+        "מערכת Auth מלאה",
+        "Storage לקבצים",
+        "Realtime subscriptions",
+        "תוכנית חינם נדיבה"
+      ],
+      "weaknesses": [
+        "עקומת לימוד תלולה יותר",
+        "צריך להבין SQL בסיסי"
+      ],
+      "useCases": [
+        "אפליקציות מורכבות",
+        "מערכות עם רשומות רבות",
+        "אזורי משתמשים אישיים",
+        "צ'אטים בזמן אמת"
+      ],
+      "pricing": [
+        { "tier": "Free", "price": "חינם", "note": "500MB DB + 50K משתמשים" },
+        { "tier": "Pro", "price": "$25 / חודש", "note": "8GB DB + שירותים נוספים" }
+      ],
+      "url": "https://supabase.com",
+      "courseRelevance": "נדבר עליו בשיעורים מתקדמים — אחרי שתבין את Google Sheets."
+    }
+  ]
+}

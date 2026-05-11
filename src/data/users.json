@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "laviemb@gmail.com",
+      "name": "מאיר לביא",
+      "role": "instructor"
+    }
+  ],
+  "_note": "Temporary mapping — to be replaced by Supabase users table when DB is hooked up. Lookup is by lowercased email."
+}
