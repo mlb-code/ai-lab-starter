@@ -18,7 +18,7 @@ export default function Layout() {
       </button>
 
       <div className="lg:mr-72">
-        <main className="px-5 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16 max-w-[1180px]">
+        <main className="px-4 pt-20 pb-10 sm:px-8 sm:py-12 lg:px-14 lg:py-16 lg:pt-16 max-w-[1180px]">
           <Outlet />
         </main>
       </div>

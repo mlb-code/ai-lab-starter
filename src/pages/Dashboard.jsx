@@ -25,35 +25,35 @@ export default function Dashboard() {
     .filter((x) => x.homework)
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-10 sm:space-y-16">
       {/* Page head */}
-      <div className="pb-7 border-b border-line">
-        <div className="kicker mb-5">האזור האישי שלי</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+      <div className="pb-5 sm:pb-7 border-b border-line">
+        <div className="kicker mb-4 sm:mb-5">האזור האישי שלי</div>
+        <h1 className="font-display text-[2.25rem] sm:text-5xl lg:text-6xl font-black leading-[1] tracking-tight text-ink-100">
           שלום, <em className="not-italic text-brand">{user?.name || 'סטודנט'}.</em>
         </h1>
-        <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">
+        <p className="mt-4 sm:mt-5 text-base sm:text-lg text-ink-300 leading-relaxed max-w-2xl">
           כל החומרים, השיעורים והמצגות שלך — במקום אחד.
           כשתהיה/י מוכן/ה, נמשיך מאיפה שעצרנו.
         </p>
       </div>
 
       {/* Hero card — current lesson */}
-      <section className="card-elev accent-stripe relative overflow-hidden p-10 sm:p-12"
+      <section className="card-elev accent-stripe relative overflow-hidden p-6 sm:p-10 lg:p-12"
         style={{ background: 'linear-gradient(135deg, rgba(16,229,147,0.08), rgba(16,229,147,0.02)), #101010' }}
       >
-        <div className="kicker mb-4">השיעור שלך עכשיו</div>
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-3">
-          {nextLesson.title} <span className="text-ink-500 font-normal">— {nextLesson.subtitle}</span>
+        <div className="kicker mb-3 sm:mb-4">השיעור שלך עכשיו</div>
+        <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-3">
+          {nextLesson.title} <span className="text-ink-500 font-normal block sm:inline">— {nextLesson.subtitle}</span>
         </h2>
-        <div className="mono text-sm text-ink-500 uppercase tracking-mono mb-8 flex flex-wrap gap-5">
+        <div className="mono text-xs sm:text-sm text-ink-500 uppercase tracking-mono mb-6 sm:mb-8 flex flex-wrap gap-3 sm:gap-5">
           <span>שיעור {nextLesson.number}</span>
           <span className="text-ink-700">·</span>
           <span>~{nextLesson.duration}</span>
           <span className="text-ink-700">·</span>
           <span>{nextLesson.slides?.length || 0} שקפים</span>
         </div>
-        <Link to={`/lessons/${nextLesson.id}`} className="btn-primary">
+        <Link to={`/lessons/${nextLesson.id}`} className="btn-primary w-full sm:w-auto justify-center sm:justify-start">
           להמשיך לשיעור
           <span className="btn-arrow">←</span>
         </Link>
@@ -97,23 +97,23 @@ function AIAssistantCard() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="w-full card-elev accent-stripe relative overflow-hidden p-8 sm:p-10 text-right hover:border-brand transition group"
+        className="w-full card-elev accent-stripe relative overflow-hidden p-6 sm:p-10 text-right hover:border-brand transition group"
         style={{ background: 'linear-gradient(135deg, rgba(16,229,147,0.10), rgba(16,229,147,0.02)), #101010' }}
       >
-        <div className="flex items-center gap-6 flex-wrap">
-          <div className="grid place-items-center w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-glow text-black font-black text-3xl shrink-0 shadow-brand">
+        <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+          <div className="grid place-items-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-brand to-brand-glow text-black font-black text-2xl sm:text-3xl shrink-0 shadow-brand">
             ✦
           </div>
-          <div className="flex-1 min-w-[200px]">
-            <div className="kicker mb-2">העוזר האישי שלך</div>
-            <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-ink-100 leading-tight mb-1">
+          <div className="flex-1 min-w-[160px]">
+            <div className="kicker mb-1.5 sm:mb-2">העוזר האישי שלך</div>
+            <h3 className="font-display text-lg sm:text-2xl lg:text-3xl font-extrabold text-ink-100 leading-tight mb-1">
               שאל אותי כל שאלה שעולה לך
             </h3>
-            <p className="text-base text-ink-300">
+            <p className="text-sm sm:text-base text-ink-300">
               עוזר AI שמכיר את הקורס, הכלים שלך, ואת הפרויקטים. תמיד זמין.
             </p>
           </div>
-          <div className="btn-primary shrink-0 pointer-events-none">
+          <div className="btn-primary w-full sm:w-auto shrink-0 pointer-events-none justify-center sm:justify-start">
             פתיחה
             <span className="btn-arrow">←</span>
           </div>
@@ -367,10 +367,10 @@ function LessonRow({ lesson, done, current }) {
   return (
     <Wrapper
       {...wrapperProps}
-      className={`card-elev grid grid-cols-[56px,1fr,auto] gap-5 items-center px-7 py-5 transition-all ${
+      className={`card-elev grid grid-cols-[44px,1fr,auto] sm:grid-cols-[56px,1fr,auto] gap-3 sm:gap-5 items-center px-4 py-4 sm:px-7 sm:py-5 transition-all ${
         locked
           ? 'opacity-60 cursor-not-allowed'
-          : 'hover:border-brand hover:bg-bg-card hover:-translate-x-1 cursor-pointer'
+          : 'hover:border-brand hover:bg-bg-card hover:-translate-x-1 active:bg-bg-card cursor-pointer'
       }`}
     >
       <div className="text-center">
