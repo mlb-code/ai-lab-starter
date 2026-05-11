@@ -16,10 +16,8 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) {
-      try { setUser(JSON.parse(saved)) } catch {}
-    }
+    try { localStorage.removeItem(STORAGE_KEY) } catch {}
+    setUser({ email: 'guest@ai-lab.co.il', name: 'אורח/ת', role: 'student' })
     setLoading(false)
   }, [])
 
