@@ -12,6 +12,7 @@ import AIToolDetail from './pages/AIToolDetail.jsx'
 import DevToolsIndex from './pages/DevToolsIndex.jsx'
 import DevToolDetail from './pages/DevToolDetail.jsx'
 import Setup from './pages/Setup.jsx'
+import SystemRequirements from './pages/SystemRequirements.jsx'
 import Prompts from './pages/Prompts.jsx'
 import Glossary from './pages/Glossary.jsx'
 import Projects from './pages/Projects.jsx'
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/tools/dev" element={<DevToolsIndex />} />
             <Route path="/tools/dev/:id" element={<DevToolDetail />} />
             <Route path="/setup" element={<Setup />} />
+            <Route path="/system-requirements" element={<SystemRequirements />} />
             <Route path="/prompts" element={<Prompts />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route path="/projects" element={<Projects />} />

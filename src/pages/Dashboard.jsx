@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import lessonsData from '../data/lessons.json'
 import tipsData from '../data/tips.json'
@@ -59,9 +58,6 @@ export default function Dashboard() {
         </Link>
       </section>
 
-      {/* AI Assistant CTA */}
-      <AIAssistantCard />
-
       {/* Recording + Tip side by side */}
       <section className="grid lg:grid-cols-2 gap-4">
         <RecordingCard recording={latestRecording} />
@@ -86,63 +82,6 @@ export default function Dashboard() {
 
       {/* Personal homework log */}
       <PersonalHomeworkSection items={completedLessonsWithHomework} />
-    </div>
-  )
-}
-
-/* ============ AI ASSISTANT CARD ============ */
-function AIAssistantCard() {
-  const [open, setOpen] = useState(false)
-  return (
-    <>
-      <button
-        onClick={() => setOpen(true)}
-        className="w-full card-elev accent-stripe relative overflow-hidden p-6 sm:p-10 text-right hover:border-brand transition group"
-        style={{ background: 'linear-gradient(135deg, rgba(16,229,147,0.10), rgba(16,229,147,0.02)), #101010' }}
-      >
-        <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-          <div className="grid place-items-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-brand to-brand-glow text-black font-black text-2xl sm:text-3xl shrink-0 shadow-brand">
-            ✦
-          </div>
-          <div className="flex-1 min-w-[160px]">
-            <div className="kicker mb-1.5 sm:mb-2">העוזר האישי שלך</div>
-            <h3 className="font-display text-lg sm:text-2xl lg:text-3xl font-extrabold text-ink-100 leading-tight mb-1">
-              שאל אותי כל שאלה שעולה לך
-            </h3>
-            <p className="text-sm sm:text-base text-ink-300">
-              עוזר AI שמכיר את הקורס, הכלים שלך, ואת הפרויקטים. תמיד זמין.
-            </p>
-          </div>
-          <div className="btn-primary w-full sm:w-auto shrink-0 pointer-events-none justify-center sm:justify-start">
-            פתיחה
-            <span className="btn-arrow">←</span>
-          </div>
-          <span className="absolute top-4 left-5 w-2.5 h-2.5 bg-brand rounded-full animate-pulse shadow-brand" />
-        </div>
-      </button>
-
-      {open && <AssistantModal onClose={() => setOpen(false)} />}
-    </>
-  )
-}
-
-function AssistantModal({ onClose }) {
-  return (
-    <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm grid place-items-center p-6" onClick={onClose}>
-      <div className="card-elev p-10 max-w-lg w-full text-center" onClick={(e) => e.stopPropagation()}>
-        <div className="grid place-items-center w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-brand to-brand-glow text-black font-black text-3xl mb-5 shadow-brand">
-          ✦
-        </div>
-        <div className="kicker justify-center mb-4">בקרוב</div>
-        <h3 className="font-display text-2xl font-extrabold text-ink-100 mb-3">
-          העוזר עוד בבנייה
-        </h3>
-        <p className="text-base text-ink-300 leading-relaxed mb-6">
-          העוזר האישי יחובר ל-Claude API ויהיה זמין לכל סטודנט בקרוב.
-          הוא יכיר את כל החומרים של הקורס, את הכלים שלך, ויעזור לך 24/7.
-        </p>
-        <button onClick={onClose} className="btn-ghost">סגירה</button>
-      </div>
     </div>
   )
 }

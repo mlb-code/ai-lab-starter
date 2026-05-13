@@ -113,6 +113,113 @@
           "prompt": "אני בתחום [תחום]. רוצה ניתוח של 10 המתחרים הכי רלוונטיים שלי.\n\nתשתמש ב-Web Search לכל אחד, ותכין:\n\n1. שם החברה + לינק לאתר\n2. הצעת ערך ראשית (מה הם מבטיחים?)\n3. קהל יעד\n4. מודל תמחור\n5. נקודות חוזק\n6. נקודות חולשה (ביקורות, חוסרים בולטים)\n7. הזדמנות עבורי — מה הם לא עושים?\n\nבסוף — תכתוב סיכום של 3 הזדמנויות בשוק שאני יכול לנצל."
         }
       ]
+    },
+    {
+      "id": "build",
+      "name": "פרויקטים מלאים",
+      "icon": "⬢",
+      "description": "פרומפטים שבונים פרויקט מקצה לקצה — אתר, בוט, או אוטומציה שלמה. תעתיק לתיקייה ריקה ל-Claude Code, ותן לו לרוץ.",
+      "prompts": [
+        {
+          "id": "build-landing",
+          "title": "בניית אתר תדמית",
+          "description": "Landing page מקצועי — Hero, About, Services, Contact form המחובר ל-Google Sheet.",
+          "tags": ["אתר תדמית", "Landing Page", "HTML"],
+          "prompt": "צור לי אתר תדמית מקצועי לעסק [תיאור העסק — למשל: עורך דין מסחרי בתל אביב].\n\nקהל היעד: [תיאור הקהל]\nהמטרה העיקרית: לידים מטופס יצירת קשר\nסגנון רצוי: [נקי / חם / יוקרתי / שמרני]\nצבעים: [למשל: כחול עמוק וזהב]\n\nהמבנה הרצוי (HTML + CSS + JS, ללא framework):\n\n1. Hero:\n   - לוגו / שם העסק למעלה מימין\n   - כותרת ראשית (8 מילים מקסימום)\n   - תת-כותרת (20 מילים)\n   - כפתור CTA ראשי \"צור קשר\" — גולל לטופס\n   - תמונת רקע או אילוסטרציה\n\n2. אודות:\n   - תמונה + פסקה של 80-100 מילים\n   - 3 נקודות עיקריות (אייקון + טקסט קצר)\n\n3. השירותים שלי:\n   - 3-4 שירותים, כל אחד בכרטיס: אייקון + כותרת + תיאור קצר\n\n4. אמרו עלינו:\n   - 3 עדויות (placeholder עם [שם] + תפקיד + ציטוט)\n\n5. טופס יצירת קשר:\n   - שדות: שם, טלפון, אימייל, הודעה\n   - כפתור שליחה\n   - הודעת הצלחה / שגיאה\n\n6. Footer: פרטי קשר, רשתות חברתיות, זכויות.\n\nדרישות:\n- RTL מלא (dir=\"rtl\", lang=\"he\")\n- מותאם מובייל\n- אנימציית fade-in בעת גלילה\n- טופס מחובר ל-Google Apps Script (אספק URL בנפרד)\n- CSS variables לצבעים (קל לשנות)\n- favicon + SEO meta tags\n\nמבנה הקבצים: index.html, style.css, script.js, README.md\n\nב-README: הוראות מה להחליף (טקסטים, תמונות) ואיך לפרסם ל-GitHub Pages.\n\nבסיום: checklist קצר של מה לעדכן ידנית לפני פרסום."
+        },
+        {
+          "id": "build-shop",
+          "title": "בניית אתר חנות",
+          "description": "אתר e-commerce עם קטלוג, סל, checkout (Lemon Squeezy), ופאנל הזמנות.",
+          "tags": ["חנות", "E-commerce", "Lemon Squeezy"],
+          "prompt": "צור לי אתר חנות אונליין למכירת [סוג המוצר — למשל: ספרים דיגיטליים / קורסים / מוצרי handmade].\n\nקהל היעד: [תיאור]\nמספר מוצרים משוער: [10-50]\nשיטת תשלום: Lemon Squeezy (אנחנו בישראל — לא Stripe)\n\nמבנה הפרויקט (React + Vite + Tailwind):\n\n1. דף ראשי: Hero + 4-6 \"מוצרים מובילים\" + קטגוריות\n2. דף קטלוג: Grid של מוצרים, מסננים (קטגוריה, מחיר), חיפוש\n3. דף מוצר בודד: גלריה, תיאור מורחב, \"הוסף לסל\", מוצרים קשורים\n4. סל קניות: שינוי כמות, הסרה, סיכום, \"מעבר לתשלום\"\n5. Checkout: שדות לקוח + redirect ל-Lemon Squeezy Checkout + דף אישור\n6. פאנל מנהל ב-/admin: הוספת מוצרים + צפייה בהזמנות\n\nנתונים:\n- מוצרים ב-Supabase (טבלת products)\n- הזמנות מ-webhook של Lemon Squeezy → טבלת orders ב-Supabase\n\nדרישות:\n- RTL, mobile-first\n- .env: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, LEMON_SQUEEZY_API_KEY, LEMON_SQUEEZY_STORE_ID, LEMON_SQUEEZY_WEBHOOK_SECRET\n- README עם הוראות: יצירת Supabase + הטבלאות, יצירת חנות Lemon Squeezy, רישום webhook URL\n- מבנה תיקיות: src/pages, src/components, src/lib, supabase/migrations\n\nבסיום: רשימה של מה להגדיר ב-Lemon Squeezy + Supabase, ואיך לראות את ההזמנה הראשונה זורמת."
+        },
+        {
+          "id": "build-portal",
+          "title": "בניית אתר עם איזור אישי",
+          "description": "אתר + Auth (Supabase) + Dashboard למשתמש מחובר + פרופיל.",
+          "tags": ["Auth", "Dashboard", "Supabase"],
+          "prompt": "צור לי אתר ל-[סוג השירות — קורס אונליין / מנוי לתוכן / קהילה] עם איזור אישי לכל משתמש רשום.\n\nקהל היעד: [תיאור]\nמה משתמש רשום מקבל: [גישה לתכנים / מעקב התקדמות / כלים אישיים]\n\nמבנה הפרויקט (React + Vite + Tailwind + Supabase):\n\n1. דף בית פומבי: Hero, About, Features, Pricing, FAQ + כפתורי הרשמה/כניסה\n2. הרשמה: שם + אימייל + סיסמה + Google OAuth, אימות במייל, redirect לדאשבורד\n3. כניסה: אימייל/סיסמה + Google + \"שכחתי סיסמה\"\n4. דאשבורד (Protected): ברכת שלום, 3-4 כרטיסי פעולה, תוכן לפי הסוג\n5. פרופיל: עריכת שם, תמונה, אימייל, שינוי סיסמה, מחיקת חשבון\n6. Settings: העדפות התראות, שפה\n\nAuth:\n- Supabase Auth: Email/Password + Google OAuth\n- Protected routes — לא מחובר → redirect ל-/login\n- Session persistence ב-localStorage\n\nDB ב-Supabase:\n- profiles (id, full_name, avatar_url, created_at)\n- user_data (לפי סוג האתר)\n- Row Level Security: כל user רואה רק את שלו\n\nדרישות:\n- RTL, responsive\n- .env: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY\n- README עם: יצירת פרויקט Supabase, הפעלת Email Auth + Google OAuth, SQL ליצירת הטבלאות\n\nבסיום: מה להגדיר ב-Supabase Console + לינק לדף ההרשמה לבדיקה."
+        },
+        {
+          "id": "build-whatsapp-bot",
+          "title": "בוט WhatsApp עוזר אישי",
+          "description": "שיחה חופשית עם Claude — מבין הקשר, זוכר שיחות, ומקבל פקודות בסיס.",
+          "tags": ["WhatsApp", "Bot", "Claude API"],
+          "prompt": "צור לי בוט WhatsApp שמתפקד כעוזר אישי — שיחה חופשית עם Claude, עם זיכרון.\n\nמבנה (Python + Flask + Claude API + Twilio):\n\n1. שרת Flask שמקבל webhook מ-Twilio\n2. כל הודעה נשמרת ב-DB (SQLite) לפי מספר הטלפון\n3. הודעה חדשה → שולפים 20 הודעות אחרונות עם המשתמש כהקשר → שולחים ל-Claude\n4. תשובת Claude נשלחת חזרה ב-WhatsApp + נשמרת ב-DB\n5. פקודות מיוחדות:\n   - /reset — איפוס היסטוריית השיחה\n   - /summarize — סיכום השיחה האחרונה\n   - /export — שולח במייל את כל ההיסטוריה כ-PDF\n   - /help — רשימת הפקודות\n\nSystem prompt של Claude:\n\"אתה עוזר אישי של [שם המשתמש]. אתה עוזר במשימות יומיומיות: סיכום מחשבות, רעיונות, תזכורות, תכנון. שמור על טון ידידותי וקצר. אם לא ברור — שאל.\"\n\nDB schema:\n- users (phone, name, created_at)\n- messages (id, user_phone, role, content, timestamp)\n\nפיצ'רים נוספים:\n- Rate limit — 10 הודעות לדקה למשתמש\n- Whitelist בלבד — מספרים לא מוכרים נדחים\n- לוג של כל פניה לקובץ\n\nדרישות:\n- .env: ANTHROPIC_API_KEY, TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_PHONE_NUMBER, ALLOWED_PHONES (CSV)\n- requirements.txt: anthropic, flask, twilio, python-dotenv\n- Dockerfile + docker-compose להרצה מקומית\n- README: יצירת Twilio, רישום WhatsApp sandbox, הוספת המספר ל-ALLOWED_PHONES, הרצת ngrok\n\nבסיום: checklist + הוראה לשלוח את ההודעה הראשונה והדגמת תשובה."
+        },
+        {
+          "id": "build-morning-brief",
+          "title": "עוזר בוקר אוטומטי",
+          "description": "כל בוקר ב-7:00 — סיכום היום ב-WhatsApp: יומן, מיילים, מזג אוויר, מטרת היום.",
+          "tags": ["אוטומציה", "Calendar", "Gmail"],
+          "prompt": "צור לי script Python שמשגר סיכום בוקר אישי לוואטסאפ שלי כל יום ב-7:00.\n\nמבנה:\n\n1. cron job שמריץ python script כל בוקר ב-7:00\n2. הסקריפט אוסף:\n   - Google Calendar API: כל האירועים של היום (זמן + כותרת + מיקום)\n   - Gmail API: 5 המיילים האחרונים שהתקבלו מאז אתמול בערב (לא ספאם, לא promotions)\n   - OpenWeather API: תחזית להיום בעיר [שלך] (טמפ', תיאור, סבירות גשם)\n3. שולח את כל הנתונים ל-Claude API עם הפרומפט:\n   \"תן לי סיכום בוקר חם וקצר — פגישות היום, 3 מיילים הכי חשובים, מטרת היום המומלצת, מזג אוויר. בעברית. מקסימום 200 מילים. השתמש באמוג'ים.\"\n4. תוצאה נשלחת לוואטסאפ דרך Twilio\n\nתוכן ההודעה לדוגמה:\n🌅 בוקר טוב מאיר!\n📅 3 פגישות היום: 10:00 לקוח, 13:00 צוות, 16:00 דנטיסט.\n📧 חשוב לראות: סקירה מעו\"ד, הצעת מחיר מספק, תזכורת מהרו\"ח.\n🎯 המטרה העיקרית: לסיים את המצגת ללקוח של מחר.\n☔ 18°C, גשם קל אחר הצהריים.\n\nמבנה הקבצים:\n- morning_brief.py — סקריפט ראשי\n- google_auth.py — טיפול ב-OAuth של Google\n- requirements.txt\n- .env.example\n- README.md\n- setup_cron.sh\n\nדרישות:\n- .env: ANTHROPIC_API_KEY, TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_FROM, TWILIO_TO, OPENWEATHER_API_KEY, GOOGLE_CREDENTIALS_PATH\n- requirements.txt: anthropic, google-auth, google-api-python-client, twilio, requests, python-dotenv\n- README שלב-שלב: Google Cloud Project + הפעלת APIs + OAuth credentials + Twilio sandbox + OpenWeather\n\nבסיום: checklist + הוראה איך להריץ ידנית פעם אחת לבדיקה + הוספה ל-cron."
+        },
+        {
+          "id": "build-expense-tracker",
+          "title": "מעקב הוצאות מ-WhatsApp",
+          "description": "שולח \"100 ש\"ח קפה\" לבוט — נכנס אוטומטית ל-Google Sheet עם קטגוריה וסיכום חודשי.",
+          "tags": ["אוטומציה", "WhatsApp", "Sheets"],
+          "prompt": "צור לי פרויקט Python שמתפקד כבוט WhatsApp למעקב הוצאות אישיות.\n\nהמבנה:\n1. שרת Flask שמקבל webhook מ-Twilio בכל הודעת WhatsApp נכנסת\n2. הטקסט של ההודעה מועבר ל-Claude API (claude-opus-4-7) עם הפרומפט:\n   \"חלץ מההודעה: amount (מספר), category (קצר בעברית), location (אם מוזכר). החזר רק JSON.\"\n3. ה-JSON שחוזר נכנס כשורה חדשה ל-Google Sheet בשם 'expenses'\n   (עמודות: תאריך · סכום · קטגוריה · מיקום)\n4. הבוט מחזיר ב-WhatsApp:\n   \"נוסף ✓ — [סכום] ₪ · קטגוריה: [קטגוריה] · סך החודש: [סכום מצטבר] ₪\"\n\nדרישות:\n- .env: ANTHROPIC_API_KEY, TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, GOOGLE_CREDENTIALS_PATH\n- חישוב הסיכום החודשי: סכום ההוצאות בחודש הנוכחי מהגיליון\n- requirements.txt: anthropic, flask, twilio, gspread, oauth2client, python-dotenv\n- README שלב-שלב:\n  - יצירת חשבון Twilio + הפעלת WhatsApp sandbox\n  - יצירת Google Service Account + שיתוף הגיליון איתו\n  - הרצה מקומית עם ngrok\n  - הגדרת ה-webhook URL ב-Twilio\n\nבסיום: checklist קצר + הודעת WhatsApp ראשונה לבדיקה."
+        }
+      ]
+    },
+    {
+      "id": "integrations",
+      "name": "חיבורים ואינטגרציות",
+      "icon": "⚡",
+      "description": "פרומפטים קצרים להוסיף יכולת לפרויקט קיים — חיבור לשירות חיצוני. תפתח את הפרויקט הקיים ב-Claude Code ותעתיק את הפרומפט.",
+      "prompts": [
+        {
+          "id": "connect-calendar",
+          "title": "חיבור Google Calendar",
+          "description": "קריאת אירועים, יצירת אירוע חדש, עדכון/מחיקה — מתוך הקוד שלך.",
+          "tags": ["Google Calendar", "API", "OAuth"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי ל-Google Calendar API. אני צריך: [קריאת אירועים של היום / יצירת אירוע חדש / שניהם].\n\nתעזור לי שלב-שלב:\n\n1. הסבר על OAuth 2.0 של Google — איך זה עובד ולמה דרוש\n2. הוראות יצירת OAuth credentials ב-Google Cloud Console:\n   - יצירת פרויקט חדש\n   - הפעלת Google Calendar API\n   - יצירת OAuth Client ID (Desktop)\n   - הורדת credentials.json\n3. כתוב לי קוד Python עם:\n   - get_calendar_service() — מטפלת ב-OAuth (token.json נשמר בפעם הראשונה)\n   - list_events(date) — מחזיר אירועים בתאריך\n   - create_event(summary, start, end, description) — יוצר אירוע\n   - update_event(event_id, ...) — אם בחרתי גם עדכון\n4. דוגמת שימוש: קריאת אירועי היום והדפסה\n5. טיפול בשגיאות נפוצות (token פג תוקף, הרשאות חסרות)\n6. requirements.txt: google-auth, google-api-python-client, google-auth-oauthlib\n\nבסוף README קצר עם:\n- איך מקבלים credentials.json שלב-שלב\n- איך מאשרים בפעם הראשונה (חלון דפדפן)\n- איך משחזרים אם token.json נמחק"
+        },
+        {
+          "id": "connect-whatsapp",
+          "title": "חיבור WhatsApp (Twilio)",
+          "description": "Webhook לקבלת הודעות + שליחת הודעות. כולל sandbox ו-production.",
+          "tags": ["WhatsApp", "Twilio", "Webhook"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי לוואטסאפ דרך Twilio. אני צריך:\n- לקבל הודעות נכנסות מ-WhatsApp\n- לשלוח הודעות החוצה ב-WhatsApp\n\nתעזור לי:\n\n1. הסבר על WhatsApp Business API — Sandbox מול Production\n2. הוראות הקמת חשבון Twilio:\n   - הרשמה ב-twilio.com (חינמי, $15 קרדיט)\n   - הפעלת WhatsApp Sandbox\n   - רישום המספר שלי ב-Sandbox (שליחת \"join [code]\")\n3. כתוב Flask app שמטפל ב-2 כיוונים:\n   - POST /webhook — מקבל הודעות נכנסות, לוג, שליחת תשובה (echo בינתיים)\n   - send_message(to, body) — שולח הודעה חוצה\n4. הוראות חיבור Webhook ב-Twilio Console:\n   - איך להגדיר URL ב-Sandbox Settings → \"When a message comes in\"\n   - שימוש ב-ngrok להרצה מקומית עם URL ציבורי\n5. דוגמת שימוש: שליחת \"שלום מהבוט שלי\" למספר שלי\n6. הסבר קצר על המעבר ל-Production: Business Verification + אישור Templates של Meta + מספר עסקי קבוע\n\nrequirements.txt: twilio, flask, python-dotenv\n.env: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM (whatsapp:+14155238886 לsandbox)\n\nבסוף README עם כל הצעדים הידניים — מה לעשות ב-Twilio Console ואיפה לקבל המפתחות."
+        },
+        {
+          "id": "connect-sheets",
+          "title": "חיבור Google Sheets",
+          "description": "קריאה וכתיבה לגיליון — מאתר רגיל (Apps Script) או מ-Python (gspread).",
+          "tags": ["Sheets", "Apps Script", "gspread"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי ל-Google Sheets. איך אני קורא אליו: [מאתר רגיל ב-JavaScript / מ-Python script ברקע / שניהם].\n\nתעזור לי לפי הסוג:\n\nאם מאתר רגיל (JavaScript):\n1. הסבר על Apps Script — מנוע השרת החינמי של גוגל\n2. קוד Apps Script שמטפל ב-POST request, מקבל JSON, ומוסיף שורה לגיליון\n3. הוראות לפרסם כ-Web App (deploy → URL ציבורי)\n4. קוד JS לצד הלקוח: fetch(APPS_SCRIPT_URL, { method: 'POST', body: JSON.stringify(data) })\n5. הסבר למה אין בעיית CORS עם Apps Script\n\nאם מ-Python:\n1. הוראות יצירת Service Account ב-Google Cloud:\n   - הפעלת Sheets API\n   - יצירת Service Account + הורדת credentials.json\n   - שיתוף הגיליון עם האימייל של ה-Service Account (Editor)\n2. קוד Python עם gspread:\n   - connect() — מתחבר לגיליון לפי שם\n   - append_row(values) — מוסיף שורה\n   - read_all() — קורא את הטבלה כ-list of dicts\n   - update_cell(row, col, value)\n3. דוגמה: כתיבת שורה + קריאה חזרה\n\nrequirements (Python): gspread, oauth2client\n\nבסוף: template Apps Script שעובד מהקופסה (להעתיק)."
+        },
+        {
+          "id": "connect-gmail",
+          "title": "חיבור Gmail",
+          "description": "קריאת מיילים נכנסים מסוננים + שליחת מיילים אוטומטיים.",
+          "tags": ["Gmail", "API", "אוטומציה"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי ל-Gmail API. מה אני צריך: [קריאת מיילים נכנסים / שליחת מיילים / שניהם].\n\nתעזור לי:\n\n1. הסבר על Gmail API — מה אפשר ומה לא\n2. הוראות OAuth ב-Google Cloud:\n   - הפעלת Gmail API\n   - יצירת OAuth credentials (Desktop)\n   - Scopes נדרשים: gmail.readonly (לקריאה), gmail.send (לשליחה)\n3. אם קריאה:\n   - list_recent(n) — n המיילים האחרונים שהתקבלו\n   - search(query) — חיפוש לפי שאילתה (כמו \"from:dan@example.com\")\n   - get_message(id) — מחזיר subject, from, body, date\n   - אופציה לסנן רק INBOX (לא promotions/social)\n4. אם שליחה:\n   - send(to, subject, body, attachments=[]) — שולח מייל\n   - תמיכה ב-HTML body וקבצים מצורפים\n5. דוגמה: שליחת \"שלום מהקוד\" + קריאת 3 המיילים האחרונים והדפסת ה-subject\n\nrequirements.txt: google-auth, google-api-python-client, google-auth-oauthlib\nREADME: הוראות שלב-שלב + הסבר על שאילתות Gmail."
+        },
+        {
+          "id": "connect-payments",
+          "title": "חיבור Lemon Squeezy לתשלומים",
+          "description": "Checkout חד-פעמי + מנוי + Webhook לסטטוס. גלובלי וידידותי לישראלים (מטפלים במס וחשבונית).",
+          "tags": ["תשלומים", "Lemon Squeezy", "Webhook"],
+          "prompt": "אני רוצה להוסיף תשלומים לפרויקט דרך Lemon Squeezy (לא Stripe — אנחנו בישראל).\n\nמה אני צריך: [קנייה חד-פעמית / מנוי חודשי / שניהם]\n\nתעזור לי:\n\n1. הסבר קצר על Lemon Squeezy — Merchant of Record (מטפלים במס, חשבונית, מטבעות). למה זה מתאים לעסק ישראלי\n2. הוראות הקמת חשבון:\n   - הרשמה ב-lemonsqueezy.com\n   - יצירת חנות\n   - יצירת מוצר (one-time) או variant (subscription)\n   - קבלת API key\n3. קוד backend (Node.js / Python — תבחר לפי הפרויקט):\n   - create_checkout(product_id, customer_email) — מחזירה URL ל-checkout\n   - webhook handler /webhook ל-events (order_created, subscription_created, subscription_cancelled)\n   - אימות signature של ה-webhook\n4. קוד frontend פשוט: \"קנה עכשיו\" → fetch → redirect ל-URL\n5. שמירת state ב-DB (Supabase או SQLite): הזמנות + סטטוס subscription לכל לקוח\n\n.env: LEMON_SQUEEZY_API_KEY, LEMON_SQUEEZY_STORE_ID, LEMON_SQUEEZY_WEBHOOK_SECRET\nrequirements / package: requests או axios\n\nREADME: יצירת מוצר, הגדרת webhook URL, בדיקת חיוב ראשון (יש test mode).\n\nבסוף — checklist של כל מה שצריך בלוח הבקרה של Lemon Squeezy."
+        },
+        {
+          "id": "connect-supabase",
+          "title": "חיבור Supabase",
+          "description": "DB + Auth (Email / Google / Apple) + Storage לקבצים — backend מלא בלי שרת משלך.",
+          "tags": ["Supabase", "Auth", "DB"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי ל-Supabase. אני צריך: [DB בלבד / DB + Auth / DB + Auth + Storage]\n\nתעזור לי:\n\n1. הסבר על Supabase — Firebase open-source, PostgreSQL מתחת\n2. הוראות הקמה:\n   - יצירת פרויקט חדש ב-supabase.com\n   - העתקת SUPABASE_URL + SUPABASE_ANON_KEY + SUPABASE_SERVICE_KEY\n3. אם DB:\n   - יצירת טבלאות עם SQL (אספק מבנה לפי הצורך)\n   - Row Level Security (RLS) — חוקים מי רואה מה\n   - קוד client (JS / Python) לעבודה\n4. אם Auth:\n   - הפעלת Email/Password\n   - הפעלת Google OAuth (איך מקבלים credentials מ-Google Cloud)\n   - הפעלת Apple OAuth (איך מקבלים מ-Apple Developer)\n   - signup / login / logout / reset password\n   - user_id מקושר לטבלאות data\n5. אם Storage:\n   - יצירת bucket\n   - העלאה / הורדת קובץ\n   - public/private + הרשאות\n6. דוגמה: יצירת user → הוספת data שלו → קריאה חזרה\n\npackage: @supabase/supabase-js או supabase-py\n.env: SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY (לפעולות backend)\n\nREADME עם SQL מוכן + הוראות הגדרת OAuth."
+        },
+        {
+          "id": "connect-claude-api",
+          "title": "חיבור Claude API",
+          "description": "קריאה ל-Claude מהקוד — שיחה, structured outputs (JSON), prompt caching.",
+          "tags": ["Claude", "API", "Anthropic"],
+          "prompt": "אני רוצה לחבר את הפרויקט שלי ל-Claude API ישירות (לא דרך Claude Code). אני צריך: [שיחה רגילה / structured JSON output / שניהם]\n\nתעזור לי:\n\n1. הסבר על ההבדל בין Claude Code (סוכן) ל-API ישיר (קריאה אחת)\n2. הוראות הקמה:\n   - הרשמה ב-console.anthropic.com\n   - יצירת API key\n   - הוספה ל-.env (ANTHROPIC_API_KEY)\n3. דוגמת שיחה בסיסית (Python או JS):\n   - שימוש ב-claude-opus-4-7 או claude-sonnet-4-6 לפי הצורך\n   - הגדרת system prompt\n   - שיחה רב-תורית (messages array)\n4. אם structured output:\n   - שימוש ב-tool use להחזרת JSON תקני\n   - דוגמה: \"חלץ מהטקסט: name, email, phone. החזר JSON.\"\n5. אם הקלט גדול (PDF / מסמך):\n   - prompt caching — איך לסמן חלקים שלא משתנים\n6. שגיאות נפוצות:\n   - rate limit — backoff\n   - max tokens — חישוב נכון\n7. עלויות — איך לחשב ולעקוב\n\npackage: anthropic (Python) או @anthropic-ai/sdk (JS)\n\nדוגמת שימוש: chat() function, extract() function ל-JSON, summarize() function למסמכים.\n\nבסוף — לינק לתיעוד הרשמי + best practices."
+        }
+      ]
     }
   ]
 }

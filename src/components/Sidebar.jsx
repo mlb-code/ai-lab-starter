@@ -25,28 +25,42 @@ export default function Sidebar({ mobileOpen, onClose }) {
         }`}
       >
         {/* Header */}
-        <div className="px-6 py-7 border-b border-line">
-          <div className="flex items-baseline gap-2 mb-6">
-            <span className="mono text-[0.6rem] font-bold text-brand border border-brand px-1.5 py-0.5 rounded-sm tracking-kicker -translate-y-px">
-              STARTER
-            </span>
-            <span className="font-display font-black text-lg text-ink-100">AI Lab</span>
-          </div>
+        <div className="px-5 py-5 border-b border-line">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 grid place-items-center rounded-full bg-gradient-to-br from-brand to-brand-glow text-black font-black text-xl shrink-0">
               {initial}
             </div>
-            <div className="min-w-0">
-              <div className="mono text-[0.65rem] text-ink-500 uppercase tracking-kicker">שלום</div>
-              <div className="font-bold text-ink-100 truncate">
+            <div className="min-w-0 flex-1">
+              <div className="font-bold text-ink-100 truncate text-base leading-tight">
                 {user?.name || 'סטודנט'}
+              </div>
+              <div className="flex items-baseline gap-2 mt-1">
+                <span className="font-display font-black text-sm text-ink-100 leading-none">AI Lab</span>
+                <span className="mono text-[0.6rem] font-bold text-brand border border-brand px-1.5 py-0.5 rounded-sm tracking-kicker leading-none">
+                  STARTER
+                </span>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Zoom CTA — top */}
+        <a
+          href={lessonsData.zoomUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mx-3 mt-3 px-3 py-2.5 bg-gradient-to-br from-brand to-brand-glow text-black font-bold flex items-center gap-2.5 rounded-sm shadow-brand hover:shadow-brand-lg active:scale-[0.98] transition"
+        >
+          <span className="grid place-items-center w-7 h-7 bg-black/15 rounded-full text-sm shrink-0">▶</span>
+          <div className="flex-1 leading-tight">
+            <div className="text-sm font-extrabold">כניסה לכיתה</div>
+            <div className="text-[10px] font-medium opacity-70">Zoom · בלייב</div>
+          </div>
+          <span className="w-1.5 h-1.5 bg-black/40 rounded-full animate-pulse shrink-0" />
+        </a>
+
         {/* Nav */}
-        <nav className="px-3 py-4 flex-1 flex flex-col gap-1">
+        <nav className="px-3 py-2 flex-1 flex flex-col gap-0.5">
           <SectionLabel>ראשי</SectionLabel>
           <NavItem to="/" end icon="⌂">לוח בקרה</NavItem>
 
@@ -61,6 +75,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
           </div>
 
           <SectionLabel>ארגז כלים</SectionLabel>
+          <NavItem to="/system-requirements" icon="⚡">דרישות מערכת</NavItem>
           <NavItem to="/tools/ai" icon="✦">כלי AI</NavItem>
           <NavItem to="/tools/dev" icon="⚙">כלי פיתוח</NavItem>
           <NavItem to="/setup" icon="↓">התקנה והתחלה</NavItem>
@@ -72,24 +87,6 @@ export default function Sidebar({ mobileOpen, onClose }) {
           <NavItem to="/library" icon="♪">ספרייה</NavItem>
           <NavItem to="/community" icon="○">הקהילה</NavItem>
         </nav>
-
-        {/* Zoom CTA */}
-        <a
-          href={lessonsData.zoomUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="relative mx-3 my-3 px-5 py-4 bg-gradient-to-br from-brand to-brand-glow text-black font-bold flex items-center gap-3 rounded-sm shadow-brand hover:shadow-brand-lg hover:-translate-y-0.5 transition overflow-hidden"
-        >
-          <span className="relative grid place-items-center w-7 h-7 bg-black/10 rounded-full text-base">
-            ▶
-          </span>
-          <div className="leading-tight">
-            <div className="text-base font-extrabold">כניסה לשיעור</div>
-            <div className="text-xs font-medium opacity-70">Zoom · בלייב</div>
-          </div>
-          <span className="absolute top-3 left-4 w-2 h-2 bg-black/40 rounded-full animate-pulse" />
-        </a>
-
       </aside>
     </>
   )
@@ -97,7 +94,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
 
 function SectionLabel({ children }) {
   return (
-    <div className="mono px-3 pt-5 pb-2 text-[0.65rem] font-bold uppercase tracking-kicker text-ink-700 flex items-center justify-between">
+    <div className="mono px-3 pt-3 pb-1 text-[0.6rem] font-bold uppercase tracking-kicker text-ink-700 flex items-center justify-between">
       {children}
     </div>
   )
@@ -109,14 +106,14 @@ function NavItem({ to, icon, children, end }) {
       to={to}
       end={end}
       className={({ isActive }) =>
-        `flex items-center gap-3.5 px-4 py-2.5 rounded-sm text-base font-semibold transition border ${
+        `flex items-center gap-3 px-3 py-1.5 rounded-sm text-sm font-semibold transition border ${
           isActive
             ? 'bg-brand/[0.08] text-brand border-brand'
             : 'text-ink-300 hover:bg-white/5 hover:text-ink-100 border-transparent hover:border-line'
         }`
       }
     >
-      <span className="text-base shrink-0 w-5 text-center">{icon}</span>
+      <span className="text-sm shrink-0 w-4 text-center">{icon}</span>
       <span>{children}</span>
     </NavLink>
   )
@@ -132,7 +129,7 @@ function LessonNavItem({ lesson, done, onNavigate }) {
         else onNavigate?.()
       }}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-3 py-2.5 rounded-sm text-sm transition border ${
+        `flex items-center gap-2.5 px-3 py-1.5 rounded-sm text-sm transition border ${
           isActive
             ? 'bg-brand/[0.08] text-brand border-brand'
             : locked
@@ -142,16 +139,13 @@ function LessonNavItem({ lesson, done, onNavigate }) {
       }
     >
       <span
-        className={`mono text-base font-bold shrink-0 w-7 text-center leading-none ${
+        className={`mono text-sm font-bold shrink-0 w-6 text-center leading-none ${
           done ? 'text-brand' : locked ? 'text-ink-700' : 'text-ink-500'
         }`}
       >
         {done ? '✓' : lesson.number}
       </span>
-      <span className="flex-1 truncate">
-        <span className="block font-semibold leading-tight">{lesson.title}</span>
-        <span className="block text-[11px] text-ink-700 leading-tight font-normal">{lesson.subtitle}</span>
-      </span>
+      <span className="flex-1 truncate font-semibold leading-tight">{lesson.title}</span>
       {locked && <span className="text-[10px] mono text-ink-700 shrink-0">בקרוב</span>}
     </NavLink>
   )

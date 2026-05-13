@@ -10,7 +10,7 @@
     "description": "מקום לשאול, לשתף תובנות, ולקבל פידבק מהמרצה ומסטודנטים אחרים.",
     "url": "https://ai-lab.co.il/community"
   },
-  "zoomUrl": "https://zoom.us/j/000000000",
+  "zoomUrl": "https://us06web.zoom.us/j/81274026746?pwd=bUvfnNxiqY9XgBmlI7mUvjjZHEBuDZ.1",
   "latestRecording": {
     "lessonId": null,
     "lessonNumber": "",
@@ -345,211 +345,233 @@
     {
       "id": 2,
       "number": "02",
-      "title": "Claude Code",
-      "subtitle": "המעבר מדיבור למעשה",
-      "summary": "התקנה, פקודות יסוד, ועבודה ראשונה עם Claude Code בטרמינל — מסוכן AI שמייעץ לסוכן AI שמבצע.",
-      "duration": "50 דקות",
+      "title": "הכלים שיבנו בשבילך",
+      "subtitle": "Cursor · Claude Desktop · Terminal",
+      "summary": "שלוש סביבות עבודה שמרכיבות יחד את ה-stack המקצועי שלך — Cursor כעורך הראשי, Claude Desktop על שלושת מצביו (Chat / Cowork / Code), ו-Terminal כסביבת המתכנתים.",
+      "duration": "55 דקות",
       "status": "available",
       "slides": [
         {
           "type": "cover",
           "kicker": "שיעור 02",
-          "title": "Claude Code",
-          "subtitle": "המעבר מדיבור למעשה",
+          "title": "הכלים שיבנו בשבילך",
+          "subtitle": "Cursor, Claude Desktop, ו-Terminal — סביבת העבודה שלך",
           "meta": [
-            "~50 דקות",
-            "15 שקפים",
+            "~55 דקות",
+            "17 שקפים",
             "מעשי"
           ],
           "image": {
             "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1600",
             "position": "background",
-            "alt": "Terminal command line"
+            "alt": "Coding workspace"
           }
         },
         {
           "type": "kicker-title",
-          "kicker": "למה Claude Code",
-          "title": "מ‘עוזר שמייעץ’ ל‘עוזר שמבצע’",
-          "body": "<p>בשיעור הקודם הכרת את Claude כעוזר שיחה — שואל/ת שאלה, מקבל/ת תשובה, מחליט/ה מה לעשות איתה.</p><p><strong>Claude Code שונה לחלוטין.</strong> זה לא chatbot — זה <em>סוכן</em>. אומרים לו ‘בנה לי דף נחיתה לעסק שלי’, והוא בעצמו יוצר את הקבצים, כותב את הקוד, ומריץ אותו. את/ה מאשר/ת את הצעדים, הוא מבצע.</p><p>זה ההבדל בין לקבל מתכון לבין לקבל ארוחה מוכנה.</p>",
-          "pullquote": "השיעור הזה הופך אותך מאדם שמדבר על AI — לאדם שעובד עם AI."
+          "kicker": "המעבר ל-PRO",
+          "title": "מ‘chat בדפדפן’ ל<em>סדנת עבודה</em>",
+          "body": "<p>בשיעור הקודם הכרת את Claude כעוזר שיחה — שואל שאלה, מקבל תשובה.</p><p>בשיעור הזה אנחנו עולים שלב. נכיר שלושה כלים שעובדים יחד — <strong>Cursor</strong> (עורך הקוד), <strong>Claude Desktop</strong> (האפליקציה הרשמית של Claude על המחשב), ו-<strong>Terminal</strong> (השורה השחורה — אל תפחד ממנה). יחד הם הופכים אותך מ‘מישהו שמדבר על AI’ ל‘מישהו שעובד עם AI כל יום’.</p>",
+          "pullquote": "אחרי השיעור הזה — לא תרצה לחזור לפתוח את claude.ai בדפדפן."
         },
         {
           "type": "objectives",
           "kicker": "במה נעסוק היום",
-          "title": "ארבעה נושאים מרכזיים",
+          "title": "ארבעת הנושאים של השיעור",
           "items": [
-            "ההבדל בין Cursor (עריכה) ל-Claude Code (אוטונומיה)",
-            "התקנת Claude Code על המחשב — צעד אחר צעד",
-            "פקודות הליבה: התחברות, פתיחת פרויקט, ניקוי הקשר",
-            "הרצת המשימה הראשונה — ‘בנה לי משהו’"
-          ]
-        },
-        {
-          "type": "comparison",
-          "kicker": "השוואה",
-          "title": "Cursor או Claude Code — מתי כל אחד?",
-          "intro": "שני הכלים נבנו על ידי אותו רעיון — AI שמשתלב בעבודה. ההבדל הוא איפה אתם נמצאים בתהליך.",
-          "rows": [
-            {
-              "task": "כתיבת קוד שורה-שורה",
-              "tool": "Cursor",
-              "why": "אתם בשליטה, ה-AI מציע"
-            },
-            {
-              "task": "משימה שלמה (פרויקט מאפס)",
-              "tool": "Claude Code",
-              "why": "אומרים מה צריך, הוא בונה"
-            },
-            {
-              "task": "תיקון באג ספציפי",
-              "tool": "Cursor",
-              "why": "מהיר, ממוקד, בלי overhead"
-            },
-            {
-              "task": "שינוי גורף בכל הקבצים",
-              "tool": "Claude Code",
-              "why": "עובד על מספר קבצים בו-זמנית"
-            },
-            {
-              "task": "למידה ולמתחילים",
-              "tool": "Cursor",
-              "why": "רואים כל שינוי, מבינים מה קורה"
-            }
+            "מה זה Terminal — ולמה כל מתכנת מכיר את המונח",
+            "Cursor — העורך החכם שתעבוד איתו ברוב הקורס",
+            "Claude Desktop ושלושת המצבים שלו: Chat · Cowork · Code",
+            "המשימה: התקנה מלאה של כל הסביבה"
           ]
         },
         {
           "type": "kicker-title",
-          "kicker": "מה זה בעצם",
-          "title": "Claude Code חי בטרמינל",
-          "body": "<p>ב-Cursor יש לכם ממשק גרפי — חלונות, לחצנים, צבעים. ב-<strong>Claude Code</strong> אין ממשק — הכל קורה בטרמינל (חלון השורה השחורה).</p><p>זה נראה מפחיד למתחילים, אבל הסיבה היא חכמה: ככה Claude יכול לעבוד <em>בלי הסחות דעת</em>. רק את/ה והוא, בשיחה אחת, על משימה אחת.</p><p>אל תדאגי/אג — תוך 10 דקות תרגיש/י בבית.</p>"
-        },
-        {
-          "type": "code",
-          "kicker": "התקנה",
-          "title": "פקודה אחת. זהו.",
-          "intro": "פתח/י את הטרמינל (Mac: Spotlight → ‘Terminal’. Windows: WSL מומלץ). הדבק/י את הפקודה והרץ/י:",
-          "language": "bash",
-          "code": "curl -fsSL https://claude.ai/install.sh | bash",
-          "explanation": "הפקודה מורידה את Claude Code ומתקינה אותו על המחשב שלך. ייתכן שתתבקש/י סיסמה. ההתקנה לוקחת כדקה. ⚠ Claude Code דורש חשבון Claude Pro פעיל ($20/חודש) — אם עדיין אין לך, פתח/י עכשיו ב-claude.ai לפני שממשיכים."
-        },
-        {
-          "type": "code",
-          "kicker": "התחברות וצעד ראשון",
-          "title": "מתחברים לחשבון Claude",
-          "intro": "אחרי שההתקנה הסתיימה, יש שתי פקודות שתשתמש/י בהן בתחילת כל יום:",
-          "language": "bash",
-          "code": "# 1. כניסה לתיקיית הפרויקט שלך\ncd ~/Desktop/my-first-project\n\n# 2. הפעלת Claude Code\nclaude\n\n# בפעם הראשונה הוא יבקש להתחבר —\n# יפתח דף בדפדפן, מאשרים, חוזרים לטרמינל",
-          "explanation": "מהרגע שהתחברת, את/ה יכול/ה פשוט להגיד לו מה לעשות. הוא רואה את כל הקבצים בתיקייה שאת/ה נמצא/ת בה."
+          "kicker": "מילה ראשונה",
+          "title": "<em>Terminal</em> — השורה השחורה",
+          "body": "<p>זה המסך הראשון שכל מתכנת בעולם רואה — חלון שחור עם טקסט לבן. <strong>Terminal</strong> זו האפליקציה שמאפשרת לכתוב פקודות ישירות למחשב, בלי ממשק גרפי.</p><p>למה זה חשוב? כי הרבה כלים מקצועיים (כולל Claude Code שנפגוש בהמשך) <em>לא רצים בחלון רגיל</em> — הם רצים בטרמינל. זה כמו לדבר עם המחשב באנגלית במקום ללחוץ על אייקונים.</p><p><strong>איך פותחים?</strong></p><ul><li><strong>Mac:</strong> ⌘ + רווח → מקלידים <code>Terminal</code> → Enter</li><li><strong>Windows:</strong> מקלידים <code>PowerShell</code> ב-Start Menu</li></ul><p>אל תפחד מהמסך השחור — תוך 10 דקות תרגיש בבית.</p>",
+          "pullquote": "Terminal זה כמו לקבל מפתחות לאוטו — נראה מסובך עד שיושבים פנים."
         },
         {
           "type": "kicker-title",
-          "kicker": "פקודות חיוניות",
-          "title": "שלוש פקודות שצריך לזכור",
-          "body": "<ul><li><strong><code>/init</code></strong> — בתחילת פרויקט חדש. Claude קורא את כל הקבצים ובונה לעצמו ‘זיכרון’ של הפרויקט. עושים את זה פעם אחת.</li><li><strong><code>/clear</code></strong> — מנקה את ההיסטוריה של השיחה ומתחיל מחדש. שימושי כשהשיחה התארכה והתשובות נהיות מבולבלות.</li><li><strong><code>/compact</code></strong> — מכווץ את ההיסטוריה לסיכום. שומר על ההקשר אבל חוסך בטוקנים. מצוין אחרי משימה ארוכה שהסתיימה.</li></ul><p>זהו. עם שלוש הפקודות האלה תסתדר/י 95% מהזמן.</p>"
+          "kicker": "הכלי הראשי שלך",
+          "title": "<em>Cursor</em> — עורך הקוד עם AI מובנה",
+          "body": "<p><strong>Cursor</strong> הוא האחיין המודרני של VSCode (העורך הפופולרי בעולם) — אבל עם Claude מובנה בפנים.</p><p>איך זה עובד? פותח תיקייה של פרויקט, ומקבל:</p><ul><li><strong>חלון עריכה</strong> — כותב קוד כרגיל</li><li><strong>חלון שיחה עם AI</strong> בצד — ‘תכתוב לי דף נחיתה’, ‘תקן את הבאג כאן’, ‘תשנה את הצבעים’</li><li><strong>הצעות אוטומטיות</strong> תוך כדי הקלדה — ניחושים חכמים של מה שאתה רוצה לכתוב</li></ul><p>זה <strong>הכלי שתעבוד איתו ב-90% מהזמן בקורס.</strong> ויזואלי, ידידותי, ומתאים גם למתחילים — בלי Terminal, בלי פקודות.</p>"
         },
         {
           "type": "flow",
-          "kicker": "תרחיש אמיתי",
-          "title": "‘בנה לי דף נחיתה לעורך דין’ — מה קורה?",
-          "intro": "תרחיש שיחזור על עצמו עוד הרבה פעמים. ככה Claude Code עובד מאחורי הקלעים:",
+          "kicker": "התקנה — בלי טרמינל",
+          "title": "מ-‘אין כלום’ ל-‘מוכן לעבודה’ — הכל דרך <em>Cursor</em>",
+          "intro": "במקום להתקין כל כלי בנפרד עם פקודות בטרמינל, נעשה את זה דרך Cursor — הוא יתקין הכל בעצמו, צעד אחרי צעד. אתה לא צריך לדעת אף פקודה.",
           "steps": [
             {
-              "label": "את/ה כותב/ת בקשה בעברית פשוטה",
-              "detail": "‘בנה דף נחיתה לעורך דין מסחרי בתל אביב. צבעים: כחול עמוק וזהב. קהל יעד: בעלי עסקים קטנים.’"
+              "label": "1. התקנת Cursor",
+              "detail": "cursor.com → Download. במק: גרור לתיקיית Applications. ב-Windows: Next → Next → Finish. פתח את Cursor."
             },
             {
-              "label": "Claude קורא את התיקייה ומבין את ההקשר",
-              "detail": "הוא רואה אם יש כבר קבצים, איזה stack, מה כבר נכתב. אם זו תיקייה ריקה — הוא מתחיל מאפס."
+              "label": "2. חיבור חשבון Claude ל-Cursor",
+              "detail": "במסך הפתיחה — ‘Sign in with Anthropic’ → אשר בדפדפן. ⚠ דורש חשבון Claude Pro פעיל ($20/חודש)."
             },
             {
-              "label": "הוא מציג תוכנית עבודה",
-              "detail": "‘אני אצור 4 קבצים: index.html, style.css, script.js, README.md. אישור?’ — את/ה אומר/ת כן או מתקן/ת."
+              "label": "3. פתיחת חשבון GitHub",
+              "detail": "github.com/signup → שם משתמש קצר ומקצועי + אימייל. אימות במייל. חינמי לעולם. (נלמד על GitHub בעומק בשיעור הבא — בינתיים רק פותחים חשבון.)"
             },
             {
-              "label": "הוא כותב את הקוד שלב-שלב",
-              "detail": "כל קובץ נוצר אצלך מול העיניים. את/ה רואה כל שינוי לפני שמאושר."
+              "label": "4. חיבור Cursor ל-GitHub",
+              "detail": "ב-Cursor: Source Control (אייקון בצד) → ‘Sign in with GitHub’ → אשר את ההרשאה בדפדפן."
             },
             {
-              "label": "הוא מריץ ומציג תוצאה",
-              "detail": "מפעיל שרת מקומי, פותח בדפדפן, מראה איך זה נראה חי. אם משהו לא מתאים — אומרים, והוא מתקן."
+              "label": "5. בדיקה שה-Cursor מחובר לטרמינל",
+              "detail": "פתח את הצ'אט של Cursor (⌘ + L במק) ושאל באנגלית: ‘Are you connected to the terminal? Can you run commands?’ אם הוא לא מחובר — תן לו הרשאה כשהוא יבקש."
             },
             {
-              "label": "אישור סופי וגיבוי",
-              "detail": "git commit אוטומטי כדי לשמור גרסה. אם משהו ייהרס בעתיד — אפשר תמיד לחזור."
+              "label": "6. התקנת Claude Code דרך הצ'אט",
+              "detail": "אמור לצ'אט של Cursor: ‘Install Claude Code on my machine.’ הוא יריץ את הפקודה בטרמינל, ידרוש אישור, ויסיים את ההתקנה תוך דקה."
+            },
+            {
+              "label": "7. אישור שהכל עובד",
+              "detail": "שאל את הצ'אט: ‘Is Claude Code installed? Show me the version.’ הוא יוודא שזה רץ."
             }
           ]
         },
         {
           "type": "kicker-title",
-          "kicker": "אינטגרציה",
-          "title": "Cursor + Claude Code — לא או, אלא וגם",
-          "body": "<p>הטעות הנפוצה היא לחשוב שצריך לבחור בין השניים. <strong>אנחנו משתמשים בשניהם — באותו פרויקט.</strong></p><p>Claude Code בונה את השלד הראשוני — תיקיות, קבצים, מבנה כללי. אחר כך פותחים את אותה תיקייה ב-Cursor כדי לערוך שורות בודדות, להוסיף תוכן, לשנות צבעים.</p><p>Claude Code = ‘קבלן הביצוע’. Cursor = ‘שיפוצים פנימיים’. שניהם עובדים על אותו קוד, באותם הקבצים — בלי קונפליקטים.</p>"
+          "kicker": "אחרי ההתקנה",
+          "title": "איך פותחים את <em>Claude Code</em>?",
+          "body": "<p>Claude Code לא יושב כאייקון על שולחן העבודה — הוא <strong>תוכנה שרצה בטרמינל</strong>. ככה פותחים:</p><ol><li><strong>פתח טרמינל</strong> — ב-Cursor יש טרמינל מובנה: ⌃ + ` (Mac), או View → Terminal.</li><li><strong>היכנס לתיקיית הפרויקט</strong> — <code dir=\"ltr\">cd ~/Desktop/my-project</code></li><li><strong>הרץ את הפקודה</strong> — מקליד <code>claude</code> ולוחץ Enter</li><li><strong>בפעם הראשונה</strong> — תתבקש להתחבר. ייפתח דפדפן, מאשרים, חוזרים לטרמינל.</li><li><strong>זהו — Claude Code פעיל.</strong> תוכל לכתוב לו בעברית: ‘בנה לי דף נחיתה’</li></ol><p>טיפ חכם: אם לא בא לך לזכור את הפקודות, פשוט אמור לצ'אט של Cursor: ‘Open Claude Code in a new terminal.’ הוא יעשה את זה בשבילך.</p>",
+          "pullquote": "Claude Code חי בטרמינל — אבל Cursor יכול להפעיל אותו במקומך."
         },
         {
           "type": "kicker-title",
-          "kicker": "הזהרות",
-          "title": "5 טעויות שכל מתחיל עושה",
-          "body": "<ul><li><strong>לא לעשות /init בתחילת פרויקט</strong> — Claude לא מכיר את הקוד שלך, ויעבוד עיוור. תמיד /init בתיקייה חדשה.</li><li><strong>שיחה ארוכה מדי</strong> — אחרי 30+ הודעות, התשובות נהיות פחות מדויקות. /compact או /clear בזמן הנכון.</li><li><strong>לא לקרוא את התוכנית</strong> — Claude מציע צעדים, אבל אתם מאשרים. אם תאשרי בלי לקרוא, הוא יבנה מה ש-<em>הוא</em> חושב, לא מה שאתם רוצים.</li><li><strong>לא לעשות git commit</strong> — בלי גרסאות, אם משהו נשבר — אבד הכל. תקבעו הרגל: בכל שלב שעובד → commit.</li><li><strong>להגיד ‘תעשה הכל’</strong> — משימות גדולות מדי = תוצאות גרועות. חתכו לחלקים: ‘קודם בנה את ה-Hero. אחרי זה נמשיך.’</li></ul>"
+          "kicker": "הכלי המשלים",
+          "title": "<em>Claude Desktop</em> — האפליקציה השנייה שלך",
+          "body": "<p>בנוסף ל-Cursor, יש לנו את <strong>Claude Desktop</strong> — אפליקציה רשמית של Anthropic על המחשב. למה שתי אפליקציות?</p><p>כי לכל אחת תפקיד שונה:</p><ul><li><strong>Cursor</strong> = עבודה <em>על קוד ספציפי</em> בפרויקט</li><li><strong>Claude Desktop</strong> = שיחות, רעיונות, תכנון, ועבודה <em>על המחשב שלך כולו</em></li></ul><p>החדש ב-Claude Desktop: שלושה מצבי עבודה — <strong>Chat · Cowork · Code</strong> — ולכל אחד שימוש אחר.</p>"
+        },
+        {
+          "type": "comparison",
+          "kicker": "3 מצבי Claude Desktop",
+          "title": "<em>Chat</em> · <em>Cowork</em> · <em>Code</em> — מתי כל אחד?",
+          "intro": "ההבדל בין השלושה הוא ברמת השליטה שאתה נותן ל-Claude.",
+          "rows": [
+            {
+              "task": "שאלה כללית / רעיון / תכנון",
+              "tool": "Chat",
+              "why": "שיחה רגילה, ידנית"
+            },
+            {
+              "task": "להכין מסמך / לכתוב מייל / להסביר",
+              "tool": "Chat",
+              "why": "Claude עונה, אתה מעתיק"
+            },
+            {
+              "task": "לעבוד יחד על משהו במחשב",
+              "tool": "Cowork",
+              "why": "Claude רואה את המסך ופועל איתך"
+            },
+            {
+              "task": "לבצע משימה (קבצים, אפליקציות)",
+              "tool": "Cowork",
+              "why": "Claude שולט במחשב, אתה מאשר"
+            },
+            {
+              "task": "לבנות פרויקט קוד אוטונומי",
+              "tool": "Code",
+              "why": "Claude בונה לבד מקצה לקצה"
+            }
+          ]
         },
         {
           "type": "kicker-title",
-          "kicker": "MCP — מבט קדימה",
-          "title": "מה זה MCP ולמה זה ‘המהפכה הבאה’",
-          "body": "<p><strong>MCP — Model Context Protocol</strong> זה סטנדרט שאנטרופיק יצרו, שמאפשר ל-Claude Code להתחבר לכלים חיצוניים. Slack, Gmail, GitHub, Notion — והוא יכול לקרוא ולפעול בהם.</p><p>דוגמה: ‘Claude, קח את ההודעה האחרונה מ-#leads ב-Slack וצור ממנה קלף לקוח חדש בגיליון.’ — וזה קורה.</p><p>אנחנו לא נטמיע MCP בקורס הבסיסי — אבל שווה להכיר את עצם קיומו. בפרויקטים מתקדמים יותר — זה הצעד הבא הטבעי.</p>",
-          "pullquote": "Claude Code בלי MCP = רכב טוב. עם MCP = רכב טוב + GPS + חיבור לבית החכם."
+          "kicker": "מצב 01",
+          "title": "<em>Chat</em> — שיחה רגילה",
+          "body": "<p>זה המצב שאתה כבר מכיר מ-claude.ai. שואל שאלה — Claude עונה. שיחה טקסטואלית פשוטה.</p><p><strong>מתי להשתמש?</strong></p><ul><li>סיעור מוחות לרעיונות חדשים</li><li>סיכום מסמכים, מאמרים, סרטוני וידאו</li><li>כתיבת טקסטים — מיילים, פוסטים, תיאורי מוצר</li><li>למידה — שאלות על נושא חדש</li></ul><p>אין סיבה לפתוח את Cursor כדי לכתוב מייל. Chat מספיק.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "מצב 02",
+          "title": "<em>Cowork</em> — Claude כעוזר אישי במחשב",
+          "body": "<p>במצב <strong>Cowork</strong>, Claude רואה את המסך שלך ויכול לבצע פעולות במחשב — לפתוח אפליקציות, ללחוץ על כפתורים, לקרוא מיילים, לעדכן קבצים. אתה לידו, מאשר או דוחה כל פעולה.</p><p><strong>דוגמאות:</strong></p><ul><li>‘Claude, פתח את Excel ותסכם את הקובץ הזה’</li><li>‘Claude, תארגן לי את התיקייה Downloads’</li><li>‘Claude, תעבור על המיילים שלי מהשבוע ותסכם מה דחוף’</li></ul><p>זה הפיצ'ר החדש ביותר. שווה לנסות — אבל זכור: <strong>אתה תמיד יכול לעצור.</strong></p>",
+          "pullquote": "Cowork = Claude כשכיר שלך, על המחשב שלך, בפעולות שאתה מאשר."
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "מצב 03",
+          "title": "<em>Code</em> — בונה פרויקטים שלמים",
+          "body": "<p>זה המצב הכי חזק — אבל גם <strong>הכי דורש מיומנות</strong>. מצב Code הוא בעצם <strong>Claude Code</strong> בתוך Claude Desktop.</p><p>אתה אומר ל-Claude ‘בנה לי X’ — והוא בונה <em>מהתחלה ועד הסוף</em>: יוצר תיקייה, כותב את כל הקוד, מתקין dependencies, מריץ את הפרויקט.</p><p><strong>החיסרון:</strong> מתחת למכסה הוא רץ ב-Terminal. אין ממשק גרפי לקוד עצמו. צריך להבין מה קורה.</p><p><strong>בקורס שלנו</strong> — נכיר אותו, אבל ברוב הזמן נשתמש ב-Cursor (ויזואלי יותר, נוח יותר למתחילים). מי שירצה לעלות רמה — Code הוא הצעד הבא הטבעי.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "התזמורת",
+          "title": "<em>Cursor + Claude Desktop</em> — הזוג המנצח",
+          "body": "<p>אל תחשוב על שני הכלים האלה כתחרות. <strong>הם משלימים זה את זה.</strong></p><ul><li><strong>תכנון:</strong> Claude Desktop (Chat) — מסביר מה אתה רוצה לבנות, מבקש תוכנית עבודה</li><li><strong>בנייה:</strong> Cursor — פותח את הפרויקט, מעתיק את התוכנית, בונה צעד-צעד</li><li><strong>תיקונים:</strong> Cursor + ה-AI שבתוכו (Claude משולב)</li><li><strong>שאלות בצד:</strong> Claude Desktop — לבדיקה אקראית בלי לעזוב את העבודה</li><li><strong>אוטומציות מתקדמות:</strong> Claude Desktop (Cowork או Code)</li></ul><p>בקורס תראה אותי משתמש בשניהם — לפעמים גם באותה דקה.</p>",
+          "pullquote": "Cursor = הסטודיו. Claude Desktop = השותף שמייעץ מהצד."
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "אזהרות",
+          "title": "4 טעויות שכל מתחיל עושה",
+          "body": "<ul><li><strong>לא להתקין את Claude Pro</strong> — בלי המנוי, גישה מוגבלת. שווה את ה-$20.</li><li><strong>להחליף בין הכלים כל הזמן</strong> — בחר אחד עיקרי, השני משלים. אל תנסה לעשות הכל בכולם בו-זמנית.</li><li><strong>לפחד מ-Terminal</strong> — תוך שבוע תרגיש בנוח. כל מתכנת התחיל בדיוק במקום הזה.</li><li><strong>לחכות שתבין הכל לפני שמתחילים</strong> — תתחיל, תיתקע, תשאל. ככה לומדים.</li></ul>"
         },
         {
           "type": "homework",
-          "kicker": "משימה",
-          "title": "ההתקנה הראשונה שלך — בלייב",
-          "intro": "לפני השיעור הבא, צריך שיהיה לך Claude Code עובד על המחשב, כי בשיעור 3 נקפוץ ישר לבנייה.",
+          "kicker": "המשימה",
+          "title": "הסביבה שלך — מוכנה לבנייה",
+          "intro": "לפני שיעור 03, כל הכלים צריכים להיות מותקנים ופועלים. הזרימה החכמה: Cursor יתקין את הכל בשבילך.",
           "items": [
             {
-              "label": "התקנת Claude Code",
-              "detail": "הרצת פקודת ההתקנה בטרמינל (השקף ה-6 בשיעור הזה)"
+              "label": "1. וודא דרישות מערכת",
+              "detail": "פתח את הדף ‘דרישות מערכת’ בתפריט. אם המחשב לא עומד — דווח בקהילה לפני שממשיך."
             },
             {
-              "label": "התחברות לחשבון",
-              "detail": "claude login → אישור בדפדפן → חזרה לטרמינל"
+              "label": "2. פתיחת חשבון Claude Pro",
+              "detail": "claude.ai/upgrade → $20/חודש. תנאי הכרחי לקורס."
             },
             {
-              "label": "יצירת תיקיית הפרויקט הראשונה",
-              "detail": "Desktop → תיקייה חדשה בשם hello-claude → פתיחה ב-Cursor"
+              "label": "3. התקנת Cursor + חיבור לחשבון Claude",
+              "detail": "cursor.com → Download → התקן → ‘Sign in with Anthropic’."
             },
             {
-              "label": "ההרצה הראשונה",
-              "detail": "claude → /init → לבקש: ‘צור לי דף HTML פשוט שאומר Hello World בעברית עם רקע כהה’"
+              "label": "4. פתיחת חשבון GitHub + חיבור Cursor אליו",
+              "detail": "github.com/signup → שם מקצועי. ב-Cursor: Source Control → ‘Sign in with GitHub’."
             },
             {
-              "label": "Git commit ראשון",
-              "detail": "אחרי שזה עובד — Cursor → Source Control → Commit ‘first claude code project’"
+              "label": "5. בקשת Cursor להתקין Claude Code",
+              "detail": "פתח את הצ'אט של Cursor (⌘ + L) → ‘Install Claude Code on my machine.’ אשר את ההרשאות שהוא יבקש. הוא יסיים תוך דקה."
+            },
+            {
+              "label": "6. התקנת Claude Desktop (אופציונלי)",
+              "detail": "claude.ai/download → התקן → התחבר. תראה 3 לשוניות: Chat · Cowork · Code. אפשר לעשות גם אחרי השיעור."
+            },
+            {
+              "label": "7. ניסוי בסיסי",
+              "detail": "ב-Cursor: New Folder ‘hello-world’ → צ'אט בצד → ‘צור index.html שאומר שלום בעברית עם רקע כהה’. בסיום: ‘Open Claude Code and ask it to add an animation.’ ראה איך שני הכלים עובדים יחד."
             }
           ],
-          "note": "אם משהו לא עובד — שאל את Claude עצמו. הוא יודע את כל הכלים האלה היטב, ויעזור לדבג."
+          "note": "כל הצעדים יחד לוקחים כ-45 דקות. אם נתקעת — שאל את הצ'אט של Cursor (‘How do I do X?’) או בקהילה."
         },
         {
           "type": "recap",
           "kicker": "סיכום",
           "title": "מה עברנו היום",
           "points": [
-            "Claude Code הוא סוכן שמבצע — לא רק מייעץ",
-            "פקודה אחת מתקינה (curl), שלוש פקודות מפעילות (/init, /clear, /compact)",
-            "Cursor + Claude Code עובדים יחד — לא או-או",
-            "בלי /init ובלי git commit אנחנו עובדים עיוור"
+            "Cursor הוא העורך הראשי שלך — ויזואלי, ידידותי, AI מובנה",
+            "Claude Desktop מציע 3 מצבים: Chat (שיחה) · Cowork (פעולה במחשב) · Code (בנייה אוטונומית)",
+            "Terminal זו סביבת המתכנתים — לא להפחיד, פשוט להכיר",
+            "שני הכלים משלימים: תכנון ב-Claude Desktop, בנייה ב-Cursor",
+            "המשימה: התקנה מלאה לפני השיעור הבא"
           ]
         },
         {
           "type": "next-lesson",
           "kicker": "בשיעור הבא",
           "lessonNumber": "03",
-          "title": "בונים את ה‘פנים’",
-          "subtitle": "דף נחיתה / אתר ראשון",
-          "preview": "עם Claude Code מותקן ועובד — נצא ביחד לבניית דף הנחיתה הראשון שלך. נכיר את האנטומיה של דף נחיתה מקצועי, נכתוב פרומפט שמייצר תוצאה אמיתית, נחבר את האתר ל-GitHub Pages — ובסוף השיעור יהיה לך אתר חי באוויר.",
+          "title": "GitHub",
+          "subtitle": "בית הקוד שלך",
+          "preview": "עם Claude Code מותקן — הצעד הבא הוא לדעת איפה הקוד שלך גר. נכיר את GitHub, נלמד מה זה Git, ניצור את ה-repository הראשון, נדחוף קוד בענן, ונפרסם אתר חינמי דרך GitHub Pages. בלי GitHub אי אפשר באמת לבנות פרויקטים — זו התשתית של כל מה שאחר כך.",
           "image": {
-            "src": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1600",
+            "src": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=1600",
             "position": "background",
-            "alt": "Web design preview"
+            "alt": "GitHub octocat"
           }
         }
       ],
@@ -571,6 +593,238 @@
     {
       "id": 3,
       "number": "03",
+      "title": "GitHub",
+      "subtitle": "בית הקוד שלך",
+      "summary": "מה זה Git, מה זה GitHub, איך לדחוף קוד בענן, ואיך לפרסם אתר חינמי דרך GitHub Pages. תשתית קריטית לכל פרויקט.",
+      "duration": "50 דקות",
+      "status": "available",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "שיעור 03",
+          "title": "GitHub",
+          "subtitle": "בית הקוד שלך — הפלטפורמה שכל פרויקט גר עליה",
+          "meta": [
+            "~50 דקות",
+            "17 שקפים",
+            "מעשי"
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=1600",
+            "position": "background",
+            "alt": "GitHub workspace"
+          }
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "למה זה קריטי",
+          "title": "בלי GitHub — <em>אין פרויקט</em>",
+          "body": "<p>כל מתכנת ב-2026 משתמש ב-GitHub. לא חלק מהמתכנתים. כולם. גם Claude Code עצמו עושה commits אוטומטיים תוך כדי עבודה — כי בלי גרסאות, אין דרך חזרה.</p><p><strong>GitHub זה ה-Dropbox של הקוד שלך</strong>, רק חכם יותר. כל שינוי שאתה עושה נשמר כ-snapshot, ואתה תמיד יכול לחזור אחורה. גם אם 'הרסת' את הפרויקט — תוך 5 שניות אתה חוזר לגרסה שעבדה.</p><p>בנוסף — GitHub זה גם <em>פלטפורמת אחסון</em>: אפשר לפרסם אתר חינמי, לשתף עם אנשים, ולעבוד יחד עם אחרים על אותו פרויקט.</p>",
+          "pullquote": "Claude Code בלי Git = רכב בלי חגורת בטיחות.",
+          "image": {
+            "src": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200",
+            "position": "side",
+            "alt": "GitHub logo"
+          }
+        },
+        {
+          "type": "objectives",
+          "kicker": "במה נעסוק היום",
+          "title": "ארבעת הנושאים של השיעור",
+          "items": [
+            "Git לעומת GitHub — מה ההבדל ולמה אתה צריך את שניהם",
+            "שלושת הפעולות שתעשה כל יום: commit, push, pull",
+            "Repository, branches, ו-README — מילון בסיסי",
+            "GitHub Pages — איך להעלות אתר חינמי באוויר תוך 5 דקות"
+          ]
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "המושגים הבסיסיים",
+          "title": "<em>Git</em> ≠ <em>GitHub</em>",
+          "body": "<p>שני שמות שמבלבלים מתחילים — אבל ההבדל פשוט:</p><ul><li><strong>Git</strong> = התוכנה שרצה על המחשב שלך. היא עוקבת אחרי שינויים בקוד, יוצרת גרסאות (snapshots), ויודעת לחזור אחורה. <em>Git חיה אצלך.</em></li><li><strong>GitHub</strong> = השרת בענן שמאחסן עותק של הפרויקט שלך. אתה דוחף ל-GitHub כדי לגבות, לפרסם, או לשתף. <em>GitHub חיה ברשת.</em></li></ul><p>אנלוגיה: Git זה כמו Microsoft Word — תוכנה אצלך. GitHub זה כמו Google Drive — מקום בענן ששומר את המסמכים שלך.</p><p>בקורס שלנו נשתמש בשניהם. Git לעבודה מקומית, GitHub לגיבוי ופרסום.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "שלוש פעולות יומיות",
+          "title": "<em>Commit</em> · <em>Push</em> · <em>Pull</em>",
+          "body": "<p>זה הריקוד היומי של מתכנת:</p><ul><li><strong><code>commit</code></strong> — \"שמירת snapshot\". אחרי שעשית שינוי משמעותי בקוד, אתה אומר ל-Git: \"שמור את המצב הנוכחי, תקרא לזה X.\" כל commit הוא נקודת חזרה.</li><li><strong><code>push</code></strong> — \"שליחה לענן\". מעלה את כל ה-commits מהמחשב שלך ל-GitHub. ככה הקוד שלך מגובה ויכול לעלות לאוויר.</li><li><strong><code>pull</code></strong> — \"משיכה מהענן\". אם עבדת מהמחשב הביתי ועכשיו אתה במחשב אחר — pull מוריד את הגרסה האחרונה.</li></ul><p>שלוש פקודות. זה כל מה שצריך לזכור בהתחלה.</p>"
+        },
+        {
+          "type": "code",
+          "kicker": "צעד ראשון",
+          "title": "יצירת חשבון GitHub",
+          "intro": "פותחים את github.com/signup, בוחרים שם משתמש (ייכנס ל-URL של כל הפרויקטים שלך — כדאי שיהיה קצר ומקצועי), מאמתים אימייל. החשבון חינמי לעולם.",
+          "language": "text",
+          "code": "1. גש ל-github.com/signup\n2. בחר שם משתמש קצר ומקצועי (יופיע ב-github.com/USERNAME)\n3. אימייל + סיסמה חזקה\n4. אמת את החשבון במייל\n5. בחר תוכנית: Free (מתאים לנו)\n6. דלג על שאלות ה-onboarding (אפשר לחזור אליהן)",
+          "explanation": "טיפ: שם המשתמש יישאר איתך לעולם — קשה לשנות. בחר משהו שיתאים גם לעסק שלך וגם לפרויקטים אישיים. דוגמאות טובות: שמך, או שילוב של שם + עיסוק (`meir-code`, `lavi-builds`)."
+        },
+        {
+          "type": "code",
+          "kicker": "Git על המחשב",
+          "title": "ה-commit הראשון שלך",
+          "intro": "Git מותקן על מקבוק כברירת מחדל. בתיקיית הפרויקט (בה אתה כבר עובד מ-Claude Code) הרץ את הפקודות הבאות:",
+          "language": "bash",
+          "code": "# 1. אתחל git בתיקייה (פעם אחת לפרויקט)\ngit init\n\n# 2. הגדר את הזהות שלך (פעם אחת לכל המחשב)\ngit config --global user.name \"השם שלך\"\ngit config --global user.email \"your@email.com\"\n\n# 3. הוסף את כל הקבצים ל-staging\ngit add .\n\n# 4. שמור snapshot — commit ראשון\ngit commit -m \"first commit\"",
+          "explanation": "מה קרה: Git יצר תיקייה חבויה .git/ בפרויקט. כל commit עתידי יישמר שם. השם וההודעה של ה-commit יישארו לתמיד — לכן כדאי שיהיו ברורים. דוגמאות טובות: 'added contact form', 'fixed mobile layout', 'first version'."
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "מילון",
+          "title": "<em>Repository</em> — איפה הקוד שלך גר",
+          "body": "<p><strong>Repository</strong> (או בקיצור <strong>repo</strong>) = תיקיית הפרויקט שלך. ב-GitHub, כל פרויקט הוא repo נפרד.</p><p>דוגמה: github.com/<strong>your-name</strong>/<strong>my-website</strong> — זה repo בשם 'my-website' בחשבון שלך.</p><p>כל repo מכיל:</p><ul><li>את כל הקבצים של הפרויקט</li><li>היסטוריה של כל ה-commits</li><li>README.md שמסביר מה הפרויקט עושה</li><li>הגדרות (פומבי/פרטי, שיתופי פעולה, וכו')</li></ul><p>בקורס שלנו — כל אתר/פרויקט יקבל repo משלו. רעיון חדש = repo חדש.</p>"
+        },
+        {
+          "type": "code",
+          "kicker": "חיבור ל-GitHub",
+          "title": "Push — הקוד עולה לענן",
+          "intro": "אחרי שיצרת חשבון GitHub וביצעת commit מקומי — הגיע הזמן להעלות הכל לענן. ב-GitHub, לחץ על '+ New repository', תן לו שם (כמו my-website), אל תסמן 'Initialize with README' (כי כבר יש לך קוד), ולחץ 'Create'. תקבל הוראות — תעתיק את הפקודות:",
+          "language": "bash",
+          "code": "# חבר את ה-repo המקומי לזה שיצרת ב-GitHub\ngit remote add origin https://github.com/USERNAME/my-website.git\n\n# שנה את שם ה-branch ל-main (תקן מודרני)\ngit branch -M main\n\n# דחוף את הכל בפעם הראשונה\ngit push -u origin main\n\n# מעכשיו — בכל פעם שתרצה לעדכן:\ngit add .\ngit commit -m \"description of change\"\ngit push",
+          "explanation": "טיפ: ב-push הראשון GitHub יבקש ממך להתחבר. הדרך הקלה — להתקין GitHub CLI (brew install gh && gh auth login). Claude Code יכול לעזור לך עם זה אם תבקש."
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "המהפכה החינמית",
+          "title": "<em>GitHub Pages</em> — אתר חי, חינם, לתמיד",
+          "body": "<p>הפיצ'ר שאתה תאהב הכי מ-GitHub: <strong>GitHub Pages.</strong></p><p>כל repo שמכיל קבצי HTML יכול להפוך לאתר חי באינטרנט. בחינם. ללא הגבלת זמן. עם HTTPS. עם domain חינמי בצורה <em>username.github.io/repo-name</em>.</p><p>איך מפעילים? Settings ב-repo → Pages → Source: Deploy from a branch → main → Save. תוך 30 שניות האתר חי.</p><p><strong>זה לא משחק.</strong> זה תשתית רצינית שמשרתת מיליוני אתרים בעולם — כולל אתר ai-lab.co.il שלנו.</p>",
+          "pullquote": "אתר ראשון באוויר ב-2026 = 5 דקות עבודה."
+        },
+        {
+          "type": "flow",
+          "kicker": "המעגל המלא",
+          "title": "מ-‘רעיון’ ל-‘אתר חי’ — 6 צעדים",
+          "intro": "כך נראית עבודה יומיומית של מתכנת ב-2026 — שילוב של Claude Code + Git + GitHub:",
+          "steps": [
+            {
+              "label": "פותחים פרויקט עם Claude Code",
+              "detail": "תיקייה חדשה → cd → claude → /init → אומרים לClaude מה לבנות."
+            },
+            {
+              "label": "Claude כותב את הקוד",
+              "detail": "תוך כדי עבודה, Claude Code עושה commits אוטומטיים אחרי כל שינוי משמעותי."
+            },
+            {
+              "label": "יוצרים repo ב-GitHub",
+              "detail": "github.com/new → שם → Create. מקבלים URL."
+            },
+            {
+              "label": "Push ראשון",
+              "detail": "git remote add origin ... → git push -u origin main. הקוד עכשיו בענן."
+            },
+            {
+              "label": "מפעילים GitHub Pages",
+              "detail": "Settings → Pages → main → Save. תוך 30 שניות יש URL חי."
+            },
+            {
+              "label": "כל עדכון = git push",
+              "detail": "משנים את הקוד מקומית → commit → push. האתר באוויר מתעדכן אוטומטית תוך דקה."
+            }
+          ]
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "האינטגרציה הכי חזקה",
+          "title": "<em>Claude Code</em> + <em>Git</em> = זוג מנצח",
+          "body": "<p>אחת היכולות החזקות של Claude Code: הוא מבין Git לעומק. אתה לא חייב לזכור פקודות.</p><p>פשוט אומר לו:</p><ul><li>‘תעשה commit עם הודעה מתאימה’ — הוא יסכם את השינויים ויעשה commit</li><li>‘תדחוף את זה ל-GitHub’ — הוא יעשה git push</li><li>‘תחזור ל-commit הקודם’ — הוא יעשה git revert</li><li>‘תיצור repo חדש ב-GitHub’ — אם יש לך gh CLI מותקן, הוא יעשה את זה</li></ul><p>זה אומר: <strong>אתה לא צריך להיות מומחה ב-Git.</strong> מספיק להבין את הרעיון. את הביצוע — Claude יעשה.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "כרטיס הביקור",
+          "title": "<em>README.md</em> — הדף הראשון של הפרויקט",
+          "body": "<p>כשמישהו נכנס ל-repo שלך ב-GitHub, הדבר הראשון שהוא רואה הוא קובץ בשם <code>README.md</code>. זה התיאור של הפרויקט.</p><p>README טוב כולל:</p><ul><li><strong>שם הפרויקט + תיאור קצר</strong> (משפט אחד)</li><li><strong>למה זה קיים</strong> (פסקה קצרה)</li><li><strong>איך להתקין ולהריץ</strong> (פקודות bash)</li><li><strong>צילום מסך</strong> או GIF של הפרויקט בעבודה</li><li><strong>איך לתרום</strong> (אם פתוח לקהילה)</li></ul><p>טיפ: בקש מ-Claude Code לכתוב את ה-README. הוא יודע איך נראה README מקצועי, ויעשה את זה טוב יותר ממה שתעשה לבד.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "אזהרות",
+          "title": "5 טעויות שכל מתחיל עושה",
+          "body": "<ul><li><strong>שמירת סיסמאות ב-repo</strong> — לעולם אל תשמור .env, API keys, סיסמאות. תוסיף .gitignore עם השמות שלהם לפני ה-commit הראשון.</li><li><strong>לא לעשות commit מספיק</strong> — אנשים אוגרים שינויים ואז עושים commit ענק. עדיף commit קטן אחרי כל פיצ'ר.</li><li><strong>הודעות commit כמו ‘fix’ או ‘changes’</strong> — חודש מהיום לא תזכור מה זה היה. תכתוב ‘fixed contact form mobile layout’ — לוקח 5 שניות יותר, שווה זהב.</li><li><strong>repo פרטי כשרוצים לפרסם</strong> — GitHub Pages חינמי עובד רק ב-public repos. אם זה פרטי, Pages לא יפעל.</li><li><strong>לא לעשות push בסוף היום</strong> — כל מה שלא נמצא ב-GitHub, יכול להעלם. עשה push בסוף כל יום עבודה.</li></ul>"
+        },
+        {
+          "type": "homework",
+          "kicker": "המשימה",
+          "title": "הקוד הראשון שלך — באוויר",
+          "intro": "המשימה: ליצור חשבון GitHub, להעלות פרויקט hello-world, ולפרסם אותו דרך GitHub Pages. בסוף המשימה — יהיה לך URL חי לשתף עם חברים.",
+          "items": [
+            {
+              "label": "1. יצירת חשבון GitHub",
+              "detail": "github.com/signup → שם משתמש מקצועי → אימייל. אמת את החשבון."
+            },
+            {
+              "label": "2. התקנת GitHub CLI",
+              "detail": "ב-Terminal: brew install gh (Mac) → gh auth login → לעקוב אחרי ההוראות (יפתח דפדפן לאימות)."
+            },
+            {
+              "label": "3. יצירת פרויקט hello-world עם Claude Code",
+              "detail": "תיקייה חדשה hello-world → claude → /init → ‘צור index.html שאומר Hello World בעברית עם רקע כהה ועיצוב נקי’"
+            },
+            {
+              "label": "4. Git init + commit ראשון",
+              "detail": "בקש מ-Claude: ‘הרץ git init, הוסף את כל הקבצים, ועשה commit ראשון עם הודעה first version.’"
+            },
+            {
+              "label": "5. דחיפה ל-GitHub",
+              "detail": "בקש מ-Claude: ‘תיצור repo חדש ב-GitHub בשם hello-world ותדחוף את הקוד אליו.’ (זה ידרוש gh CLI מותקן)."
+            },
+            {
+              "label": "6. הפעלת GitHub Pages",
+              "detail": "בדפדפן: github.com/[שם משתמש]/hello-world → Settings → Pages → Source: main → Save. המתן 30 שניות → URL חי."
+            },
+            {
+              "label": "7. שיתוף הלינק",
+              "detail": "שתף את ה-URL בקבוצת הקורס. כל סטודנט שולח את הקישור — נכנס לכולם, מאשר שהאתר חי."
+            }
+          ],
+          "note": "טיפ: כל הצעדים האלה Claude Code יכול לעשות בשבילך. אתה רק צריך לתת לו את החשבון GitHub שלך (פעם אחת) ולבקש."
+        },
+        {
+          "type": "recap",
+          "kicker": "סיכום",
+          "title": "מה עברנו היום",
+          "points": [
+            "Git חי על המחשב שלך, GitHub חי בענן — שניהם חיוניים",
+            "3 פקודות יומיות: commit (שמירה), push (העלאה), pull (הורדה)",
+            "כל פרויקט = repo. GitHub Pages הופך repo לאתר חי בחינם",
+            "Claude Code יודע Git לעומק — בקש ממנו לעשות הכל",
+            "המשימה: hello-world באוויר עם URL לשיתוף"
+          ]
+        },
+        {
+          "type": "next-lesson",
+          "kicker": "בשיעור הבא",
+          "lessonNumber": "04",
+          "title": "בונים את ה‘פנים’",
+          "subtitle": "דף נחיתה / אתר ראשון",
+          "preview": "עם Claude Code מותקן ו-GitHub מוכן — נצא לבניית דף הנחיתה הראשון שלך. נכיר את האנטומיה של דף נחיתה מקצועי, נכתוב פרומפט שמייצר תוצאה אמיתית, ונפרסם את האתר ב-GitHub Pages — אתר חי באוויר עד סוף השיעור.",
+          "image": {
+            "src": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1600",
+            "position": "background",
+            "alt": "Web design preview"
+          }
+        }
+      ],
+      "resources": [
+        {
+          "label": "GitHub — הרשמה",
+          "url": "https://github.com/signup"
+        },
+        {
+          "label": "GitHub Pages — תיעוד",
+          "url": "https://pages.github.com"
+        },
+        {
+          "label": "GitHub CLI",
+          "url": "https://cli.github.com"
+        },
+        {
+          "label": "Pro Git — הספר החינמי המקיף",
+          "url": "https://git-scm.com/book/he/v2"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "number": "04",
       "title": "בונים את ה'פנים'",
       "subtitle": "דף נחיתה / אתר ראשון",
       "summary": "בניית דף נחיתה מקצועי באמצעות AI — מהרעיון לעיצוב חי באוויר.",
@@ -827,7 +1081,7 @@
         {
           "type": "next-lesson",
           "kicker": "בשיעור הבא",
-          "lessonNumber": "04",
+          "lessonNumber": "05",
           "title": "ה‘מוח’ של האתר",
           "subtitle": "חיבור ל-Google Sheets",
           "preview": "יש לך אתר. עכשיו צריך שהוא יעשה משהו. בשיעור הבא נחבר את האתר שלך ל-Google Sheets — כך שכל טופס שמילאו ישמר אוטומטית בגיליון. אין שרת, אין בסיס נתונים — רק גיליון, לחלוטין חינם, שעובד 24/7.",
@@ -858,8 +1112,8 @@
       ]
     },
     {
-      "id": 4,
-      "number": "04",
+      "id": 5,
+      "number": "05",
       "title": "ה'מוח' של האתר",
       "subtitle": "חיבור ל-Google Sheets",
       "summary": "הופכים אתר סטטי לאתר חי: שמירת נתונים, טפסים, וניהול הכל מתוך גיליון.",
@@ -1111,14 +1365,14 @@
         {
           "type": "next-lesson",
           "kicker": "בשיעור הבא",
-          "lessonNumber": "05",
-          "title": "סיכום הקורס וצעדים הבאים",
-          "subtitle": "אני יזם AI",
-          "preview": "סיימנו את החלק הטכני — יש לך אתר חי, מחובר לגיליון, פועל. בשיעור האחרון נחזור על המסע, נסקור את הכלים שהצטבר לך, ונדבר על איך ממשיכים — איך מציגים את הפרויקט שלך, מה הצעד הבא בלמידה, ואיך הופכים את מה שבנינו לעסק אמיתי.",
+          "lessonNumber": "06",
+          "title": "אוטומציות אישיות",
+          "subtitle": "הצוות הסודי שלך",
+          "preview": "אחרי שהאתר שלך חי ומחובר לגיליון — הצעד הבא הוא לתת לטכנולוגיה לעבוד בשבילך. נכיר חמש אוטומציות אישיות שכל אחד יכול לבנות עם Claude Code: עוזר בוקר, מעקב הוצאות מ-WhatsApp, תזכורות ימי הולדת, מעקב משלוחים וסיכום קבוצות. המשימה: בניית עוזר הבוקר שלך.",
           "image": {
-            "src": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600",
+            "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600",
             "position": "background",
-            "alt": "Business meeting"
+            "alt": "Automation circuits"
           }
         }
       ],
@@ -1134,6 +1388,247 @@
         {
           "label": "MDN — fetch API",
           "url": "https://developer.mozilla.org/docs/Web/API/Fetch_API"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "number": "06",
+      "title": "אוטומציות אישיות",
+      "subtitle": "הצוות הסודי שלך",
+      "summary": "חמש אוטומציות פרקטיות לחיים האישיים — מה אפשר לבנות, איך כל אחת בנויה, ומה תופס אותך לעשות בעצמך עם Claude Code.",
+      "duration": "50 דקות",
+      "status": "available",
+      "slides": [
+        {
+          "type": "cover",
+          "kicker": "שיעור 05",
+          "title": "אוטומציות אישיות",
+          "subtitle": "הצוות הסודי שלך — סוכנים שמטפלים בשגרה היומיומית",
+          "meta": [
+            "~55 דקות",
+            "16 שקפים",
+            "מעשי"
+          ],
+          "image": {
+            "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600",
+            "position": "background",
+            "alt": "Automation circuits"
+          }
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "למה זה רלוונטי",
+          "title": "אוטומציה היא <em>לא רק לעסקים</em>",
+          "body": "<p>כשאומרים ‘אוטומציה’ — רוב האנשים חושבים על שורת ייצור או על מערכת עסקית גדולה. זו טעות.</p><p>הסוד של 2026 הוא ש-<strong>כל אחד יכול לבנות אוטומציה אישית בשעה אחת.</strong> משימות שאתה עושה כל יום בלי לחשוב — סקירת היומן בבוקר, רישום הוצאה לטבלה, זכירת ימי הולדת — כולן יכולות לעבוד ברקע, בלי שתיגע.</p><p>בשיעור הזה נכיר חמש דוגמאות אמיתיות, ונבין איך כל אחת בנויה.</p>",
+          "pullquote": "כלל אצבע: אם עשית את זה 3 פעמים השבוע — תאוטמט.",
+          "image": {
+            "src": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200",
+            "position": "side",
+            "alt": "Person checking phone"
+          }
+        },
+        {
+          "type": "objectives",
+          "kicker": "במה נעסוק היום",
+          "title": "ארבעת הנושאים של השיעור",
+          "items": [
+            "מתי משימה הופכת ל-‘מועמדת לאוטומציה’",
+            "האנטומיה של כל אוטומציה: Trigger → Steps → Output",
+            "חמש אוטומציות פרקטיות לחיים האישיים",
+            "המשימה: בניית עוזר בוקר עם Claude Code"
+          ]
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "תיאוריה — 3 דקות",
+          "title": "<em>Trigger → Steps → Output</em>",
+          "body": "<p>כל אוטומציה, מהפשוטה ביותר ועד למורכבת ביותר, מורכבת מאותם שלושה שלבים:</p><ul><li><strong>Trigger</strong> — מה מפעיל אותה? זמן (כל בוקר ב-7:00), אירוע (מייל נכנס), או ידני (שליחת הודעה לבוט).</li><li><strong>Steps</strong> — מה קורה? קריאת נתונים מ-API, עיבוד עם Claude, החלטות לוגיות.</li><li><strong>Output</strong> — לאן זה הולך? WhatsApp, מייל, Google Sheets, Notion.</li></ul><p>כשתבנה אוטומציה, תמיד התחל בשלוש השאלות האלה: <strong>מה מפעיל? מה קורה? לאן זה הולך?</strong></p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "החלופה הויזואלית",
+          "title": "<em>n8n</em> — אוטומציה בלי קוד",
+          "body": "<p><strong>n8n</strong> הוא כלי אוטומציה ויזואלי — במקום לכתוב קוד, גוררים תיבות (nodes) ומחברים אותן בקווים. כל תיבה מבצעת פעולה אחת: קריאה מ-Gmail, שליחה ל-Slack, עיבוד עם Claude, הוספת שורה ל-Sheet.</p><p><strong>דוגמה — מעקב הוצאות, גרסת n8n:</strong></p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;border-radius:2px;font-family:monospace;'>📥 Twilio Trigger (הודעה מ-WhatsApp)<br>&nbsp;&nbsp;↓<br>🤖 Claude Node (חלץ סכום וקטגוריה)<br>&nbsp;&nbsp;↓<br>📊 Google Sheets Node (הוסף שורה)<br>&nbsp;&nbsp;↓<br>💬 Twilio Reply (שלח אישור)</p><p>ארבע תיבות, חמש דקות עבודה, אפס שורות קוד.</p><p><strong>למי זה מתאים?</strong> אנשים שלא רוצים לגעת בקוד, או צוותים שצריכים לשתף ולתחזק את האוטומציה בקלות.</p><p><strong>החיסרון:</strong> דורש שרת או חשבון בענן. הגרסה החינמית מוגבלת. גמישות פחותה מקוד.</p><p>🔗 <a href='https://n8n.io' target='_blank' rel='noreferrer' style='color:#10E593;text-decoration:underline;'>n8n.io</a> — האתר הרשמי</p>"
+        },
+        {
+          "type": "comparison",
+          "kicker": "השוואת כלים",
+          "title": "Claude Code או n8n — מתי כל אחד?",
+          "intro": "שני הכלים יכולים לבנות אוטומציות. ההבדל הוא בגישה — קוד מול ויזואלי.",
+          "rows": [
+            {
+              "task": "אוטומציה מהירה ופשוטה",
+              "tool": "n8n",
+              "why": "drag & drop, ללא קוד"
+            },
+            {
+              "task": "אוטומציה אישית מתקדמת",
+              "tool": "Claude Code",
+              "why": "גמישות מלאה, ללא הגבלות"
+            },
+            {
+              "task": "ללא subscription נוסף",
+              "tool": "Claude Code",
+              "why": "כבר יש לך אותו מהקורס"
+            },
+            {
+              "task": "שיתוף עם לא-מתכנתים",
+              "tool": "n8n",
+              "why": "ויזואלי, קל להסביר"
+            },
+            {
+              "task": "ריצה מקומית עם פרטיות מלאה",
+              "tool": "Claude Code",
+              "why": "הכל רץ מהמחשב שלך"
+            }
+          ]
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "הבחירה שלנו",
+          "title": "אנחנו ממשיכים עם <em>Claude Code</em>",
+          "body": "<p>n8n הוא כלי מצוין — אבל בקורס הזה אנחנו דבקים ב-Claude Code. שלוש סיבות:</p><ul><li><strong>גמישות מלאה</strong> — כל מה שאפשר לבנות ב-n8n אפשר לבנות גם ב-Claude Code, ועוד.</li><li><strong>אין הגבלות פלטפורמה</strong> — n8n דורש שרת או חשבון, Claude Code רץ ישיר מהמחשב שלך.</li><li><strong>אתה כבר מכיר אותו</strong> — בשיעור 02 כבר התקנת אותו. אין צורך ללמוד כלי חדש.</li></ul><p>אם בעתיד תרצה כלי ויזואלי — n8n מחכה לך. בינתיים, נשארים עם החבר הוותיק.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "דוגמה 01",
+          "title": "<em>עוזר הבוקר</em> — סיכום היום, כל בוקר",
+          "body": "<p>כל בוקר ב-7:00, הטלפון שלך מצפצף. הודעה ב-WhatsApp:</p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;border-radius:2px;'>🌅 בוקר טוב מאיר!<br>📅 שלוש פגישות היום: 10:00 לקוח, 13:00 צוות, 16:00 דנטיסט.<br>📧 שלושה מיילים חשובים מחכים: סקירה מעו״ד, הצעת מחיר מספק, תזכורת מהרו״ח.<br>🎯 המטרה הראשית: לסיים את המצגת ללקוח של מחר.<br>☔ 18 מעלות, גשם קל אחר הצהריים.</p><p><strong>איך זה בנוי?</strong></p><ul><li><strong>Trigger:</strong> cron job — כל בוקר ב-7:00</li><li><strong>Steps:</strong> Google Calendar API → אירועי היום · Gmail API → מיילים מסוננים · Claude API → מבחר ה-3 החשובים · OpenWeather API → תחזית</li><li><strong>Output:</strong> Twilio WhatsApp API → הודעה לטלפון</li></ul><p>זמן בנייה משוער: 2-3 שעות עם Claude Code.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "דוגמה 02 — נצלול לעומק",
+          "title": "<em>מעקב הוצאות</em> — מ-WhatsApp ישר ל-Sheet",
+          "body": "<p>אתה ביציאה מבית קפה. שולח הודעה לבוט שלך:</p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;font-family:monospace;border-radius:2px;'>120 ש״ח קפה ברלין, ת״א</p><p>תוך שתי שניות, הבוט עונה:</p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;border-radius:2px;'>נוסף ✓<br>סכום: 120 ₪<br>קטגוריה: בית קפה<br>מיקום: ת״א<br>סך החודש: 1,840 ₪ מתוך 3,000 ₪</p><p>כל ההוצאות שלך בגיליון Google Sheets, מסודרות לפי קטגוריה, עם סיכום חודשי אוטומטי. בלי אפליקציה. בלי מנוי. בלי לבזבז זמן על הקלדה.</p>",
+          "pullquote": "כל אוטומציה טובה עונה על שאלה אחת: ‘למה אני עושה את זה ידנית כל יום?’"
+        },
+        {
+          "type": "flow",
+          "kicker": "פירוק לרכיבים",
+          "title": "מה קורה מאחורי הקלעים — מעקב הוצאות",
+          "intro": "שלושים שניות מהשליחה ועד האישור. נחתוך את זה לשישה צעדים:",
+          "steps": [
+            {
+              "label": "שליחת הודעה לבוט WhatsApp",
+              "detail": "‘120 ש״ח קפה ברלין’ — נשלח למספר הבוט שאיתו רשמת ב-Twilio."
+            },
+            {
+              "label": "Twilio שולח webhook לשרת שלך",
+              "detail": "Twilio מקבל את ההודעה, מעביר אותה ל-URL שהגדרת — שרת קטן שרץ אצלך או בענן."
+            },
+            {
+              "label": "השרת מעביר את הטקסט ל-Claude",
+              "detail": "‘חלץ מההודעה הבאה: סכום, קטגוריה, ומיקום. החזר JSON.’"
+            },
+            {
+              "label": "Claude מחזיר JSON מובנה",
+              "detail": "{ \"amount\": 120, \"category\": \"בית קפה\", \"location\": \"ת״א\", \"date\": \"2026-05-12\" }"
+            },
+            {
+              "label": "Google Sheets API מוסיף שורה",
+              "detail": "קריאה ל-Sheets API → השורה החדשה נכנסת ישר לטבלה שלך."
+            },
+            {
+              "label": "הבוט שולח אישור חזרה ב-WhatsApp",
+              "detail": "Twilio API → הודעת תגובה לטלפון שלך עם הסיכום החודשי המעודכן."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "kicker": "הפרומפט שלך",
+          "title": "תעתיק. תדביק. הוא בונה.",
+          "intro": "לא צריך לכתוב שורת קוד אחת. פותחים תיקייה חדשה, מריצים `claude`, ומדביקים את הפרומפט המלא הזה. Claude Code בונה הכל — כולל ההתקנות, החיבורים, וההוראות איך להריץ:",
+          "language": "text",
+          "code": "צור לי פרויקט Python שמתפקד כבוט WhatsApp למעקב הוצאות אישיות.\n\nהמבנה הרצוי:\n1. שרת Flask שמקבל webhook מ-Twilio בכל הודעת WhatsApp נכנסת\n2. הטקסט של ההודעה מועבר ל-Claude API (claude-opus-4-7) עם הפרומפט:\n   \"חלץ מההודעה: amount (מספר), category (קצר בעברית), location (אם מוזכר). החזר רק JSON.\"\n3. ה-JSON שחוזר נכנס כשורה חדשה ל-Google Sheet בשם 'expenses'\n   (עמודות: תאריך · סכום · קטגוריה · מיקום)\n4. הבוט מחזיר ב-WhatsApp הודעת אישור:\n   \"נוסף ✓ — [סכום] ₪ · קטגוריה: [קטגוריה] · סך החודש: [סכום מצטבר] ₪\"\n\nדרישות:\n- שמירת מפתחות ב-.env: ANTHROPIC_API_KEY, TWILIO_AUTH_TOKEN,\n  TWILIO_ACCOUNT_SID, GOOGLE_CREDENTIALS_PATH\n- חישוב הסיכום החודשי: סכום כל ההוצאות בחודש הנוכחי מהגיליון\n- requirements.txt עם: anthropic, flask, twilio, gspread,\n  oauth2client, python-dotenv\n- README.md עם הוראות שלב-שלב:\n  • יצירת חשבון Twilio + הפעלת WhatsApp sandbox\n  • יצירת Google Service Account + שיתוף הגיליון איתו\n  • הרצה מקומית עם ngrok לקבלת ה-webhook URL\n  • הגדרת ה-webhook URL ב-Twilio\n\nבסיום: תן לי checklist קצר של מה שצריך לעשות ידנית\nלפני שזה רץ — חשבונות, מפתחות, והודעת WhatsApp ראשונה לבדיקה.",
+          "explanation": "זה הסוד של Claude Code — נותנים לו פרומפט מפורט עם כל המבנה, הדרישות והפרטים הקטנים, והוא בונה את הקוד. כשהפרומפט מפורט מספיק, התוצאה מוכנה לשימוש תוך 20-30 דקות. את אותו רעיון נחזור עליו בכל אוטומציה בהמשך — הקוד הוא תוצר, הפרומפט הוא הכלי."
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "דוגמה 03",
+          "title": "<em>תזכורת ימי הולדת</em> — עם רעיון מתנה",
+          "body": "<p>כל בוקר, Claude סורק את ה-Contacts שלך. מוצא את מי שיש לו יום הולדת בעוד 3 ימים — ושולח לך הודעה:</p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;border-radius:2px;'>🎁 בעוד 3 ימים: יום ההולדת של נועה<br>🎂 30 (עיגול!)<br>💡 רעיון מתנה: בשלוש השיחות האחרונות בוואטסאפ דיברתם על קפה ועל הספר ‘האמן והמרגריטה’. אופציות:<br>1. סט קפה Aeropress<br>2. עותק כריכה קשה של בולגקוב<br>3. שובר ל-Cafe Roi</p><p><strong>איך זה בנוי?</strong></p><ul><li><strong>Trigger:</strong> cron כל בוקר ב-9:00</li><li><strong>Steps:</strong> Google Contacts API → מסנן ימי הולדת קרובים · WhatsApp History → 30 הודעות אחרונות עם האדם · Claude API → ‘על בסיס השיחה, מה היית מציע במתנה?’</li><li><strong>Output:</strong> Telegram bot → הודעה אישית אליך</li></ul>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "דוגמה 04",
+          "title": "<em>מעקב משלוחים</em> — חבילות סדורות",
+          "body": "<p>הזמנת משהו מ-AliExpress. הזמנת ספר. הזמנת בגד מ-Shein. כל אחד שולח לך 5-7 מיילים. אחרי שלוש הזמנות, אין לך מושג מה הגיע, מה תקוע, ומה איבדת.</p><p><strong>הפתרון:</strong> סקריפט שעובר על Gmail פעם ביום, מסנן מיילים שקשורים למשלוחים, ומחלץ:</p><ul><li>שם החנות</li><li>מספר ההזמנה</li><li>סטטוס (נשלח / בדרך / הגיע)</li><li>תאריך משוער</li></ul><p>הכל נכנס ל-Google Sheet — שורה לכל חבילה. אם חבילה תקועה 30 ימים — התראה אוטומטית.</p><p><strong>הכלים:</strong> Gmail API + Claude API + Google Sheets API. זמן בנייה: 4-5 שעות.</p>"
+        },
+        {
+          "type": "kicker-title",
+          "kicker": "דוגמה 05",
+          "title": "<em>סיכום קבוצה</em> — ‘קבוצת הורים’ שקטה סוף-סוף",
+          "body": "<p>200 הודעות ביום בקבוצת ההורים. רק חמש מהן רלוונטיות לך. כל יום שישי בערב, Claude שולח לך סיכום במייל:</p><p style='background:rgba(16,229,147,0.06);padding:14px;border-right:3px solid #10E593;border-radius:2px;'>📋 השבוע בקבוצה ‘כיתה ד׳ - הורים’<br>• יום ראשון: הודעה מהגננת — פעילות חוץ ביום חמישי, ביגוד חמים<br>• יום שלישי: דנה (אמא של עומר) ארגנה רכישה משותפת לציוד יצירה — 80 ₪<br>• יום חמישי: הודעה מהמורה — שינוי בלו״ז יום שישי הבא<br>• ימי הולדת בקרוב: גיא (15.5), טליה (22.5)</p><p><strong>הכלים:</strong> WhatsApp Business API + Claude API + Gmail SMTP. רץ פעם בשבוע.</p>",
+          "pullquote": "‘קבוצת ההורים’ — הסיוט של כל הורה. אוטומציה הופכת אותה לכלי שימושי."
+        },
+        {
+          "type": "homework",
+          "kicker": "המשימה",
+          "title": "בנה את <em>עוזר הבוקר</em> שלך",
+          "intro": "כל אחד בכיתה בונה את אותה אוטומציה — עוזר הבוקר. ככה נוכל לעזור אחד לשני בקהילה, ולהשוות תוצאות בשיעור הבא.",
+          "items": [
+            {
+              "label": "1. הגדרת חשבונות API",
+              "detail": "Google Cloud → הפעלת Gmail + Calendar APIs (חינמי). Twilio → חשבון trial עם מספר WhatsApp (חינמי, $15 קרדיט). אם זה נראה מסובך — בקש מ-Claude Code שיוביל אותך צעד-צעד."
+            },
+            {
+              "label": "2. פתיחת פרויקט עם Claude Code",
+              "detail": "תיקייה חדשה בשם morning-brief. cd → claude → /init → ‘צור script Python שמשתמש ב-Google Calendar API ו-Gmail API. בכל בוקר ב-7:00 הוא שולח לי הודעת WhatsApp דרך Twilio עם: 3 פגישות היום, 3 מיילים חשובים, ומטרת היום.’"
+            },
+            {
+              "label": "3. הרצה ידנית והגדרת cron",
+              "detail": "ודא שה-script רץ ידנית והודעה מגיעה בפועל. אחר כך — בקש מ-Claude Code: ‘הוסף את ה-script הזה ל-cron job של macOS כך שירוץ כל בוקר ב-7:00.’"
+            },
+            {
+              "label": "4. צ׳ק 24 שעות",
+              "detail": "תן לזה לרוץ יום אחד. בבוקר הבא — צריכה להגיע הודעה. אם לא — חוזרים ל-Claude Code לדבג."
+            },
+            {
+              "label": "5. שיתוף בקהילה",
+              "detail": "שתף screenshot של ההודעה הראשונה שקיבלת בקבוצת הקורס. כל סטודנט מקבל פידבק על האוטומציה שלו."
+            }
+          ],
+          "note": "טיפ: התחל פשוט. הגרסה הראשונה צריכה רק להישלח. שיפורים (מזג אוויר, ציטוט יומי, חידה) יבואו אחר כך."
+        },
+        {
+          "type": "recap",
+          "kicker": "סיכום",
+          "title": "מה עברנו היום",
+          "points": [
+            "אוטומציה אישית = יותר זמן + פחות עומס מנטלי",
+            "כל אוטומציה: Trigger → Steps → Output",
+            "Claude Code הוא הכלי שלנו — גמיש, ללא subscription נוסף, רץ אצלך",
+            "חמש דוגמאות פתוחות לבחירה — או רעיון משלך",
+            "המשימה: עוזר בוקר עד השיעור הבא"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "label": "Twilio — WhatsApp API",
+          "url": "https://www.twilio.com/docs/whatsapp"
+        },
+        {
+          "label": "Anthropic Python SDK",
+          "url": "https://docs.anthropic.com/en/api/client-sdks"
+        },
+        {
+          "label": "Google Calendar API",
+          "url": "https://developers.google.com/calendar"
+        },
+        {
+          "label": "Gmail API",
+          "url": "https://developers.google.com/gmail"
+        },
+        {
+          "label": "gspread — Python ל-Google Sheets",
+          "url": "https://docs.gspread.org/"
+        },
+        {
+          "label": "crontab.guru — מחשבון cron",
+          "url": "https://crontab.guru/"
         }
       ]
     }
