@@ -16,7 +16,22 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    try { localStorage.removeItem(STORAGE_KEY) } catch {}
+    // Read user authenticated via starter.ai-lab.co.il login
+    try {
+      const raw = localStorage.getItem('ai_lab_user')
+      if (raw) {
+        const u = JSON.parse(raw)
+        setUser({
+          email: u.email,
+          name: u.name || u.email.split('@')[0],
+          role: u.isAdmin ? 'admin' : 'student',
+          isAdmin: !!u.isAdmin,
+        })
+        setLoading(false)
+        return
+      }
+    } catch {}
+    // Fallback: guest (direct access without login)
     setUser({ email: 'guest@ai-lab.co.il', name: 'אורח/ת', role: 'student' })
     setLoading(false)
   }, [])
@@ -42,7 +57,11 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem(STORAGE_KEY)
+    try {
+      localStorage.removeItem(STORAGE_KEY)
+      localStorage.removeItem('ai_lab_user')
+    } catch {}
+    window.location.href = 'https://starter.ai-lab.co.il/'
   }
 
   return (

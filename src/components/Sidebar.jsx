@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext.jsx'
 import { useProgress } from '../context/ProgressContext.jsx'
 
 export default function Sidebar({ mobileOpen, onClose }) {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
   const { completed, isCompleted } = useProgress()
   const total = lessonsData.lessons.length
   const done = completed.length
@@ -87,6 +87,17 @@ export default function Sidebar({ mobileOpen, onClose }) {
           <NavItem to="/library" icon="♪">ספרייה</NavItem>
           <NavItem to="/community" icon="○">הקהילה</NavItem>
         </nav>
+
+        {/* Logout */}
+        <div className="px-3 py-3 border-t border-line mt-auto">
+          <button
+            onClick={logout}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold text-ink-500 hover:text-warn hover:bg-warn/10 rounded-sm transition border border-transparent hover:border-warn/30"
+          >
+            <span>←</span>
+            <span>יציאה</span>
+          </button>
+        </div>
       </aside>
     </>
   )
