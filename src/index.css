@@ -149,6 +149,186 @@
   .menu-btn {
     @apply lg:hidden fixed top-4 right-4 z-[60] grid place-items-center w-12 h-12 bg-bg-elev border border-line-strong rounded-sm text-ink-100 cursor-pointer active:bg-bg-card active:scale-95 transition-transform;
   }
+
+  /* ============================================================
+     MOBILE CHROME — top bar + bottom nav + more-sheet
+     (structure mirrors ai-lab.co.il/portal, green starter palette)
+     ============================================================ */
+
+  /* ----- Top bar ----- */
+  .m-topbar {
+    @apply lg:hidden fixed top-0 inset-x-0 z-[55] flex items-center justify-between;
+    padding: 0.7rem 1rem;
+    padding-top: calc(0.7rem + env(safe-area-inset-top));
+    background: rgba(8, 8, 8, 0.9);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(180%);
+    border-bottom: 1px solid theme('colors.line.DEFAULT');
+  }
+  .m-topbar-logo {
+    @apply font-display font-black text-ink-100;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+  .m-topbar-zoom {
+    @apply inline-flex items-center gap-1.5 font-bold text-black;
+    height: 38px;
+    padding: 0 1.1rem;
+    font-size: 0.9rem;
+    border-radius: theme('borderRadius.full');
+    background: linear-gradient(135deg, theme('colors.brand.DEFAULT'), theme('colors.brand.glow'));
+    box-shadow: theme('boxShadow.brand');
+    transition: transform 0.2s;
+  }
+  .m-topbar-zoom:active { transform: scale(0.96); }
+  .m-topbar-avatar {
+    @apply grid place-items-center font-display font-black text-black shrink-0;
+    width: 36px; height: 36px;
+    font-size: 0.95rem;
+    border-radius: theme('borderRadius.full');
+    background: linear-gradient(135deg, theme('colors.brand.DEFAULT'), theme('colors.brand.glow'));
+    box-shadow: 0 2px 8px rgba(16,229,147,0.3);
+  }
+
+  /* ----- Profile dropdown ----- */
+  .m-profile-menu {
+    @apply fixed z-[70] hidden;
+    top: calc(3.6rem + env(safe-area-inset-top));
+    left: 0.8rem;
+    min-width: 200px;
+    padding: 0.5rem;
+    background: rgba(20, 20, 20, 0.97);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border: 1px solid theme('colors.line.strong');
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .m-profile-menu.open { @apply block; }
+  .m-profile-greet {
+    @apply text-ink-100 font-semibold;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid theme('colors.line.DEFAULT');
+    margin-bottom: 0.3rem;
+  }
+  .m-profile-item {
+    @apply flex items-center gap-2.5 w-full font-semibold cursor-pointer;
+    color: theme('colors.warn');
+    font-size: 0.88rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+  }
+  .m-profile-item:active { background: rgba(255,120,73,0.12); }
+
+  /* ----- Bottom nav ----- */
+  .m-nav {
+    @apply lg:hidden fixed bottom-0 inset-x-0 z-[50] flex items-center justify-around;
+    padding: 0.4rem 0.3rem calc(0.4rem + env(safe-area-inset-bottom));
+    background: rgba(8, 8, 8, 0.92);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(180%);
+    border-top: 1px solid theme('colors.line.DEFAULT');
+  }
+  .m-nav-btn {
+    @apply flex flex-col items-center gap-0.5 flex-1 min-w-0 cursor-pointer;
+    color: theme('colors.ink.500');
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 0.4rem 0.3rem;
+    border-radius: 12px;
+    transition: color 0.2s;
+  }
+  .m-nav-btn .m-nav-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: transform 0.2s;
+  }
+  .m-nav-btn.active { color: theme('colors.ink.100'); }
+  .m-nav-btn.active .m-nav-icon {
+    transform: scale(1.15);
+    color: theme('colors.brand.DEFAULT');
+  }
+  .m-nav-fab {
+    @apply grid place-items-center shrink-0 cursor-pointer text-black font-display font-black;
+    width: 56px; height: 56px;
+    transform: translateY(-10px);
+    border-radius: theme('borderRadius.full');
+    background: linear-gradient(135deg, theme('colors.brand.DEFAULT'), theme('colors.brand.glow'));
+    box-shadow: 0 6px 20px rgba(16,229,147,0.55);
+    border: 3px solid rgba(8, 8, 8, 0.92);
+    font-size: 0.62rem;
+    line-height: 1.05;
+    letter-spacing: -0.2px;
+  }
+  .m-nav-fab:active { transform: translateY(-8px) scale(0.95); }
+
+  /* ----- More-sheet ----- */
+  .m-sheet-backdrop {
+    @apply fixed inset-0 z-[59] opacity-0 pointer-events-none;
+    background: rgba(0,0,0,0.6);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.25s ease;
+  }
+  .m-sheet-backdrop.open { @apply opacity-100 pointer-events-auto; }
+  .m-sheet {
+    @apply fixed inset-x-0 bottom-0 z-[60];
+    padding: 0.8rem 1rem calc(1.2rem + env(safe-area-inset-bottom));
+    background: rgba(16, 16, 16, 0.98);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    backdrop-filter: blur(40px) saturate(180%);
+    border-top: 1px solid theme('colors.line.strong');
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.28s cubic-bezier(.22,.9,.3,1);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .m-sheet.open { transform: translateY(0); }
+  .m-sheet-handle {
+    width: 42px; height: 4px;
+    border-radius: 2px;
+    background: theme('colors.line.strong');
+    margin: 0 auto 0.8rem;
+  }
+  .m-sheet-title {
+    @apply text-ink-100 font-bold text-center;
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  .m-sheet-grid {
+    @apply grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+  }
+  .m-sheet-item {
+    @apply relative flex flex-col items-center gap-1.5 text-ink-100 font-semibold cursor-pointer;
+    font-size: 0.78rem;
+    padding: 0.9rem 0.4rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid theme('colors.line.DEFAULT');
+    border-radius: 14px;
+    transition: background 0.2s, transform 0.1s, border-color 0.2s;
+  }
+  .m-sheet-item:active {
+    transform: scale(0.96);
+    background: theme('colors.brand.dim2');
+  }
+  .m-sheet-item.active {
+    background: theme('colors.brand.dim2');
+    border-color: theme('colors.brand.DEFAULT');
+    color: theme('colors.brand.DEFAULT');
+  }
+  .m-sheet-item.disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  .m-sheet-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: theme('colors.brand.DEFAULT');
+  }
+  .m-sheet-item.active .m-sheet-icon { color: theme('colors.brand.DEFAULT'); }
 }
 
 @layer utilities {

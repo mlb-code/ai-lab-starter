@@ -3,7 +3,7 @@ import lessonsData from '../data/lessons.json'
 import { useAuth } from '../context/AuthContext.jsx'
 import { useProgress } from '../context/ProgressContext.jsx'
 
-export default function Sidebar({ mobileOpen, onClose }) {
+export default function Sidebar() {
   const { user, logout } = useAuth()
   const { completed, isCompleted } = useProgress()
   const total = lessonsData.lessons.length
@@ -12,17 +12,8 @@ export default function Sidebar({ mobileOpen, onClose }) {
   const initial = (user?.name?.[0] || 'ס').toUpperCase()
 
   return (
-    <>
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-[49] bg-black/60 backdrop-blur-sm lg:hidden"
-          onClick={onClose}
-        />
-      )}
       <aside
-        className={`fixed inset-y-0 right-0 z-[50] flex w-72 flex-col bg-bg-side border-l border-line transition-transform overflow-y-auto ${
-          mobileOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
-        }`}
+        className="hidden lg:flex fixed inset-y-0 right-0 z-[50] w-72 flex-col bg-bg-side border-l border-line overflow-y-auto"
       >
         {/* Header */}
         <div className="px-5 py-5 border-b border-line">
@@ -70,7 +61,7 @@ export default function Sidebar({ mobileOpen, onClose }) {
           </SectionLabel>
           <div className="space-y-1">
             {lessonsData.lessons.map((l) => (
-              <LessonNavItem key={l.id} lesson={l} done={isCompleted(l.id)} onNavigate={onClose} />
+              <LessonNavItem key={l.id} lesson={l} done={isCompleted(l.id)} />
             ))}
           </div>
 
@@ -99,7 +90,6 @@ export default function Sidebar({ mobileOpen, onClose }) {
           </button>
         </div>
       </aside>
-    </>
   )
 }
 
