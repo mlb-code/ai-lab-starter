@@ -3,14 +3,16 @@ import lessonsData from '../data/lessons.json'
 import tipsData from '../data/tips.json'
 import { useAuth } from '../context/AuthContext.jsx'
 import { useProgress } from '../context/ProgressContext.jsx'
+import { useCourse } from '../context/CourseContext.jsx'
 
 export default function Dashboard() {
   const { user } = useAuth()
-  const { isCompleted, completed } = useProgress()
-  const { lessons, latestRecording } = lessonsData
+  const { isCompleted } = useProgress()
+  const { lessons, courses, course, setCourse } = useCourse()
+  const { latestRecording } = lessonsData
 
   const total = lessons.length
-  const done = completed.length
+  const done = lessons.filter((l) => isCompleted(l.id)).length
   const nextLesson = lessons.find((l) => !isCompleted(l.id) && l.status === 'available') || lessons[0]
 
   // Pick today's tip deterministically
@@ -35,6 +37,43 @@ export default function Dashboard() {
           כל החומרים, השיעורים והמצגות שלך — במקום אחד.
           כשתהיה/י מוכן/ה, נמשיך מאיפה שעצרנו.
         </p>
+
+        {/* Course switcher — only when the user has access to more than one course */}
+        {courses.length > 1 && (
+        <div className="mt-6 sm:mt-7">
+          <div className="kicker mb-3">הקורס שלי</div>
+          <div className="flex flex-col sm:flex-row sm:items-stretch gap-2">
+            {courses.map((c) => {
+              const active = course === c.id
+              return (
+                <button
+                  key={c.id}
+                  onClick={() => setCourse(c.id)}
+                  className={`flex-1 text-right p-4 sm:p-5 border rounded-sm transition ${
+                    active
+                      ? 'border-brand bg-brand/[0.08]'
+                      : 'border-line hover:border-brand/50 hover:bg-bg-card'
+                  }`}
+                >
+                  <div className="flex items-center gap-2.5 mb-1.5">
+                    <span className={`mono text-[0.7rem] font-bold uppercase tracking-kicker px-2 py-0.5 border rounded-sm ${
+                      active ? 'border-brand text-brand' : 'border-line text-ink-500'
+                    }`}>
+                      {c.label}
+                    </span>
+                    <span className={`font-display text-lg font-extrabold leading-none ${
+                      active ? 'text-ink-100' : 'text-ink-300'
+                    }`}>
+                      {c.title}
+                    </span>
+                  </div>
+                  <p className="text-sm text-ink-500 leading-snug">{c.subtitle}</p>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+        )}
       </div>
 
       {/* Hero card — current lesson */}

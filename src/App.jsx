@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { ProgressProvider } from './context/ProgressContext.jsx'
+import { CourseProvider } from './context/CourseContext.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import Layout from './components/Layout.jsx'
 import Login from './pages/Login.jsx'
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <AuthProvider>
       <ProgressProvider>
+        <CourseProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
 
@@ -44,6 +46,7 @@ export default function App() {
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        </CourseProvider>
       </ProgressProvider>
     </AuthProvider>
   )

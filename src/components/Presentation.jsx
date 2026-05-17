@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import lessonsData from '../data/lessons.json'
 import { useProgress } from '../context/ProgressContext.jsx'
+import { useCourse } from '../context/CourseContext.jsx'
 
 export default function Presentation() {
   const { id } = useParams()
@@ -9,10 +10,19 @@ export default function Presentation() {
   const lessonId = Number(id)
   const lesson = lessonsData.lessons.find((l) => l.id === lessonId)
   const { isCompleted, toggleCompleted } = useProgress()
+  const { courses } = useCourse()
   const [index, setIndex] = useState(0)
   const [showThumbs, setShowThumbs] = useState(false)
 
   if (!lesson) {
+    navigate('/', { replace: true })
+    return null
+  }
+
+  // Block lessons outside the user's allowed courses (e.g. a basic user
+  // typing /lessons/7 directly) — send them back to the dashboard.
+  const lessonTrack = lesson.track || 'basic'
+  if (!courses.some((c) => c.id === lessonTrack)) {
     navigate('/', { replace: true })
     return null
   }

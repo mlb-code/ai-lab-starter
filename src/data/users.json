@@ -3,8 +3,9 @@
     {
       "email": "laviemb@gmail.com",
       "name": "מאיר לביא",
-      "role": "instructor"
+      "role": "instructor",
+      "level": "advanced"
     }
   ],
-  "_note": "Temporary mapping — to be replaced by Supabase users table when DB is hooked up. Lookup is by lowercased email."
+  "_note": "Temporary mapping for the portal's demo login. The real login (starter.ai-lab.co.il) reads the 'Adult Course' Google Sheet via Apps Script and passes email/name/group/level/isAdmin in localStorage 'ai_lab_user'. Course access: level 'advanced' (or admin) sees basic + advanced; anything else sees basic only."
 }

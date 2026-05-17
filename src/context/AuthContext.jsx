@@ -21,18 +21,23 @@ export function AuthProvider({ children }) {
       const raw = localStorage.getItem('ai_lab_user')
       if (raw) {
         const u = JSON.parse(raw)
+        const isAdmin = !!u.isAdmin
+        const level = String(u.level || '').toLowerCase()
         setUser({
           email: u.email,
           name: u.name || u.email.split('@')[0],
-          role: u.isAdmin ? 'admin' : 'student',
-          isAdmin: !!u.isAdmin,
+          role: isAdmin ? 'admin' : 'student',
+          isAdmin,
+          group: String(u.group || '').toLowerCase(),
+          // Course access level: admin → advanced; empty → basic
+          level: isAdmin ? 'advanced' : (level || 'basic'),
         })
         setLoading(false)
         return
       }
     } catch {}
     // Fallback: guest (direct access without login)
-    setUser({ email: 'guest@ai-lab.co.il', name: 'אורח/ת', role: 'student' })
+    setUser({ email: 'guest@ai-lab.co.il', name: 'אורח/ת', role: 'student', level: 'basic' })
     setLoading(false)
   }, [])
 
@@ -45,10 +50,13 @@ export function AuthProvider({ children }) {
     }
     const known = lookupUser(email)
     const fallbackName = email.split('@')[0].replace(/[._-]/g, ' ')
+    const level = String(known?.level || '').toLowerCase()
     const u = {
       email,
       name: known?.name || fallbackName || 'סטודנט',
-      role: known?.role || 'student'
+      role: known?.role || 'student',
+      isAdmin: known?.role === 'instructor' || known?.role === 'admin',
+      level: level || 'basic'
     }
     setUser(u)
     localStorage.setItem(STORAGE_KEY, JSON.stringify(u))
