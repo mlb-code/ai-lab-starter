@@ -8,7 +8,7 @@ export default function DevToolDetail() {
 
   return (
     <article className="space-y-10">
-      <div className="flex items-center gap-2 mono text-xs uppercase tracking-mono text-ink-500">
+      <div className="flex items-center gap-2 mono text-xs tracking-mono text-ink-500">
         <Link to="/" className="hover:text-brand transition">דאשבורד</Link>
         <span className="text-ink-700">/</span>
         <Link to="/tools/dev" className="hover:text-brand transition">כלי פיתוח</Link>
@@ -31,7 +31,7 @@ export default function DevToolDetail() {
         </div>
         <div className="flex-1 min-w-0">
           <div className="kicker mb-3">{tool.category}</div>
-          <h1 className="font-display text-4xl sm:text-5xl font-black leading-tight tracking-tight text-ink-100">
+          <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-ink-100">
             {tool.name}
           </h1>
           <div className="mono text-sm text-ink-500 mt-2 tracking-mono">על ידי · {tool.company}</div>
@@ -93,7 +93,7 @@ export default function DevToolDetail() {
         <div className="grid sm:grid-cols-3 gap-3">
           {tool.pricing.map((p, i) => (
             <div key={i} className="card-elev p-6">
-              <div className="mono text-xs text-brand mb-2 uppercase tracking-mono">{p.tier}</div>
+              <div className="mono text-xs text-brand mb-2 tracking-mono">{p.tier}</div>
               <div className="font-display text-2xl font-extrabold text-ink-100 mb-1">{p.price}</div>
               <div className="text-xs text-ink-500">{p.note}</div>
             </div>

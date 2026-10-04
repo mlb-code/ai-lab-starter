@@ -8,7 +8,7 @@
   "why": [
     {
       "title": "למה Cursor?",
-      "text": "Cursor הוא העורך — שם תכתוב/י את הקוד. בלעדיו צריך לעבור בין דפדפן (ChatGPT/Claude) לעורך הקוד הרגיל, ולעשות העתק-הדבק כל הזמן. Cursor משלב את ה-AI בעורך עצמו — הוא רואה את כל הקוד שלך, מציע שינויים בקובץ הנכון, ועובד הרבה יותר מהר."
+      "text": "Cursor הוא העורך — שם תכתוב את הקוד. בלעדיו צריך לעבור בין דפדפן (ChatGPT/Claude) לעורך הקוד הרגיל, ולעשות העתק-הדבק כל הזמן. Cursor משלב את ה-AI בעורך עצמו — הוא רואה את כל הקוד שלך, מציע שינויים בקובץ הנכון, ועובד הרבה יותר מהר."
     },
     {
       "title": "למה Claude Code?",
@@ -32,10 +32,10 @@
       "subtitle": "העורך הראשי שלך לאורך הקורס",
       "duration": "~5 דקות",
       "actions": [
-        { "label": "כניסה לאתר Cursor", "detail": "פתח/י cursor.com בדפדפן" },
+        { "label": "כניסה לאתר Cursor", "detail": "פתח cursor.com בדפדפן" },
         { "label": "הורדה של הגרסה למחשב שלך", "detail": "Mac / Windows / Linux — האתר יזהה אוטומטית" },
-        { "label": "התקנה", "detail": "Mac: גרור/י את האייקון ל-Applications. Windows: הרצת ה-installer." },
-        { "label": "פתיחת Cursor והתחברות", "detail": "צור/י חשבון או התחבר/י עם Google. בחר/י את התוכנית החינמית להתחלה." }
+        { "label": "התקנה", "detail": "Mac: גרור את האייקון ל-Applications. Windows: הרצת ה-installer." },
+        { "label": "פתיחת Cursor והתחברות", "detail": "צור חשבון או התחבר עם Google. בחר את התוכנית החינמית להתחלה." }
       ],
       "downloadUrl": "https://cursor.com",
       "downloadLabel": "להורדה"
@@ -66,7 +66,7 @@
       "subtitle": "אחסון הקוד + פרסום אתרים",
       "duration": "~5 דקות",
       "actions": [
-        { "label": "הרשמה ב-GitHub", "detail": "github.com → Sign up. בחר/י username שאת/ה תהיה/י גאה/ה בו (יופיע ב-URL של האתרים שלך)." },
+        { "label": "הרשמה ב-GitHub", "detail": "github.com → Sign up. בחר username שאתה תהיה גאה בו (יופיע ב-URL של האתרים שלך)." },
         { "label": "אימות אימייל", "detail": "GitHub ישלח קישור לאימות. לחיצה — וזהו." },
         { "label": "חיבור Cursor ל-GitHub", "detail": "ב-Cursor: Source Control → Sign in with GitHub. אישור הרשאה." },
         { "label": "יצירת repository ראשון", "detail": "ב-Cursor: File → Open Folder → צור תיקייה חדשה. ואז: Source Control → Initialize Repository → Publish to GitHub." }
@@ -84,9 +84,9 @@
       "intro": "לא חובה בשיעורים הראשונים — אבל כדאי לפתוח חשבון מראש כדי שיהיה מוכן.",
       "actions": [
         { "label": "הרשמה ב-Supabase", "detail": "supabase.com → Start your project. כדאי להירשם עם אותו GitHub." },
-        { "label": "יצירת פרויקט חדש", "detail": "Project name: שם תיאורי. Database password: סיסמה חזקה — שמור/י אותה!" },
-        { "label": "בחירת אזור (Region)", "detail": "בחר/י Frankfurt או London — הכי קרוב לישראל מבחינת latency." },
-        { "label": "המתנה ~2 דקות", "detail": "Supabase יקים עבורך בסיס נתונים PostgreSQL מלא. תקבל/י URL ו-API key מוכנים לשימוש." }
+        { "label": "יצירת פרויקט חדש", "detail": "Project name: שם תיאורי. Database password: סיסמה חזקה — שמור אותה!" },
+        { "label": "בחירת אזור (Region)", "detail": "בחר Frankfurt או London — הכי קרוב לישראל מבחינת latency." },
+        { "label": "המתנה ~2 דקות", "detail": "Supabase יקים עבורך בסיס נתונים PostgreSQL מלא. תקבל URL ו-API key מוכנים לשימוש." }
       ],
       "downloadUrl": "https://supabase.com",
       "downloadLabel": "להרשמה"

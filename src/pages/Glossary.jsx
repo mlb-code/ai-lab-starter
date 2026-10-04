@@ -26,7 +26,7 @@ export default function Glossary() {
     <div className="space-y-10">
       <header className="pb-7 border-b border-line">
         <div className="kicker mb-5">{category.kicker}</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {category.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">{category.subtitle}</p>
@@ -66,7 +66,7 @@ export default function Glossary() {
               <h3 className="font-display text-2xl font-extrabold text-ink-100" dir="ltr">
                 {t.term}
               </h3>
-              <span className="mono text-[0.65rem] text-brand bg-brand/[0.08] border border-brand/30 px-2 py-1 uppercase tracking-mono rounded-sm">
+              <span className="mono text-[0.65rem] text-brand bg-brand/[0.08] border border-brand/30 px-2 py-1 tracking-mono rounded-sm">
                 {t.category}
               </span>
             </div>

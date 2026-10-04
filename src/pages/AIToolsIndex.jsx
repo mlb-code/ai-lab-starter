@@ -8,7 +8,7 @@ export default function AIToolsIndex() {
     <div className="space-y-12">
       <header className="pb-7 border-b border-line">
         <div className="kicker mb-5">{category.kicker}</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {category.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">{category.subtitle}</p>
@@ -41,7 +41,7 @@ export default function AIToolsIndex() {
             <div className="mt-5 pt-4 border-t border-line flex items-center justify-between gap-3">
               <Link
                 to={`/tools/ai/${tool.id}`}
-                className="mono text-xs text-ink-500 hover:text-brand uppercase tracking-mono font-bold transition"
+                className="mono text-xs text-ink-500 hover:text-brand tracking-mono font-bold transition"
               >
                 למידע נוסף ←
               </Link>

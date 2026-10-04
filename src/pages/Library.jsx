@@ -7,7 +7,7 @@ export default function Library() {
     <div className="space-y-12">
       <header className="pb-7 border-b border-line">
         <div className="kicker mb-5">{category.kicker}</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {category.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">{category.subtitle}</p>
@@ -35,7 +35,7 @@ export default function Library() {
                   <div className="flex items-baseline justify-between gap-3 mb-2 flex-wrap">
                     <h4 className="font-display text-xl font-extrabold text-ink-100 leading-tight">{item.name}</h4>
                     {item.frequency && (
-                      <span className="mono text-[0.65rem] text-brand bg-brand/[0.08] border border-brand/30 px-2 py-0.5 uppercase tracking-mono rounded-sm">
+                      <span className="mono text-[0.65rem] text-brand bg-brand/[0.08] border border-brand/30 px-2 py-0.5 tracking-mono rounded-sm">
                         {item.frequency}
                       </span>
                     )}
@@ -43,7 +43,7 @@ export default function Library() {
                   <div className="mono text-xs text-ink-500 mb-3 tracking-mono">מאת · {item.host}</div>
                   <p className="text-sm text-ink-300 leading-relaxed flex-1">{item.description}</p>
                   {item.url && (
-                    <div className="mono text-xs text-brand mt-4 pt-3 border-t border-line uppercase tracking-mono font-bold opacity-0 group-hover:opacity-100 transition">
+                    <div className="mono text-xs text-brand mt-4 pt-3 border-t border-line tracking-mono font-bold opacity-0 group-hover:opacity-100 transition">
                       להאזנה / צפייה ↗
                     </div>
                   )}

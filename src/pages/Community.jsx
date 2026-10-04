@@ -7,7 +7,7 @@ export default function Community() {
     <div className="space-y-12">
       <div className="pb-7 border-b border-line">
         <div className="kicker mb-5">הקהילה</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {community.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">
@@ -20,7 +20,7 @@ export default function Community() {
       >
         <div className="kicker mb-4">אזור הסטודנטים</div>
         <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-ink-100 leading-tight tracking-tight max-w-xl mb-4">
-          הצטרף/י לקהילה הפעילה של בוגרי ובוגרות AI Lab.
+          הצטרף לקהילה הפעילה של בוגרי ובוגרות AI Lab.
         </h2>
         <p className="text-lg text-ink-300 max-w-xl mb-8 leading-relaxed">
           שאל שאלות, שתף פרויקטים, וקבל פידבק מסטודנטים אחרים ומהמרצה.
@@ -44,7 +44,7 @@ export default function Community() {
 
       <div className="card-elev border-dashed p-6 text-sm text-ink-500">
         <span className="mono text-brand font-bold ml-2">לתשומת לבך:</span>
-        הקישור לקהילה יעודכן כאן בקרוב. אם את/ה בוגר/ת קורס פעיל, פרטי ההצטרפות נשלחו לאימייל הקבלה.
+        הקישור לקהילה יעודכן כאן בקרוב. אם אתה בוגר קורס פעיל, פרטי ההצטרפות נשלחו לאימייל הקבלה.
       </div>
     </div>
   )
@@ -53,7 +53,7 @@ export default function Community() {
 function Feature({ num, title, text }) {
   return (
     <div className="card-elev p-7">
-      <div className="mono text-[0.7rem] text-brand uppercase tracking-kicker font-bold mb-3">
+      <div className="mono text-[0.7rem] text-brand tracking-kicker font-bold mb-3">
         {num} / מה יש
       </div>
       <h4 className="font-display text-xl font-extrabold text-ink-100 mb-2 leading-tight">{title}</h4>

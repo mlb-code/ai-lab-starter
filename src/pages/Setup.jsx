@@ -7,7 +7,7 @@ export default function Setup() {
     <div className="space-y-12">
       <header className="pb-7 border-b border-line">
         <div className="kicker mb-5">{category.kicker}</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {category.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">{category.subtitle}</p>
@@ -44,7 +44,7 @@ export default function Setup() {
         <ol className="space-y-5">
           {steps.map((step, i) => (
             <li key={i} className="card-elev overflow-hidden">
-              <div className="flex items-start gap-5 p-7 sm:p-8">
+              <div className="flex items-start gap-5 p-6 sm:p-8 flex-wrap sm:flex-nowrap">
                 <div className="card-elev w-16 h-16 grid place-items-center shrink-0 bg-bg-card">
                   {step.logo ? (
                     <img
@@ -71,7 +71,7 @@ export default function Setup() {
                   href={step.downloadUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn-mono bg-brand text-black hover:bg-brand-glow shrink-0"
+                  className="btn-mono bg-brand text-black hover:bg-brand-glow shrink-0 w-full sm:w-auto justify-center"
                 >
                   {step.downloadLabel || 'לאתר'} ↗
                 </a>
@@ -98,7 +98,7 @@ export default function Setup() {
                 {step.code && (
                   <div className="mt-5">
                     <div className="kicker-plain mb-2">פקודה להעתקה</div>
-                    <pre className="bg-bg p-4 rounded-sm border border-line overflow-x-auto" dir="ltr">
+                    <pre className="bg-bg p-4 rounded-sm border border-line overflow-x-auto whitespace-pre-wrap break-all" dir="ltr">
                       <code className="mono text-brand text-sm">{step.code}</code>
                     </pre>
                   </div>

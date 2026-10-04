@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams, Link } from 'react-router-dom'
+import Icon from './Icon.jsx'
 import lessonsData from '../data/lessons.json'
 import { useProgress } from '../context/ProgressContext.jsx'
 import { useCourse } from '../context/CourseContext.jsx'
@@ -11,7 +12,9 @@ export default function Presentation() {
   const lesson = lessonsData.lessons.find((l) => l.id === lessonId)
   const { isCompleted, toggleCompleted } = useProgress()
   const { courses } = useCourse()
-  const [index, setIndex] = useState(0)
+  const [params] = useSearchParams()
+  const startAt = Math.max(0, (Number(params.get('s')) || 1) - 1)
+  const [index, setIndex] = useState(startAt)
   const [showThumbs, setShowThumbs] = useState(false)
 
   if (!lesson) {
@@ -60,24 +63,17 @@ export default function Presentation() {
   }, [prev, next, close])
 
   return (
-    <div className="fixed inset-0 z-[100] bg-bg flex flex-col"
-      style={{
-        backgroundImage:
-          'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16,229,147,0.06), transparent 60%)'
-      }}
-    >
+    <div className="fixed inset-0 z-[100] bg-bg flex flex-col">
       {/* Top bar */}
       <header className="flex items-center justify-between px-6 sm:px-10 py-4 border-b border-line bg-bg-side/60 backdrop-blur-sm shrink-0">
-        <div className="flex items-baseline gap-3">
-          <Link to="/" className="flex items-baseline gap-2 group">
-            <span className="mono text-[0.6rem] font-bold text-brand border border-brand px-1.5 py-0.5 rounded-sm tracking-kicker -translate-y-px">
-              STARTER
-            </span>
-            <span className="font-display font-black text-base text-ink-100 group-hover:text-brand transition">AI Lab</span>
+        <div className="flex items-baseline gap-3 min-w-0">
+          <Link to="/" className="flex items-baseline gap-2 group shrink-0">
+            <span className="font-display font-bold text-base text-ink-100 group-hover:text-brand transition whitespace-nowrap" dir="ltr">AI Lab</span>
+            <span className="mono text-[0.55rem] font-bold text-brand tracking-[0.22em]">STARTER</span>
           </Link>
-          <span className="text-ink-700 mono text-xs">/</span>
-          <span className="mono text-xs uppercase tracking-mono text-ink-500">
-            שיעור {lesson.number} · {lesson.title}
+          <span className="text-ink-700 mono text-xs shrink-0">/</span>
+          <span className="text-xs text-ink-500 truncate min-w-0">
+            מפגש <span className="mono">{lesson.number}</span> · {lesson.title}
           </span>
         </div>
 
@@ -89,17 +85,17 @@ export default function Presentation() {
           </span>
           <button
             onClick={() => setShowThumbs(!showThumbs)}
-            className="grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-brand hover:border-brand rounded-sm transition"
-            title="תוכן השיעור"
+            className="grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-brand hover:border-brand transition"
+            title="תוכן המפגש"
           >
-            ⊞
+            <Icon name="grid" size={15} />
           </button>
           <button
             onClick={close}
-            className="grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-warn hover:border-warn rounded-sm transition"
+            className="grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-ink-100 hover:border-line-strong transition"
             title="יציאה (ESC)"
           >
-            ✕
+            <Icon name="close" size={15} />
           </button>
         </div>
       </header>
@@ -148,11 +144,11 @@ export default function Presentation() {
         </button>
 
         <div className="flex-1 mono text-xs text-ink-700 hidden sm:flex items-center gap-4">
-          <span>← / → ניווט</span>
+          <span>חיצים: ניווט</span>
           <span>·</span>
-          <span>F מסך מלא</span>
+          <span>F: מסך מלא</span>
           <span>·</span>
-          <span>ESC יציאה</span>
+          <span>ESC: יציאה</span>
         </div>
 
         {index === total - 1 ? (
@@ -160,7 +156,7 @@ export default function Presentation() {
             onClick={() => { toggleCompleted(lesson.id); }}
             className={done ? 'btn-mono border border-brand text-brand bg-brand/[0.08]' : 'btn-mono bg-brand text-black'}
           >
-            {done ? '✓ הושלם' : 'סמן כהושלם'}
+            {done ? 'הושלם' : 'סמן כהושלם'}
           </button>
         ) : (
           <button
@@ -191,7 +187,7 @@ function ThumbnailsOverlay({ slides, currentIndex, onSelect, onClose }) {
       <div className="card-elev p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
           <div className="kicker">תוכן השיעור</div>
-          <button onClick={onClose} className="text-ink-500 hover:text-warn">✕</button>
+          <button onClick={onClose} className="text-ink-500 hover:text-ink-100"><Icon name="close" size={16} /></button>
         </div>
         <div className="grid sm:grid-cols-2 gap-2">
           {slides.map((s, i) => (
@@ -204,8 +200,8 @@ function ThumbnailsOverlay({ slides, currentIndex, onSelect, onClose }) {
                   : 'border-line hover:border-brand/50 hover:bg-bg-card'
               }`}
             >
-              <div className="mono text-xs text-brand mb-1 tracking-mono">
-                שקף {String(i + 1).padStart(2, '0')}
+              <div className="text-xs text-brand mb-1">
+                שקף <span className="mono">{String(i + 1).padStart(2, '0')}</span>
               </div>
               <div className="text-base font-bold text-ink-100 leading-tight">
                 {s.title?.replace(/<[^>]+>/g, '') || s.kicker || '—'}
@@ -224,10 +220,10 @@ function ThumbnailsOverlay({ slides, currentIndex, onSelect, onClose }) {
 function ComingSoonFullscreen({ lesson, onClose }) {
   return (
     <div className="fixed inset-0 z-[100] bg-bg grid place-items-center px-6">
-      <button onClick={onClose} className="absolute top-6 left-6 grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-warn hover:border-warn rounded-sm">✕</button>
+      <button onClick={onClose} className="absolute top-6 left-6 grid place-items-center w-10 h-10 border border-line text-ink-300 hover:text-ink-100"><Icon name="close" size={15} /></button>
       <div className="text-center max-w-2xl">
         <div className="kicker justify-center mb-5">בקרוב</div>
-        <h1 className="font-display text-5xl sm:text-7xl font-black text-ink-100 tracking-tight leading-none mb-4">
+        <h1 className="font-display text-5xl sm:text-7xl font-bold text-ink-100 tracking-tight leading-none mb-4">
           {lesson.title}
         </h1>
         <p className="text-2xl sm:text-3xl text-ink-300 font-light mb-6">{lesson.subtitle}</p>
@@ -282,17 +278,17 @@ function SlideStage({ children, image, className = '' }) {
 
 function CoverSlide({ slide }) {
   return (
-    <SlideStage image={slide.image}>
+    <SlideStage image={null}>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
-        <div className="kicker mb-10">{slide.kicker}</div>
-        <h1 className="font-display text-6xl sm:text-9xl font-black leading-[0.9] tracking-tight text-ink-100" dangerouslySetInnerHTML={{ __html: slide.title }} />
+        <div className="kicker mb-8 sm:mb-10">{slide.kicker}</div>
+        <h1 className="serif-tight text-[3.4rem] sm:text-8xl lg:text-9xl leading-[0.95]" dangerouslySetInnerHTML={{ __html: slide.title }} />
         {slide.subtitle && (
-          <p className="mt-8 text-3xl sm:text-5xl text-ink-300 font-light leading-tight">
+          <p className="mt-6 sm:mt-8 text-2xl sm:text-4xl text-ink-300 font-light leading-tight max-w-4xl">
             {slide.subtitle}
           </p>
         )}
         {slide.meta?.length > 0 && (
-          <div className="mt-16 flex flex-wrap gap-5 text-base mono text-ink-500 uppercase tracking-mono">
+          <div className="mt-12 sm:mt-16 flex flex-wrap gap-x-5 gap-y-2 text-base text-ink-500">
             {slide.meta.map((m, i) => (
               <span key={i}>
                 {i > 0 && <span className="text-ink-700 ml-5">·</span>}
@@ -380,9 +376,9 @@ function PlayerSlide({ slide }) {
             </div>
           )}
           <div className="flex items-baseline gap-4 flex-wrap">
-            <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100" dangerouslySetInnerHTML={{ __html: slide.title }} />
+            <h2 className="font-display text-5xl sm:text-7xl font-bold leading-none tracking-tight text-ink-100" dangerouslySetInnerHTML={{ __html: slide.title }} />
             {slide.model && (
-              <span className="mono text-brand text-sm uppercase tracking-mono px-3 py-1.5 border border-brand/40 rounded-sm bg-brand/[0.08]">
+              <span className="mono text-brand text-sm tracking-mono px-3 py-1.5 border border-brand/40 rounded-sm bg-brand/[0.08]">
                 {slide.model}
               </span>
             )}
@@ -446,9 +442,9 @@ function ComparisonSlide({ slide }) {
           <table className="w-full">
             <thead>
               <tr className="bg-bg-card">
-                <th className="mono text-xs uppercase tracking-mono text-brand text-right px-6 py-4 border-b border-line">משימה</th>
-                <th className="mono text-xs uppercase tracking-mono text-brand text-right px-6 py-4 border-b border-line">הכלי המומלץ</th>
-                <th className="mono text-xs uppercase tracking-mono text-brand text-right px-6 py-4 border-b border-line hidden sm:table-cell">למה</th>
+                <th className="mono text-xs tracking-mono text-brand text-right px-6 py-4 border-b border-line">משימה</th>
+                <th className="mono text-xs tracking-mono text-brand text-right px-6 py-4 border-b border-line">הכלי המומלץ</th>
+                <th className="mono text-xs tracking-mono text-brand text-right px-6 py-4 border-b border-line hidden sm:table-cell">למה</th>
               </tr>
             </thead>
             <tbody>
@@ -538,7 +534,7 @@ function HomeworkSlide({ slide }) {
                   />
                 ))}
               </div>
-              <span className="mono text-[0.65rem] uppercase tracking-kicker text-brand font-bold">{diff.label}</span>
+              <span className="text-[0.72rem] tracking-kicker text-brand font-semibold">{diff.label}</span>
             </div>
           )}
         </div>
@@ -644,7 +640,7 @@ function CodeSlide({ slide }) {
 
         <div className="card-elev bg-bg overflow-hidden">
           <div className="flex items-center justify-between px-5 py-3 border-b border-line bg-bg-side">
-            <span className="mono text-[0.65rem] uppercase tracking-kicker text-ink-500">
+            <span className="mono text-[0.65rem] tracking-kicker text-ink-500">
               {slide.language || 'shell'}
             </span>
             {slide.filename && (
@@ -680,18 +676,18 @@ function DemoSlide({ slide }) {
           <div className="card-elev bg-bg overflow-hidden max-w-4xl">
             <div className="flex items-center gap-2 px-5 py-3 border-b border-line bg-bg-side">
               <span className="text-brand text-lg leading-none">🎬</span>
-              <span className="mono text-[0.65rem] uppercase tracking-kicker text-brand">הפרומפט המדויק</span>
+              <span className="mono text-[0.65rem] tracking-kicker text-brand">הפרומפט המדויק</span>
             </div>
-            <pre className="p-6 whitespace-pre-wrap">
-              <code className="text-ink-100 text-base sm:text-lg leading-relaxed">{slide.prompt}</code>
+            <pre className="p-6 whitespace-pre-wrap font-sans">
+              <code className="font-sans text-ink-100 text-base sm:text-lg leading-relaxed">{slide.prompt}</code>
             </pre>
           </div>
         )}
 
         {Array.isArray(slide.useCases) && slide.useCases.length > 0 && (
           <div className="mt-6 max-w-4xl">
-            <div className="mono text-[0.65rem] uppercase tracking-kicker text-ink-500 mb-3">
-              אפשר להחליף נושא — בחר/י יוז-קייס:
+            <div className="mono text-[0.65rem] tracking-kicker text-ink-500 mb-3">
+              אפשר להחליף נושא — בחר יוז-קייס:
             </div>
             <div className="flex flex-wrap gap-2.5">
               {slide.useCases.map((u, i) => (
@@ -755,14 +751,14 @@ function FlowSlide({ slide }) {
 
 function NextLessonSlide({ slide }) {
   return (
-    <SlideStage image={slide.image}>
+    <SlideStage image={null}>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
         <div className="card-elev accent-stripe p-10 sm:p-14 max-w-4xl">
-          <div className="mono text-xs uppercase tracking-kicker text-ink-500 mb-4">
-            שיעור {slide.lessonNumber}
+          <div className="text-xs text-ink-500 mb-4">
+            מפגש <span className="mono">{slide.lessonNumber}</span>
           </div>
-          <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
+          <h2 className="serif-tight text-5xl sm:text-7xl leading-none mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
           <p className="text-3xl text-brand font-light mb-8">{slide.subtitle}</p>
           <p className="text-xl text-ink-300 leading-relaxed max-w-3xl">{slide.preview}</p>
         </div>

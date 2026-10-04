@@ -1,51 +1,66 @@
 /** @type {import('tailwindcss').Config} */
+// Design tokens shared with starter.ai-lab.co.il (2026): two colours, ivory type,
+// Hebrew serif display, hairlines, no glow. Square on desktop, rounded "sheets" on mobile
+// (the mobile radius override lives at the end of src/index.css).
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Heebo', 'system-ui', 'sans-serif'],
-        display: ['Heebo', 'system-ui', 'sans-serif'],
-        mono: ['"Space Mono"', 'ui-monospace', 'monospace']
+        sans: ['"Noto Sans Hebrew"', 'system-ui', 'sans-serif'],
+        display: ['"Noto Serif Hebrew"', 'Georgia', 'serif'],
+        mono: ['"Space Mono"', '"Noto Sans Hebrew"', 'ui-monospace', 'monospace']
       },
       colors: {
         bg: {
-          DEFAULT: '#080808',
-          elev: '#101010',
-          card: '#141414',
-          side: '#0c0c0c',
-          ink: '#1a1a1a'
+          DEFAULT: '#050605',
+          elev: '#0B0E0D',
+          card: '#0F1211',
+          side: '#050605',
+          ink: '#141817'
         },
         ink: {
-          100: '#f4f4f4',
-          300: '#c8c8c8',
-          500: '#888888',
-          700: '#555555',
-          900: '#333333'
+          100: '#F1EEE5',
+          200: '#D9D6CD',
+          300: 'rgba(241,238,229,0.72)',
+          500: 'rgba(241,238,229,0.5)',
+          700: 'rgba(241,238,229,0.34)',
+          900: 'rgba(241,238,229,0.18)'
         },
         brand: {
           DEFAULT: '#10E593',
-          glow: '#c1f0c1',
+          glow: '#10E593',
           dim: 'rgba(16,229,147,0.08)',
           dim2: 'rgba(16,229,147,0.16)'
         },
         line: {
-          DEFAULT: 'rgba(255,255,255,0.08)',
-          strong: 'rgba(255,255,255,0.16)'
+          DEFAULT: 'rgba(241,238,229,0.14)',
+          strong: 'rgba(241,238,229,0.3)'
         },
         warn: '#FF7849',
         gold: '#F5C842'
       },
       boxShadow: {
-        'brand': '0 8px 24px rgba(16,229,147,0.25)',
-        'brand-lg': '0 12px 32px rgba(16,229,147,0.35)'
+        'brand': 'none',
+        'brand-lg': 'none'
       },
       letterSpacing: {
-        'kicker': '0.22em',
-        'mono': '0.06em'
+        'kicker': '0.06em',
+        'mono': '0.04em'
       },
       maxWidth: {
         'slide': '960px'
+      },
+      borderRadius: {
+        none: '0',
+        sm: '0',
+        DEFAULT: '0',
+        md: '0',
+        lg: '0',
+        xl: '0',
+        '2xl': '0',
+        '3xl': '0',
+        full: '9999px'
       }
     }
   },

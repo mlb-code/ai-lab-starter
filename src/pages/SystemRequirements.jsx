@@ -62,7 +62,7 @@ export default function SystemRequirements() {
     <div className="space-y-10 sm:space-y-14">
       <header className="pb-5 sm:pb-7 border-b border-line">
         <div className="kicker mb-4 sm:mb-5">לפני שמתחילים</div>
-        <h1 className="font-display text-[2.25rem] sm:text-5xl lg:text-6xl font-black leading-[1] tracking-tight text-ink-100">
+        <h1 className="font-display text-[2.25rem] sm:text-5xl lg:text-6xl font-bold leading-[1] tracking-tight text-ink-100">
           דרישות <em className="not-italic text-brand">מערכת</em>.
         </h1>
         <p className="mt-4 sm:mt-5 text-base sm:text-lg text-ink-300 leading-relaxed max-w-2xl">

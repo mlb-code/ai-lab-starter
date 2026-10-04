@@ -15,7 +15,7 @@ export default function Layout() {
         <MobileChrome />
 
         <div className="lg:mr-72">
-          <main className="px-4 pt-[4.75rem] pb-28 sm:px-8 lg:px-14 lg:py-16 lg:pt-16 max-w-[1180px]">
+          <main className="px-4 pt-[4.75rem] pb-28 sm:px-8 lg:px-14 lg:pt-16 lg:pb-32 max-w-[1180px]">
             <Outlet />
           </main>
         </div>

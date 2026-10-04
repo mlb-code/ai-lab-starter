@@ -7,7 +7,7 @@ export default function Projects() {
     <div className="space-y-12">
       <header className="pb-7 border-b border-line">
         <div className="kicker mb-5">{category.kicker}</div>
-        <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight text-ink-100">
+        <h1 className="font-display text-5xl sm:text-6xl font-bold leading-[0.95] tracking-tight text-ink-100">
           {category.title}
         </h1>
         <p className="mt-5 text-lg text-ink-300 leading-relaxed max-w-2xl">{category.subtitle}</p>
@@ -29,7 +29,7 @@ export default function Projects() {
               <div className="flex items-start justify-between gap-4 flex-wrap mb-3">
                 <div>
                   <div className="kicker mb-3">{p.category}</div>
-                  <h2 className="font-display text-3xl sm:text-4xl font-black text-ink-100 tracking-tight">{p.name}</h2>
+                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-ink-100 tracking-tight">{p.name}</h2>
                   <p className="text-xl text-brand font-light mt-2">{p.tagline}</p>
                 </div>
                 {p.url && (
@@ -90,7 +90,7 @@ export default function Projects() {
 
               {p.lessonsRelevant?.length > 0 && (
                 <div className="mt-6 pt-5 border-t border-line">
-                  <div className="text-xs text-ink-500 mono uppercase tracking-mono">
+                  <div className="text-xs text-ink-500 mono tracking-mono">
                     רלוונטי לשיעורים: {p.lessonsRelevant.map((n) => `0${n}`).join(' · ')}
                   </div>
                 </div>

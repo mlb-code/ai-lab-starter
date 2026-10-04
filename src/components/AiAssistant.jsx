@@ -97,10 +97,9 @@ export default function AiAssistant() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="פתח עוזר הקורס"
-        className="hidden lg:flex fixed bottom-6 left-6 z-[9998] w-16 h-16 rounded-full flex-col items-center justify-center leading-[1.05] text-black font-display font-black text-xs bg-gradient-to-br from-brand to-brand-glow shadow-brand hover:scale-105 active:scale-95 transition"
+        className="hidden lg:flex fixed bottom-6 left-6 z-[9998] w-16 h-16 rounded-full items-center justify-center text-black font-display font-bold text-lg bg-brand hover:bg-[#2BF2A6] active:scale-95 transition"
       >
-        <span>AI</span>
-        <span>Lab</span>
+        <span dir="ltr">AI</span>
       </button>
 
       {/* Chat panel */}
@@ -108,15 +107,15 @@ export default function AiAssistant() {
         <div
           role="dialog"
           aria-label="עוזר הקורס"
-          className="fixed z-[9999] flex flex-col overflow-hidden rounded-xl border border-brand/30 bg-bg-elev shadow-brand-lg
+          className="fixed z-[9999] flex flex-col overflow-hidden rounded-xl border border-brand/30 bg-bg-elev shadow-2xl
                      bottom-24 left-1/2 -translate-x-1/2 w-[calc(100vw-1.5rem)] max-w-[400px]
                      lg:bottom-24 lg:left-6 lg:translate-x-0 lg:w-[380px]
                      h-[min(560px,70vh)]"
         >
           {/* Header */}
-          <div className="flex items-center justify-between gap-3 px-5 py-4 bg-gradient-to-br from-brand to-brand-glow">
+          <div className="flex items-center justify-between gap-3 px-5 py-4 bg-brand">
             <div className="flex items-center gap-3">
-              <div className="grid place-items-center w-10 h-10 rounded-full bg-black/15 text-black font-display font-black text-[0.65rem] leading-[1.05] text-center">
+              <div className="grid place-items-center w-10 h-10 rounded-full bg-black/15 text-black font-display font-bold text-[0.65rem] leading-[1.05] text-center">
                 <span>AI Lab</span>
               </div>
               <h4 className="text-black font-bold text-base">עוזר הקורס</h4>
@@ -156,7 +155,7 @@ export default function AiAssistant() {
               onClick={send}
               disabled={loading}
               aria-label="שלח"
-              className="grid place-items-center w-[42px] h-[42px] shrink-0 rounded-full bg-gradient-to-br from-brand to-brand-glow text-black text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="grid place-items-center w-[42px] h-[42px] shrink-0 rounded-full bg-brand text-black text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               &#10148;
             </button>
@@ -177,7 +176,7 @@ function Bubble({ role, children }) {
     <div
       className={`max-w-[85%] px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap break-words rounded-2xl ${
         isUser
-          ? 'self-start rounded-bl-sm bg-gradient-to-br from-brand to-brand-glow text-black'
+          ? 'self-start rounded-bl-sm bg-brand text-black'
           : 'self-end rounded-br-sm bg-bg-card text-ink-300 border border-brand/20'
       }`}
     >

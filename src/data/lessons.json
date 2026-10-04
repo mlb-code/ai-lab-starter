@@ -31,13 +31,13 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 01",
+          "kicker": "מפגש 01",
           "title": "מי נגד מי",
           "subtitle": "עושים סדר בראש: מפת השחקנים בעולם ה-AI",
           "meta": [
             "~45 דקות",
             "14 שקפים",
-            "שיעור פתיחה"
+            "מפגש פתיחה"
           ],
           "image": {
             "src": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600",
@@ -383,7 +383,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 02",
+          "kicker": "מפגש 02",
           "title": "סביבת העבודה",
           "subtitle": "Cursor, Claude Code ו-Claude Desktop: מתקינים יחד, בלי פקודות",
           "meta": [
@@ -678,7 +678,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 03",
+          "kicker": "מפגש 03",
           "title": "הבית של הפרויקט",
           "subtitle": "GitHub: הפלטפורמה שכל פרויקט גר עליה",
           "meta": [
@@ -953,7 +953,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 04",
+          "kicker": "מפגש 04",
           "title": "דף הנחיתה",
           "subtitle": "הדף שעובד בשבילך: מהרעיון לאתר חי באוויר",
           "meta": [
@@ -1264,7 +1264,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 05",
+          "kicker": "מפגש 05",
           "title": "המוח של האתר",
           "subtitle": "הטופס שמביא פניות: חיבור ל-Google Sheets",
           "meta": [
@@ -1573,7 +1573,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 01",
+          "kicker": "מפגש 01",
           "title": "הפרויקט שלך",
           "subtitle": "אפיון, תכנון ומפת דרכים עם AI",
           "meta": [
@@ -1786,7 +1786,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 02",
+          "kicker": "מפגש 02",
           "title": "בונים סוכן AI",
           "subtitle": "מהתיאוריה לסוכן עובד, שלב אחרי שלב",
           "meta": [
@@ -1970,7 +1970,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 05",
+          "kicker": "מפגש 03",
           "title": "אוטומציות אישיות",
           "subtitle": "הצוות הסודי שלך — סוכנים שמטפלים בשגרה היומיומית",
           "meta": [
@@ -2214,7 +2214,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 04",
+          "kicker": "מפגש 04",
           "title": "חיבור למערכות אמיתיות",
           "subtitle": "תשלומים, תורים, APIs ואינטגרציות",
           "meta": [
@@ -2414,7 +2414,7 @@
       "slides": [
         {
           "type": "cover",
-          "kicker": "שיעור 05",
+          "kicker": "מפגש 05",
           "title": "השקה וצמיחה",
           "subtitle": "דחיפה לאוויר, ליטוש וסיכום הפרויקט",
           "meta": [
