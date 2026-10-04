@@ -1,29 +1,4 @@
 {
   "intro": "כאן מרוכזות כל הקלטות השיעורים. הצפייה מתבצעת בתוך האתר. ההקלטה של כל שיעור מתווספת כאן תוך 24 שעות מסיום השיעור בלייב.",
-  "items": [
-    {
-      "lessonNumber": "01",
-      "lessonTitle": "מי נגד מי: עושים סדר בראש",
-      "fileId": "1_djMrRjq08tG8Mk5XOJHleG2ziqhvUhy",
-      "date": "4.6.2026"
-    },
-    {
-      "lessonNumber": "02",
-      "lessonTitle": "סביבת העבודה: מתקינים יחד",
-      "fileId": "1NN8daENLcQ94_KdhVlvIUV0hAI8eQH0C",
-      "date": "11.6.2026"
-    },
-    {
-      "lessonNumber": "03",
-      "lessonTitle": "הבית של הפרויקט (GitHub)",
-      "fileId": "1SodmO5HKFEqLGKawWSFXce8jNNI7C8c9",
-      "date": "18.6.2026"
-    },
-    {
-      "lessonNumber": "04",
-      "lessonTitle": "דף הנחיתה: הדף שעובד בשבילך",
-      "fileId": "1BAIVN2_VAOmbeR4FvHdK5eizlgog8UjX",
-      "date": "25.6.2026"
-    }
-  ]
+  "items": []
 }
