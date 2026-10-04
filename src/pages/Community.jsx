@@ -33,7 +33,7 @@ export default function Community() {
 
       <section>
         <div className="section-head">
-          <h3>מה תמצא/י בקהילה</h3>
+          <h3>מה תמצא בקהילה</h3>
         </div>
         <div className="grid sm:grid-cols-3 gap-4">
           <Feature num="01" title="שאלות ותשובות" text="פתחו דיון על כל אתגר שעולה בדרך — תשובות מהמרצה ומהקהילה." />

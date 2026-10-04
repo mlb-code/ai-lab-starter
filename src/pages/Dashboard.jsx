@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import lessonsData from '../data/lessons.json'
+import recordingsData from '../data/recordings.json'
 import tipsData from '../data/tips.json'
 import { useAuth } from '../context/AuthContext.jsx'
 import { useProgress } from '../context/ProgressContext.jsx'
@@ -9,7 +9,8 @@ export default function Dashboard() {
   const { user } = useAuth()
   const { isCompleted } = useProgress()
   const { lessons, courses, course, setCourse } = useCourse()
-  const { latestRecording } = lessonsData
+  const latestRecording = [...recordingsData.items]
+    .sort((a, b) => Number(b.lessonNumber) - Number(a.lessonNumber))[0] || null
 
   const total = lessons.length
   const done = lessons.filter((l) => isCompleted(l.id)).length
@@ -127,7 +128,7 @@ export default function Dashboard() {
 
 /* ============ RECORDING CARD ============ */
 function RecordingCard({ recording }) {
-  const hasRecording = recording?.lessonId && recording?.url
+  const hasRecording = recording?.fileId
 
   if (!hasRecording) {
     return (
@@ -153,12 +154,7 @@ function RecordingCard({ recording }) {
   }
 
   return (
-    <a
-      href={recording.url}
-      target="_blank"
-      rel="noreferrer"
-      className="card-elev p-7 card-hover group flex flex-col"
-    >
+    <Link to="/recordings" className="card-elev p-7 card-hover group flex flex-col">
       <div className="kicker mb-4">ההקלטה האחרונה</div>
       <div className="aspect-video bg-bg-card rounded-sm border border-line grid place-items-center relative overflow-hidden mb-4">
         <div className="grid place-items-center w-14 h-14 rounded-full bg-brand text-black shadow-brand group-hover:shadow-brand-lg transition-all group-hover:scale-105">
@@ -174,9 +170,9 @@ function RecordingCard({ recording }) {
         {recording.lessonTitle}
       </h4>
       <div className="mono text-xs text-brand mt-4 pt-3 border-t border-line uppercase tracking-mono font-bold">
-        לצפייה ↗
+        לצפייה ←
       </div>
-    </a>
+    </Link>
   )
 }
 

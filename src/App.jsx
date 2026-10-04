@@ -18,6 +18,7 @@ import Prompts from './pages/Prompts.jsx'
 import Glossary from './pages/Glossary.jsx'
 import Projects from './pages/Projects.jsx'
 import Library from './pages/Library.jsx'
+import Recordings from './pages/Recordings.jsx'
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
             <Route path="/glossary" element={<Glossary />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/recordings" element={<Recordings />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />

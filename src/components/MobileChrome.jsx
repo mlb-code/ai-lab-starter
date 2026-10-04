@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import lessonsData from '../data/lessons.json'
 import { useAuth } from '../context/AuthContext.jsx'
+import { useAssistant } from '../context/AssistantContext.jsx'
 
 /* Bottom-nav slots (4 buttons + center FAB) — icons match the sidebar */
 const NAV_ITEMS = [
@@ -12,6 +13,7 @@ const NAV_ITEMS = [
 
 /* "כל הסעיפים" bottom-sheet tiles — matches the sidebar's tool & helper groups */
 const SHEET_ITEMS = [
+  { to: '/recordings', icon: '▶', label: 'הקלטות' },
   { to: '/system-requirements', icon: '⚡', label: 'דרישות מערכת' },
   { to: '/setup', icon: '↓', label: 'התקנה והתחלה' },
   { to: '/prompts', icon: '⌘', label: 'תבניות פרומפטים' },
@@ -23,13 +25,13 @@ const SHEET_ITEMS = [
 
 export default function MobileChrome() {
   const { user, logout } = useAuth()
+  const { setOpen: setAssistantOpen } = useAssistant()
   const navigate = useNavigate()
   const location = useLocation()
   const path = location.pathname
 
   const [profileOpen, setProfileOpen] = useState(false)
   const [sheetOpen, setSheetOpen] = useState(false)
-  const [toast, setToast] = useState(false)
 
   const initial = (user?.name?.[0] || 'ס').toUpperCase()
 
@@ -58,11 +60,6 @@ export default function MobileChrome() {
   }, [profileOpen])
 
   const go = (to) => { setSheetOpen(false); navigate(to) }
-
-  const showToast = () => {
-    setToast(true)
-    setTimeout(() => setToast(false), 2400)
-  }
 
   const sheetActive = SHEET_ITEMS.some((i) => i.to && path.startsWith(i.to))
 
@@ -101,7 +98,7 @@ export default function MobileChrome() {
           <NavButton key={item.to} item={item} active={item.match(path)} onClick={() => go(item.to)} />
         ))}
 
-        <button className="m-nav-fab" onClick={showToast} aria-label="עוזר AI Lab">
+        <button className="m-nav-fab" onClick={() => setAssistantOpen(true)} aria-label="עוזר AI Lab">
           <span>AI</span>
           <span>Lab</span>
         </button>
@@ -141,13 +138,6 @@ export default function MobileChrome() {
           ))}
         </div>
       </div>
-
-      {/* ===== FAB placeholder toast ===== */}
-      {toast && (
-        <div className="lg:hidden fixed left-1/2 -translate-x-1/2 bottom-24 z-[80] bg-bg-elev border border-brand text-ink-100 text-sm font-semibold px-4 py-2.5 rounded-sm shadow-brand">
-          העוזר האישי — בקרוב ✦
-        </div>
-      )}
     </>
   )
 }

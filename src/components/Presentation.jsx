@@ -255,6 +255,7 @@ function SlideRenderer({ slide }) {
     case 'recap': return <RecapSlide slide={slide} />
     case 'next-lesson': return <NextLessonSlide slide={slide} />
     case 'code': return <CodeSlide slide={slide} />
+    case 'demo': return <DemoSlide slide={slide} />
     case 'flow': return <FlowSlide slide={slide} />
     default: return <KickerTitleSlide slide={slide} />
   }
@@ -284,9 +285,7 @@ function CoverSlide({ slide }) {
     <SlideStage image={slide.image}>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-10">{slide.kicker}</div>
-        <h1 className="font-display text-6xl sm:text-9xl font-black leading-[0.9] tracking-tight text-ink-100">
-          {slide.title}
-        </h1>
+        <h1 className="font-display text-6xl sm:text-9xl font-black leading-[0.9] tracking-tight text-ink-100" dangerouslySetInnerHTML={{ __html: slide.title }} />
         {slide.subtitle && (
           <p className="mt-8 text-3xl sm:text-5xl text-ink-300 font-light leading-tight">
             {slide.subtitle}
@@ -353,9 +352,7 @@ function ObjectivesSlide({ slide }) {
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         {slide.kicker && <div className="kicker mb-7">{slide.kicker}</div>}
-        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12">
-          {slide.title}
-        </h2>
+        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12" dangerouslySetInnerHTML={{ __html: slide.title }} />
         <ul className="grid sm:grid-cols-2 gap-5">
           {slide.items.map((item, i) => (
             <li key={i} className="flex items-start gap-5 card-elev p-6 border border-line hover:border-brand/40 transition">
@@ -383,9 +380,7 @@ function PlayerSlide({ slide }) {
             </div>
           )}
           <div className="flex items-baseline gap-4 flex-wrap">
-            <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100">
-              {slide.title}
-            </h2>
+            <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100" dangerouslySetInnerHTML={{ __html: slide.title }} />
             {slide.model && (
               <span className="mono text-brand text-sm uppercase tracking-mono px-3 py-1.5 border border-brand/40 rounded-sm bg-brand/[0.08]">
                 {slide.model}
@@ -442,9 +437,10 @@ function ComparisonSlide({ slide }) {
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5">
-          {slide.title}
-        </h2>
+        <h2
+          className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5"
+          dangerouslySetInnerHTML={{ __html: slide.title }}
+        />
         {slide.intro && <p className="text-xl text-ink-300 mb-8 max-w-3xl">{slide.intro}</p>}
         <div className="card-elev overflow-hidden">
           <table className="w-full">
@@ -476,9 +472,7 @@ function ToolsListSlide({ slide }) {
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5">
-          {slide.title}
-        </h2>
+        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
         {slide.intro && <p className="text-xl text-ink-300 mb-10 max-w-3xl">{slide.intro}</p>}
         <div className="grid sm:grid-cols-2 gap-5">
           {slide.tools.map((tool, i) => (
@@ -506,9 +500,10 @@ function QuoteSlide({ slide }) {
     <SlideStage image={slide.image}>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12">
-          {slide.title}
-        </h2>
+        <h2
+          className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12"
+          dangerouslySetInnerHTML={{ __html: slide.title }}
+        />
         <div className="relative max-w-4xl">
           <div className="absolute -right-4 -top-12 text-brand/20 font-display text-[12rem] leading-none select-none">"</div>
           <blockquote className="relative pr-8 border-r-4 border-brand">
@@ -527,13 +522,33 @@ function QuoteSlide({ slide }) {
 
 function HomeworkSlide({ slide }) {
   const hasGroups = Array.isArray(slide.groups) && slide.groups.length > 0
+  const diff = slide.difficulty
   return (
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
-        <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5">
-          {slide.title}
-        </h2>
+        <div className="flex items-center justify-between gap-4 mb-7">
+          <div className="kicker">{slide.kicker}</div>
+          {diff && (
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <span
+                    key={n}
+                    className={`w-2 h-2 rounded-full ${n <= diff.level ? 'bg-brand' : 'border border-ink-500/50'}`}
+                  />
+                ))}
+              </div>
+              <span className="mono text-[0.65rem] uppercase tracking-kicker text-brand font-bold">{diff.label}</span>
+            </div>
+          )}
+        </div>
+        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
+        {slide.buildsOn && (
+          <div className="flex items-start gap-3 mb-7 pr-5 border-r-2 border-brand/60 max-w-3xl">
+            <span className="text-brand text-lg leading-none mt-0.5">↳</span>
+            <p className="text-base text-ink-200 leading-relaxed">{slide.buildsOn}</p>
+          </div>
+        )}
         {slide.intro && <p className="text-xl text-ink-300 mb-10 max-w-3xl">{slide.intro}</p>}
 
         {hasGroups ? (
@@ -603,9 +618,7 @@ function RecapSlide({ slide }) {
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12">
-          {slide.title}
-        </h2>
+        <h2 className="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight text-ink-100 mb-12" dangerouslySetInnerHTML={{ __html: slide.title }} />
         <ul className="space-y-5 max-w-4xl">
           {slide.points.map((p, i) => (
             <li key={i} className="flex items-start gap-6 pb-5 border-b border-line">
@@ -626,9 +639,7 @@ function CodeSlide({ slide }) {
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5">
-          {slide.title}
-        </h2>
+        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
         {slide.intro && <p className="text-xl text-ink-300 mb-7 max-w-3xl">{slide.intro}</p>}
 
         <div className="card-elev bg-bg overflow-hidden">
@@ -657,14 +668,57 @@ function CodeSlide({ slide }) {
   )
 }
 
+function DemoSlide({ slide }) {
+  return (
+    <SlideStage>
+      <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
+        <div className="kicker mb-7">{slide.kicker}</div>
+        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
+        {slide.intro && <p className="text-xl text-ink-300 mb-7 max-w-3xl">{slide.intro}</p>}
+
+        {slide.prompt && (
+          <div className="card-elev bg-bg overflow-hidden max-w-4xl">
+            <div className="flex items-center gap-2 px-5 py-3 border-b border-line bg-bg-side">
+              <span className="text-brand text-lg leading-none">🎬</span>
+              <span className="mono text-[0.65rem] uppercase tracking-kicker text-brand">הפרומפט המדויק</span>
+            </div>
+            <pre className="p-6 whitespace-pre-wrap">
+              <code className="text-ink-100 text-base sm:text-lg leading-relaxed">{slide.prompt}</code>
+            </pre>
+          </div>
+        )}
+
+        {Array.isArray(slide.useCases) && slide.useCases.length > 0 && (
+          <div className="mt-6 max-w-4xl">
+            <div className="mono text-[0.65rem] uppercase tracking-kicker text-ink-500 mb-3">
+              אפשר להחליף נושא — בחר/י יוז-קייס:
+            </div>
+            <div className="flex flex-wrap gap-2.5">
+              {slide.useCases.map((u, i) => (
+                <span key={i} className="card-elev px-4 py-2 text-sm text-ink-200 hover:border-brand/40 transition cursor-default">
+                  {u}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {slide.note && (
+          <div className="mt-7 pr-5 border-r-2 border-brand max-w-3xl">
+            <p className="text-base text-brand font-medium italic">{slide.note}</p>
+          </div>
+        )}
+      </div>
+    </SlideStage>
+  )
+}
+
 function FlowSlide({ slide }) {
   return (
     <SlideStage>
       <div className="flex flex-col justify-center min-h-[calc(100vh-220px)] py-10">
         <div className="kicker mb-7">{slide.kicker}</div>
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5">
-          {slide.title}
-        </h2>
+        <h2 className="font-display text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
         {slide.intro && <p className="text-xl text-ink-300 mb-10 max-w-3xl">{slide.intro}</p>}
 
         <ol className="space-y-3 max-w-4xl">
@@ -689,6 +743,11 @@ function FlowSlide({ slide }) {
             </li>
           ))}
         </ol>
+        {slide.note && (
+          <div className="mt-7 pr-5 border-r-2 border-brand max-w-3xl">
+            <p className="text-base text-brand font-medium italic">{slide.note}</p>
+          </div>
+        )}
       </div>
     </SlideStage>
   )
@@ -703,9 +762,7 @@ function NextLessonSlide({ slide }) {
           <div className="mono text-xs uppercase tracking-kicker text-ink-500 mb-4">
             שיעור {slide.lessonNumber}
           </div>
-          <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100 mb-5">
-            {slide.title}
-          </h2>
+          <h2 className="font-display text-5xl sm:text-7xl font-black leading-none tracking-tight text-ink-100 mb-5" dangerouslySetInnerHTML={{ __html: slide.title }} />
           <p className="text-3xl text-brand font-light mb-8">{slide.subtitle}</p>
           <p className="text-xl text-ink-300 leading-relaxed max-w-3xl">{slide.preview}</p>
         </div>

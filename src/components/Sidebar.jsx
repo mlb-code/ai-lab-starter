@@ -80,6 +80,7 @@ export default function Sidebar() {
         <nav className="px-3 py-2 flex-1 flex flex-col gap-0.5">
           <SectionLabel>ראשי</SectionLabel>
           <NavItem to="/" end icon="⌂">לוח בקרה</NavItem>
+          <NavItem to="/recordings" icon="▶">הקלטות</NavItem>
 
           <SectionLabel>
             <span>השיעורים</span>

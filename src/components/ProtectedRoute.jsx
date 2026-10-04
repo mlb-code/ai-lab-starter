@@ -1,9 +1,13 @@
-import { Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { useAuth } from '../context/AuthContext.jsx'
+
+const LOGIN_URL = '/login.html'
 
 export default function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
-  if (loading) return null
-  if (!user) return <Navigate to="/login" replace />
+  useEffect(() => {
+    if (!loading && !user) window.location.replace(LOGIN_URL)
+  }, [loading, user])
+  if (loading || !user) return null
   return children
 }
